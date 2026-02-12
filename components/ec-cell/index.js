@@ -43,10 +43,7 @@ Component({
   },
   methods: {
     onTap() {
-      this.triggerEvent('tap')
-      if (this.data.url) {
-        wx.navigateTo({ url: this.data.url })
-      }
+      
     }
   }
 })

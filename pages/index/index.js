@@ -51,6 +51,7 @@ Page({
     ],
   },
   onNavigate(e) {
+    console.log(e)
     const { path } = e.currentTarget.dataset
     wx.navigateTo({ url: path })
   }
