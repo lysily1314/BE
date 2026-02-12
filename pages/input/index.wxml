@@ -4,7 +4,7 @@
     <text class="demo-block__title">基础用法</text>
     <view class="demo-block__content demo-block__content--flush">
       <ec-input label="姓名" placeholder="请输入姓名" value="{{name}}" clearable border bind:change="onNameChange" />
-      <ec-input label="手机号" type="number" placeholder="请输入手机号" value="{{phone}}" clearable border bind:change="onPhoneChange" />
+      <ec-input label="账号" type="number" placeholder="请输入账号" value="{{phone}}" clearable border bind:change="onPhoneChange" />
       <ec-input label="密码" type="password" placeholder="请输入密码" value="{{password}}" border="{{false}}" bind:change="onPasswordChange" />
     </view>
   </view>
@@ -14,7 +14,7 @@
     <text class="demo-block__title">必填与校验</text>
     <view class="demo-block__content demo-block__content--flush">
       <ec-input label="用户名" placeholder="请输入用户名" required border />
-      <ec-input label="手机号" placeholder="格式不正确" error error-message="请输入正确的手机号" border="{{false}}" />
+      <ec-input label="账号" placeholder="格式不正确" error error-message="请输入正确的账号" border="{{false}}" />
     </view>
   </view>
 

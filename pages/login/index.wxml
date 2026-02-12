@@ -17,8 +17,8 @@
     <!-- 手机号输入 -->
     <view class="login-input-group">
       <ec-input
-        label="手机号"
-        placeholder="请输入手机号"
+        label="用户名"
+        placeholder="请输入用户名"
         type="number"
         value="{{formData.phone}}"
         error="{{errors.phone}}"
