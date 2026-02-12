@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "SearchBar 搜索栏",
+  "usingComponents": {
+    "ec-search-bar": "/components/ec-search-bar/index"
+  }
+}

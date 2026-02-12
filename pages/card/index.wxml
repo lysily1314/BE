@@ -1,0 +1,51 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-card
+        image="https://img.yzcdn.cn/vant/cat.jpeg"
+        title="秋冬新款纯棉T恤 宽松休闲百搭"
+        price="89.00"
+        original-price="199.00"
+        tag="新品"
+        desc="多色可选 · 限时折扣"
+      />
+    </view>
+  </view>
+
+  <!-- 双列布局 -->
+  <view class="demo-block">
+    <text class="demo-block__title">双列布局</text>
+    <view class="card-grid">
+      <view
+        class="card-grid__item"
+        wx:for="{{products}}"
+        wx:key="id"
+      >
+        <ec-card
+          image="{{item.image}}"
+          title="{{item.title}}"
+          price="{{item.price}}"
+          original-price="{{item.originalPrice}}"
+          tag="{{item.tag}}"
+          desc="{{item.desc}}"
+          data-id="{{item.id}}"
+          bind:tap="onCardTap"
+        />
+      </view>
+    </view>
+  </view>
+
+  <!-- 无标签/无划线价 -->
+  <view class="demo-block">
+    <text class="demo-block__title">简约卡片</text>
+    <view class="demo-block__content">
+      <ec-card
+        image="https://img.yzcdn.cn/vant/cat.jpeg"
+        title="原木桌面收纳盒 多功能文具整理架"
+        price="126.00"
+      />
+    </view>
+  </view>
+</view>

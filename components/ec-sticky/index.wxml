@@ -1,0 +1,12 @@
+<view class="ec-sticky {{custom-class}}">
+  <!-- 锚点元素，用于检测滚动位置 -->
+  <view class="ec-sticky__anchor" style="height: {{height}}px; width: {{width}}px;"></view>
+  
+  <!-- 内容容器 -->
+  <view 
+    class="ec-sticky__content {{fixed ? 'ec-sticky__content--fixed' : ''}} {{fixed ? 'sticky-class' : ''}}" 
+    style="{{fixed ? 'top: ' + stickyTopPx + 'px; z-index: ' + zIndex + '; width: ' + width + 'px;' : ''}}"
+  >
+    <slot />
+  </view>
+</view>

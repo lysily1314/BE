@@ -1,0 +1,92 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-notice-bar 
+        text="{{noticeText}}" 
+        bind:click="onClick"
+      />
+    </view>
+  </view>
+
+  <!-- 不同类型 -->
+  <view class="demo-block">
+    <text class="demo-block__title">不同类型</text>
+    <view class="demo-block__content">
+      <ec-notice-bar 
+        text="主要通知 - 主要消息通知内容" 
+        type="primary"
+        left-icon="info-circle-fill"
+        style="margin-bottom: 20rpx;"
+      />
+      <ec-notice-bar 
+        text="成功通知 - 成功消息通知内容" 
+        type="success"
+        left-icon="check-circle-fill"
+        style="margin-bottom: 20rpx;"
+      />
+      <ec-notice-bar 
+        text="警告通知 - 警告消息通知内容" 
+        type="warning"
+        left-icon="warning-circle-fill"
+        style="margin-bottom: 20rpx;"
+      />
+      <ec-notice-bar 
+        text="危险通知 - 危险消息通知内容" 
+        type="danger"
+        left-icon="close-circle-fill"
+      />
+    </view>
+  </view>
+
+  <!-- 带关闭按钮 -->
+  <view class="demo-block">
+    <text class="demo-block__title">带关闭按钮</text>
+    <view class="demo-block__content">
+      <ec-notice-bar 
+        text="这是一条可关闭的通知" 
+        closeable="{{true}}"
+        bind:close="onClose"
+      />
+    </view>
+  </view>
+
+  <!-- 换行展示 -->
+  <view class="demo-block">
+    <text class="demo-block__title">换行展示</text>
+    <view class="demo-block__content">
+      <ec-notice-bar 
+        text="这是一条换行展示的通知，内容比较长，会在容器内换行显示。这样可以更好地适应长文本内容。" 
+        wrapable="{{true}}"
+      />
+    </view>
+  </view>
+
+  <!-- 控制滚动 -->
+  <view class="demo-block">
+    <text class="demo-block__title">控制滚动</text>
+    <view class="demo-block__content">
+      <ec-notice-bar 
+        text="{{noticeText}}" 
+        scrollable="{{scrollable}}"
+      />
+      <ec-button 
+        type="primary" 
+        size="small" 
+        style="margin-top: 20rpx;"
+        bind:tap="toggleScroll"
+      >
+        {{scrollable ? '禁用' : '启用'}}滚动
+      </ec-button>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">通告栏 NoticeBar</text>
+      <text class="demo-desc__text">用于展示重要通知的组件。支持多种类型、滚动播放、关闭按钮等功能，可自定义图标和样式。</text>
+    </view>
+  </view>
+</view>

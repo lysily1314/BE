@@ -1,0 +1,3 @@
+<view class="ec-tab-pane custom-class">
+  <slot />
+</view>

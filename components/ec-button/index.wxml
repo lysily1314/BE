@@ -1,0 +1,14 @@
+<view
+  class="ec-btn ec-btn--{{type}} ec-btn--{{size}} {{block ? 'ec-btn--block' : ''}} {{disabled ? 'ec-btn--disabled' : ''}} {{round ? 'ec-btn--round' : ''}} {{plain ? 'ec-btn--plain' : ''}} {{loading ? 'ec-btn--loading' : ''}} custom-class"
+  hover-class="{{disabled || loading ? '' : 'ec-btn--active'}}"
+  hover-stay-time="100"
+  bind:tap="onTap"
+>
+  <view wx:if="{{loading}}" class="ec-btn__loading">
+    <view class="ec-btn__loading-icon"></view>
+  </view>
+  <ec-icon wx:if="{{icon && !loading}}" name="{{icon}}" size="{{size === 'small' ? '24rpx' : '28rpx'}}" class="ec-btn__icon" />
+  <view class="ec-btn__text">
+    <slot></slot>
+  </view>
+</view>

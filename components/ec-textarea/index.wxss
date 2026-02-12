@@ -1,0 +1,49 @@
+/* ec-textarea 文本域组件 */
+.ec-textarea {
+  position: relative;
+  padding: 24rpx 32rpx;
+  background: var(--ec-white, #fff);
+}
+
+.ec-textarea--border {
+  border: 2rpx solid var(--ec-border, #eee);
+  border-radius: var(--ec-radius, 8rpx);
+  transition: border-color 0.2s ease;
+}
+
+.ec-textarea--focus.ec-textarea--border {
+  border-color: var(--ec-primary, #FF4400);
+}
+
+.ec-textarea--disabled {
+  opacity: 0.5;
+}
+
+.ec-textarea__control {
+  width: 100%;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  line-height: 1.6;
+  min-height: 144rpx;
+}
+
+.ec-textarea__placeholder {
+  color: var(--ec-text-placeholder, #999);
+  font-size: var(--ec-font-body, 28rpx);
+}
+
+.ec-textarea__count {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12rpx;
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-placeholder, #999);
+}
+
+.ec-textarea__count-current--max {
+  color: var(--ec-primary, #FF4400);
+}
+
+.ec-textarea__count-divider {
+  margin: 0 4rpx;
+}

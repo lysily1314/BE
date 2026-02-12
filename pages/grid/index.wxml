@@ -1,0 +1,88 @@
+<view class="demo-page">
+  <!-- 基础用法 - 2列 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法 - 2列</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-grid column="2" clickable>
+        <ec-grid-item wx:for="{{gridData1}}" wx:key="title" icon="{{item.icon}}" title="{{item.title}}" bind:click="onItemClick1" data-index="{{index}}" />
+      </ec-grid>
+    </view>
+  </view>
+
+  <!-- 3列网格 -->
+  <view class="demo-block">
+    <text class="demo-block__title">3列网格</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-grid column="3" clickable>
+        <ec-grid-item wx:for="{{gridData2}}" wx:key="title" icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}" bind:click="onItemClick2" data-index="{{index}}" />
+      </ec-grid>
+    </view>
+  </view>
+
+  <!-- 4列网格 -->
+  <view class="demo-block">
+    <text class="demo-block__title">4列网格</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-grid column="4" icon-size="40rpx" text-size="20rpx">
+        <ec-grid-item icon="home" title="首页" />
+        <ec-grid-item icon="category" title="分类" />
+        <ec-grid-item icon="cart" title="购物车" />
+        <ec-grid-item icon="user" title="我的" />
+        <ec-grid-item icon="search" title="搜索" />
+        <ec-grid-item icon="heart" title="收藏" />
+        <ec-grid-item icon="star" title="关注" />
+        <ec-grid-item icon="message" title="消息" />
+      </ec-grid>
+    </view>
+  </view>
+
+  <!-- 无边框 -->
+  <view class="demo-block">
+    <text class="demo-block__title">无边框</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-grid column="3" border="{{false}}" background="#f5f5f5">
+        <ec-grid-item icon="phone" title="手机" />
+        <ec-grid-item icon="clothes" title="服饰" />
+        <ec-grid-item icon="food" title="美食" />
+        <ec-grid-item icon="home" title="家居" />
+        <ec-grid-item icon="car" title="出行" />
+        <ec-grid-item icon="book" title="图书" />
+      </ec-grid>
+    </view>
+  </view>
+
+  <!-- 水平布局 -->
+  <view class="demo-block">
+    <text class="demo-block__title">水平布局</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-grid column="1" direction="horizontal" clickable>
+        <ec-grid-item icon="location" title="收货地址" desc="管理收货地址" />
+        <ec-grid-item icon="coupon" title="优惠券" desc="查看优惠券" />
+        <ec-grid-item icon="history" title="浏览历史" desc="查看浏览记录" />
+      </ec-grid>
+    </view>
+  </view>
+
+  <!-- 自定义样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义样式</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-grid column="3" gap="24rpx" icon-size="56rpx">
+        <ec-grid-item icon="home" title="首页" icon-color="#FF4400" />
+        <ec-grid-item icon="category" title="分类" icon-color="#1989fa" />
+        <ec-grid-item icon="cart" title="购物车" icon-color="#07c160" />
+        <ec-grid-item icon="user" title="我的" icon-color="#ff976a" />
+        <ec-grid-item icon="search" title="搜索" icon-color="#ee0a24" />
+        <ec-grid-item icon="heart" title="收藏" icon-color="#7232dd" />
+      </ec-grid>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">九宫格 Grid</text>
+      <text class="demo-desc__text">用于展示多个功能入口，支持自定义列数、图标、文字、边框样式等。常用于首页功能导航、商品分类展示等场景。</text>
+    </view>
+  </view>
+</view>

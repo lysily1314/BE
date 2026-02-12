@@ -1,0 +1,101 @@
+/* ec-content-card 内容卡片组件 */
+.ec-content-card {
+  position: relative;
+  background: var(--ec-white, #fff);
+  border-radius: var(--ec-radius-lg, 16rpx);
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1rpx solid var(--ec-border, #eee);
+}
+
+.ec-content-card--clickable {
+  cursor: pointer;
+}
+
+.ec-content-card--hover {
+  background: #f7f8fa;
+}
+
+/* 阴影样式 */
+.ec-content-card--shadow-light {
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.ec-content-card--shadow-heavy {
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.12);
+}
+
+/* 标签 */
+.ec-content-card__tag {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  z-index: 2;
+  padding: 4rpx 12rpx;
+  font-size: var(--ec-font-xs, 20rpx);
+  color: #fff;
+  border-radius: var(--ec-radius, 8rpx);
+  line-height: 1.4;
+  transform: scale(0.9);
+}
+
+.ec-content-card__tag--primary {
+  background: var(--ec-primary, #FF4400);
+}
+
+.ec-content-card__tag--success {
+  background: var(--ec-success, #07c160);
+}
+
+.ec-content-card__tag--warning {
+  background: var(--ec-warning, #ff976a);
+}
+
+.ec-content-card__tag--danger {
+  background: var(--ec-danger, #ee0a24);
+}
+
+/* 头部区域 */
+.ec-content-card__header {
+  padding: 32rpx 32rpx 0;
+  position: relative;
+}
+
+.ec-content-card__title {
+  display: block;
+  font-size: var(--ec-font-body, 28rpx);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 8rpx;
+  word-break: break-all;
+}
+
+.ec-content-card__desc {
+  display: block;
+  font-size: var(--ec-font-sm, 24rpx);
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+/* 内容区域 */
+.ec-content-card__body {
+  padding: 32rpx;
+  position: relative;
+}
+
+/* 底部区域 */
+.ec-content-card__footer {
+  padding: 0 32rpx 32rpx;
+  position: relative;
+}
+
+/* 底部边框 */
+.ec-content-card__bottom-border {
+  position: absolute;
+  bottom: 0;
+  left: 32rpx;
+  right: 32rpx;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+}

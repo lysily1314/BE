@@ -1,0 +1,47 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-input label="姓名" placeholder="请输入姓名" value="{{name}}" clearable border bind:change="onNameChange" />
+      <ec-input label="手机号" type="number" placeholder="请输入手机号" value="{{phone}}" clearable border bind:change="onPhoneChange" />
+      <ec-input label="密码" type="password" placeholder="请输入密码" value="{{password}}" border="{{false}}" bind:change="onPasswordChange" />
+    </view>
+  </view>
+
+  <!-- 必填/错误 -->
+  <view class="demo-block">
+    <text class="demo-block__title">必填与校验</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-input label="用户名" placeholder="请输入用户名" required border />
+      <ec-input label="手机号" placeholder="格式不正确" error error-message="请输入正确的手机号" border="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 图标 -->
+  <view class="demo-block">
+    <text class="demo-block__title">带图标</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-input label="搜索" prefix-icon="search" placeholder="输入关键词" clearable border />
+      <ec-input label="金额" type="digit" placeholder="请输入金额" suffix-icon="info" value="{{amount}}" border="{{false}}" bind:change="onAmountChange" />
+    </view>
+  </view>
+
+  <!-- 禁用/只读 -->
+  <view class="demo-block">
+    <text class="demo-block__title">禁用与只读</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-input label="禁用" value="不可编辑内容" disabled border />
+      <ec-input label="只读" value="只读内容" readonly border="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 对齐方式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">输入框对齐</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-input label="左对齐" placeholder="默认左对齐" border />
+      <ec-input label="右对齐" placeholder="内容右对齐" input-align="right" border="{{false}}" />
+    </view>
+  </view>
+</view>

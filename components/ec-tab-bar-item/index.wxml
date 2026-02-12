@@ -1,0 +1,28 @@
+<view
+  class="ec-tab-bar-item {{active ? 'ec-tab-bar-item--active' : ''}} {{disabled ? 'ec-tab-bar-item--disabled' : ''}} {{custom-class}}"
+  hover-class="{{!disabled ? 'ec-tab-bar-item--hover' : ''}}"
+  hover-stay-time="80"
+  bind:tap="onClick"
+>
+  <view class="ec-tab-bar-item__content">
+    <!-- 图标 -->
+    <view class="ec-tab-bar-item__icon">
+      <ec-icon
+        name="{{active && activeIcon ? activeIcon : icon}}"
+        size="{{parentData.iconSize}}"
+        color="{{active ? (parentData.activeColor || '#FF4400') : (parentData.inactiveColor || '#666')}}"
+      />
+      
+      <!-- 徽标 -->
+      <view wx:if="{{badge}}" class="ec-tab-bar-item__badge">{{badge}}</view>
+      <view wx:elif="{{dot}}" class="ec-tab-bar-item__dot"></view>
+    </view>
+    
+    <!-- 文字 -->
+    <text
+      wx:if="{{title}}"
+      class="ec-tab-bar-item__text"
+      style="{{active ? 'color:' + (parentData.activeColor || '#FF4400') : 'color:' + (parentData.inactiveColor || '#666')}}"
+    >{{title}}</text>
+  </view>
+</view>

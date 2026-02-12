@@ -1,0 +1,8 @@
+<view class="ec-grid {{custom-class}}" style="{{background ? 'background:' + background : ''}}">
+  <view
+    class="ec-grid__content"
+    style="--column: {{column}}; --icon-size: {{iconSize}}; --text-size: {{textSize}}; --gap: {{gap}};"
+  >
+    <slot />
+  </view>
+</view>

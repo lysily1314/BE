@@ -1,0 +1,117 @@
+<view class="page">
+  <!-- 头部品牌区 -->
+  <view class="header">
+    <view class="header__logo">
+      <text class="header__logo-text">ec</text>
+      <text class="header__logo-dot">.</text>
+      <text class="header__logo-text">ui</text>
+    </view>
+    <text class="header__desc">微信小程序组件库</text>
+    <text class="header__version">v{{version}} · 极简现代风</text>
+  </view>
+
+  <!-- 基础组件 -->
+  <view class="section">
+    <view class="section__title">
+      <text class="section__title-text">基础组件</text>
+      <text class="section__title-badge">{{basicComponents.length}}</text>
+    </view>
+    <view class="section__list">
+      <ec-cell
+        wx:for="{{basicComponents}}"
+        wx:key="name"
+        title="{{item.name}}"
+        label="{{item.desc}}"
+        is-link
+        border="{{index < basicComponents.length - 1}}"
+        data-path="{{item.path}}"
+        bind:tap="onNavigate"
+      />
+    </view>
+  </view>
+
+  <!-- 业务组件 -->
+  <view class="section">
+    <view class="section__title">
+      <text class="section__title-text">业务组件</text>
+      <text class="section__title-badge">{{bizComponents.length}}</text>
+    </view>
+    <view class="section__list">
+      <ec-cell
+        wx:for="{{bizComponents}}"
+        wx:key="name"
+        title="{{item.name}}"
+        label="{{item.desc}}"
+        is-link
+        border="{{index < bizComponents.length - 1}}"
+        data-path="{{item.path}}"
+        bind:tap="onNavigate"
+      />
+    </view>
+  </view>
+
+  <!-- 表单组件 -->
+  <view class="section">
+    <view class="section__title">
+      <text class="section__title-text">表单组件</text>
+      <text class="section__title-badge">{{formComponents.length}}</text>
+    </view>
+    <view class="section__list">
+      <ec-cell
+        wx:for="{{formComponents}}"
+        wx:key="name"
+        title="{{item.name}}"
+        label="{{item.desc}}"
+        is-link
+        border="{{index < formComponents.length - 1}}"
+        data-path="{{item.path}}"
+        bind:tap="onNavigate"
+      />
+    </view>
+  </view>
+
+  <!-- 数据展示组件 -->
+  <view class="section">
+    <view class="section__title">
+      <text class="section__title-text">数据展示</text>
+      <text class="section__title-badge">{{dataComponents.length}}</text>
+    </view>
+    <view class="section__list">
+      <ec-cell
+        wx:for="{{dataComponents}}"
+        wx:key="name"
+        title="{{item.name}}"
+        label="{{item.desc}}"
+        is-link
+        border="{{index < dataComponents.length - 1}}"
+        data-path="{{item.path}}"
+        bind:tap="onNavigate"
+      />
+    </view>
+  </view>
+
+  <!-- 模板页面 -->
+  <view class="section">
+    <view class="section__title">
+      <text class="section__title-text">模板页面</text>
+      <text class="section__title-badge">{{templatePages.length}}</text>
+    </view>
+    <view class="section__list">
+      <ec-cell
+        wx:for="{{templatePages}}"
+        wx:key="name"
+        title="{{item.name}}"
+        label="{{item.desc}}"
+        is-link
+        border="{{index < templatePages.length - 1}}"
+        data-path="{{item.path}}"
+        bind:tap="onNavigate"
+      />
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class="footer">
+    <text class="footer__text">Made with care for e-commerce</text>
+  </view>
+</view>

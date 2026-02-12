@@ -1,0 +1,114 @@
+<view class="demo-page">
+  <!-- 基础栅格 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础栅格</text>
+    <view class="demo-block__content">
+      <ec-row>
+        <ec-col span="12"><ec-cell title="span-12" value="50%" is-link="{{false}}" /></ec-col>
+        <ec-col span="12"><ec-cell title="span-12" value="50%" is-link="{{false}}" /></ec-col>
+      </ec-row>
+      <ec-row style="margin-top: 16rpx;">
+        <ec-col span="8"><ec-cell title="span-8" value="33.33%" is-link="{{false}}" /></ec-col>
+        <ec-col span="8"><ec-cell title="span-8" value="33.33%" is-link="{{false}}" /></ec-col>
+        <ec-col span="8"><ec-cell title="span-8" value="33.33%" is-link="{{false}}" /></ec-col>
+      </ec-row>
+      <ec-row style="margin-top: 16rpx;">
+        <ec-col span="6"><ec-cell title="span-6" value="25%" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="25%" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="25%" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="25%" is-link="{{false}}" /></ec-col>
+      </ec-row>
+    </view>
+  </view>
+
+  <!-- 分栏间隔 -->
+  <view class="demo-block">
+    <text class="demo-block__title">分栏间隔</text>
+    <view class="demo-block__content">
+      <ec-row gutter="20">
+        <ec-col span="6"><ec-cell title="span-6" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" is-link="{{false}}" /></ec-col>
+      </ec-row>
+    </view>
+  </view>
+
+  <!-- 混合布局 -->
+  <view class="demo-block">
+    <text class="demo-block__title">混合布局</text>
+    <view class="demo-block__content">
+      <ec-row gutter="10">
+        <ec-col span="16"><ec-cell title="span-16" is-link="{{false}}" /></ec-col>
+        <ec-col span="8"><ec-cell title="span-8" is-link="{{false}}" /></ec-col>
+      </ec-row>
+      <ec-row gutter="10" style="margin-top: 10rpx;">
+        <ec-col span="8"><ec-cell title="span-8" is-link="{{false}}" /></ec-col>
+        <ec-col span="8"><ec-cell title="span-8" is-link="{{false}}" /></ec-col>
+        <ec-col span="4"><ec-cell title="span-4" is-link="{{false}}" /></ec-col>
+        <ec-col span="4"><ec-cell title="span-4" is-link="{{false}}" /></ec-col>
+      </ec-row>
+      <ec-row gutter="10" style="margin-top: 10rpx;">
+        <ec-col span="4"><ec-cell title="span-4" is-link="{{false}}" /></ec-col>
+        <ec-col span="16"><ec-cell title="span-16" is-link="{{false}}" /></ec-col>
+        <ec-col span="4"><ec-cell title="span-4" is-link="{{false}}" /></ec-col>
+      </ec-row>
+    </view>
+  </view>
+
+  <!-- 左偏移 -->
+  <view class="demo-block">
+    <text class="demo-block__title">左偏移</text>
+    <view class="demo-block__content">
+      <ec-row gutter="10">
+        <ec-col span="6" offset="2"><ec-cell title="span-6 offset-2" is-link="{{false}}" /></ec-col>
+        <ec-col span="6" offset="2"><ec-cell title="span-6 offset-2" is-link="{{false}}" /></ec-col>
+      </ec-row>
+      <ec-row gutter="10" style="margin-top: 10rpx;">
+        <ec-col span="12" offset="6"><ec-cell title="span-12 offset-6" is-link="{{false}}" /></ec-col>
+      </ec-row>
+    </view>
+  </view>
+
+  <!-- 对齐方式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">对齐方式</text>
+    <view class="demo-block__content">
+      <text>垂直对齐 - 顶部对齐</text>
+      <ec-row gutter="10" align="top" style="margin-top: 10rpx; height: 120rpx; background: #f7f8fa; padding: 10rpx; border-radius: 8rpx;">
+        <ec-col span="6"><ec-cell title="span-6" value="高60rpx" style="height: 60rpx;" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="高80rpx" style="height: 80rpx;" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="高100rpx" style="height: 100rpx;" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="高70rpx" style="height: 70rpx;" is-link="{{false}}" /></ec-col>
+      </ec-row>
+      
+      <text style="margin-top: 20rpx; display: block;">垂直对齐 - 居中对齐</text>
+      <ec-row gutter="10" align="middle" style="margin-top: 10rpx; height: 120rpx; background: #f7f8fa; padding: 10rpx; border-radius: 8rpx;">
+        <ec-col span="6"><ec-cell title="span-6" value="高60rpx" style="height: 60rpx;" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="高80rpx" style="height: 80rpx;" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="高100rpx" style="height: 100rpx;" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" value="高70rpx" style="height: 70rpx;" is-link="{{false}}" /></ec-col>
+      </ec-row>
+      
+      <text style="margin-top: 20rpx; display: block;">水平排列 - 居中</text>
+      <ec-row gutter="10" justify="center" style="margin-top: 10rpx; background: #f7f8fa; padding: 10rpx; border-radius: 8rpx;">
+        <ec-col span="6"><ec-cell title="span-6" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" is-link="{{false}}" /></ec-col>
+      </ec-row>
+      
+      <text style="margin-top: 20rpx; display: block;">水平排列 - 两端对齐</text>
+      <ec-row gutter="10" justify="space-between" style="margin-top: 10rpx; background: #f7f8fa; padding: 10rpx; border-radius: 8rpx;">
+        <ec-col span="6"><ec-cell title="span-6" is-link="{{false}}" /></ec-col>
+        <ec-col span="6"><ec-cell title="span-6" is-link="{{false}}" /></ec-col>
+      </ec-row>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">栅格布局 GridLayout</text>
+      <text class="demo-desc__text">采用24栅格系统，通过行（ec-row）和列（ec-col）创建灵活的布局。支持设置间距、对齐方式、偏移等功能。</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view
+  class="ec-icon ec-icon--{{name}} custom-class"
+  style="width: {{size}}; height: {{size}}; font-size: {{size}}; {{color ? 'color: ' + color + ';' : ''}}"
+  bind:tap="onTap"
+>
+  <view class="ec-icon__inner"></view>
+</view>

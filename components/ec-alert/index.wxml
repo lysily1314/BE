@@ -1,0 +1,45 @@
+<view wx:if="{{visible}}" class="ec-alert ec-alert--{{type}} {{custom-class}}" style="{{background ? 'background:' + background + ';' : ''}}{{color ? 'color:' + color + ';' : ''}}{{borderColor ? 'border-color:' + borderColor + ';' : ''}}{{radius ? 'border-radius:' + radius + ';' : ''}}{{padding ? 'padding:' + padding + ';' : ''}}">
+  <!-- 图标 -->
+  <view wx:if="{{showIcon}}" class="ec-alert__icon">
+    <ec-icon
+      wx:if="{{type === 'success'}}"
+      name="success"
+      size="{{iconSize}}"
+      color="{{color || '#07C160'}}"
+    />
+    <ec-icon
+      wx:elif="{{type === 'warning'}}"
+      name="info"
+      size="{{iconSize}}"
+      color="{{color || '#FF976A'}}"
+    />
+    <ec-icon
+      wx:elif="{{type === 'error'}}"
+      name="error"
+      size="{{iconSize}}"
+      color="{{color || '#EE0A24'}}"
+    />
+    <ec-icon
+      wx:else
+      name="info"
+      size="{{iconSize}}"
+      color="{{color || '#1989FA'}}"
+    />
+  </view>
+
+  <!-- 内容区 -->
+  <view class="ec-alert__content">
+    <text wx:if="{{title}}" class="ec-alert__title">{{title}}</text>
+    <text wx:if="{{message}}" class="ec-alert__message">{{message}}</text>
+    <slot />
+  </view>
+
+  <!-- 关闭按钮 -->
+  <view
+    wx:if="{{closable}}"
+    class="ec-alert__close"
+    bind:tap="onClose"
+  >
+    <ec-icon name="close" size="28rpx" color="{{color || '#999'}}" />
+  </view>
+</view>

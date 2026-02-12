@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Keyboard 数字键盘",
+  "usingComponents": {
+    "ec-keyboard": "/components/ec-keyboard/index",
+    "ec-cell": "/components/ec-cell/index",
+    "ec-input": "/components/ec-input/index"
+  }
+}

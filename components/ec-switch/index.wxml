@@ -1,0 +1,9 @@
+<view
+  class="ec-switch {{checked ? 'ec-switch--on' : ''}} {{disabled ? 'ec-switch--disabled' : ''}} {{loading ? 'ec-switch--loading' : ''}} custom-class"
+  style="font-size: {{size}}; {{checked ? (activeColor ? 'background:' + activeColor : '') : (inactiveColor ? 'background:' + inactiveColor : '')}}"
+  bind:tap="onTap"
+>
+  <view class="ec-switch__node">
+    <view wx:if="{{loading}}" class="ec-switch__loading"></view>
+  </view>
+</view>

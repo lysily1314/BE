@@ -1,0 +1,56 @@
+<view class="demo-page">
+  <!-- 基础色彩 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础色彩</text>
+    <view class="demo-block__content">
+      <ec-color-panel 
+        colors="{{basicColors}}" 
+        size="normal"
+        bind:click="onColorClick"
+      />
+    </view>
+  </view>
+
+  <!-- 中性色彩 -->
+  <view class="demo-block">
+    <text class="demo-block__title">中性色彩</text>
+    <view class="demo-block__content">
+      <ec-color-panel 
+        colors="{{neutralColors}}" 
+        size="normal"
+        direction="column"
+        bind:click="onColorClick"
+      />
+    </view>
+  </view>
+
+  <!-- 渐变色彩 -->
+  <view class="demo-block">
+    <text class="demo-block__title">渐变色彩</text>
+    <view class="demo-block__content">
+      <ec-color-panel 
+        colors="{{gradientColors}}" 
+        size="large"
+        bind:click="onColorClick"
+      />
+    </view>
+  </view>
+
+  <!-- 颜色搭配建议 -->
+  <view class="demo-block">
+    <text class="demo-block__title">颜色搭配建议</text>
+    <view class="demo-block__content">
+      <ec-cell title="主色搭配" value="主色 + 白色 + 浅灰" is-link="{{false}}" />
+      <ec-cell title="状态色搭配" value="成功/警告/危险色 + 中性色" is-link="{{false}}" />
+      <ec-cell title="文本层次" value="正文/次要/占位符文本色" is-link="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">颜色面板 ColorPanel</text>
+      <text class="demo-desc__text">用于展示颜色值和搭配的组件。支持自定义颜色数据、显示名称和值、调整大小和排列方向等配置。</text>
+    </view>
+  </view>
+</view>

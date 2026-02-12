@@ -1,0 +1,36 @@
+/* ec-index-bar 索引选择器组件 */
+.ec-index-bar {
+  position: relative;
+  height: 100%;
+}
+
+.ec-index-bar__sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 32rpx 18rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16rpx 0 0 16rpx;
+  box-shadow: -4rpx 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.ec-index-bar__index {
+  font-size: var(--ec-font-xs, 20rpx);
+  line-height: 1.5;
+  padding: 8rpx 6rpx;
+  color: var(--ec-text-secondary, #666);
+  cursor: pointer;
+}
+
+.ec-index-bar__index--active {
+  color: var(--ec-primary, #FF4400);
+  font-weight: 600;
+  transform: scale(1.2);
+  transition: all 0.2s;
+}

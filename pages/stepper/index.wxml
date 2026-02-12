@@ -1,0 +1,37 @@
+<view class="demo-page">
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="商品数量" border="{{false}}">
+        <ec-stepper slot="value" value="{{count1}}" min="{{1}}" max="{{99}}" bind:change="onCount1Change" />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">步长设置</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="步长为2" border="{{false}}">
+        <ec-stepper slot="value" value="{{count2}}" step="{{2}}" min="{{0}}" max="{{20}}" bind:change="onCount2Change" />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">禁用状态</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="禁用输入" border="{{false}}">
+        <ec-stepper slot="value" value="{{count3}}" disable-input bind:change="onCount3Change" />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">自定义宽度</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-stepper value="{{1}}" input-width="80rpx" />
+      <ec-stepper value="{{1}}" input-width="100rpx" />
+      <ec-stepper value="{{1}}" input-width="120rpx" />
+    </view>
+  </view>
+</view>

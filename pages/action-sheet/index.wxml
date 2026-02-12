@@ -1,0 +1,83 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-button type="primary" block bind:tap="onShow1">显示动作面板</ec-button>
+      <ec-action-sheet
+        show="{{show1}}"
+        actions="{{actions1}}"
+        bind:select="onSelect1"
+        bind:close="onClose1"
+      />
+    </view>
+  </view>
+
+  <!-- 带标题 -->
+  <view class="demo-block">
+    <text class="demo-block__title">带标题</text>
+    <view class="demo-block__content">
+      <ec-button type="primary" block bind:tap="onShow2">显示带标题面板</ec-button>
+      <ec-action-sheet
+        show="{{show2}}"
+        title="请选择操作"
+        actions="{{actions2}}"
+        bind:select="onSelect2"
+        bind:close="onClose2"
+      />
+    </view>
+  </view>
+
+  <!-- 自定义选项 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义选项</text>
+    <view class="demo-block__content">
+      <ec-button type="primary" block bind:tap="onShow3">显示自定义面板</ec-button>
+      <ec-action-sheet
+        show="{{show3}}"
+        title="更多操作"
+        actions="{{actions3}}"
+        bind:select="onSelect3"
+        bind:close="onClose3"
+      />
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="demo-block">
+    <text class="demo-block__title">加载状态</text>
+    <view class="demo-block__content">
+      <ec-button type="primary" block bind:tap="onShow4">显示加载面板</ec-button>
+      <ec-action-sheet
+        show="{{show4}}"
+        title="请选择"
+        actions="{{actions4}}"
+        bind:select="onSelect4"
+        bind:close="onClose4"
+      />
+    </view>
+  </view>
+
+  <!-- 无取消按钮 -->
+  <view class="demo-block">
+    <text class="demo-block__title">无取消按钮</text>
+    <view class="demo-block__content">
+      <ec-button type="primary" block bind:tap="onShow5">无取消按钮</ec-button>
+      <ec-action-sheet
+        show="{{show5}}"
+        actions="{{actions1}}"
+        show-cancel="{{false}}"
+        bind:select="onSelect5"
+        bind:close="onClose5"
+      />
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">动作面板 ActionSheet</text>
+      <text class="demo-desc__text">底部弹起的模态面板，常用于提供多个操作选项供用户选择。支持标题、描述、自定义颜色、禁用状态、加载状态等功能。</text>
+    </view>
+  </view>
+</view>

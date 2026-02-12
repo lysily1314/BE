@@ -1,0 +1,27 @@
+<view class="ec-stepper {{disabled ? 'ec-stepper--disabled' : ''}} custom-class">
+  <view
+    class="ec-stepper__btn ec-stepper__minus {{innerValue <= min ? 'ec-stepper__btn--disabled' : ''}}"
+    hover-class="{{innerValue <= min || disabled ? '' : 'ec-stepper__btn--active'}}"
+    hover-stay-time="80"
+    bind:tap="onMinus"
+  >
+    <view class="ec-stepper__btn-icon ec-stepper__btn-icon--minus"></view>
+  </view>
+  <input
+    class="ec-stepper__input"
+    style="width: {{inputWidth}};"
+    type="number"
+    value="{{innerValue}}"
+    disabled="{{disabled || disableInput}}"
+    bindinput="onInput"
+    bindblur="onBlur"
+  />
+  <view
+    class="ec-stepper__btn ec-stepper__plus {{innerValue >= max ? 'ec-stepper__btn--disabled' : ''}}"
+    hover-class="{{innerValue >= max || disabled ? '' : 'ec-stepper__btn--active'}}"
+    hover-stay-time="80"
+    bind:tap="onPlus"
+  >
+    <view class="ec-stepper__btn-icon ec-stepper__btn-icon--plus"></view>
+  </view>
+</view>

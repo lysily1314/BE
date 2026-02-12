@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "GridLayout 栅格布局",
+  "usingComponents": {
+    "ec-row": "/components/ec-row/index",
+    "ec-col": "/components/ec-col/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

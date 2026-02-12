@@ -1,0 +1,26 @@
+/* ec-rate 评分组件 */
+.ec-rate {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ec-rate--disabled {
+  opacity: 0.5;
+}
+
+.ec-rate--readonly {
+  cursor: default;
+}
+
+.ec-rate__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.ec-rate__item:active {
+  transform: scale(1.2);
+}

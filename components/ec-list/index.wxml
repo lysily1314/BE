@@ -1,0 +1,3 @@
+<view class="ec-list {{borderTop ? 'ec-list--border-top' : ''}} {{borderBottom ? 'ec-list--border-bottom' : ''}} custom-class">
+  <slot />
+</view>

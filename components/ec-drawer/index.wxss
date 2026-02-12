@@ -1,0 +1,111 @@
+/* ec-drawer 抽屉组件 */
+.ec-drawer__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.ec-drawer__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.ec-drawer {
+  position: absolute;
+  background: var(--ec-white, #fff);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.ec-drawer.left {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.ec-drawer.right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.ec-drawer.top {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.ec-drawer.bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.ec-drawer--round {
+  border-radius: 16rpx 16rpx 0 0;
+}
+
+.ec-drawer--round.left {
+  border-radius: 0 16rpx 16rpx 0;
+}
+
+.ec-drawer--round.right {
+  border-radius: 16rpx 0 0 16rpx;
+}
+
+.ec-drawer--round.top {
+  border-radius: 0 0 16rpx 16rpx;
+}
+
+.ec-drawer--round.bottom {
+  border-radius: 16rpx 16rpx 0 0;
+}
+
+.ec-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx 32rpx 24rpx;
+  border-bottom: 1rpx solid var(--ec-border, #eee);
+}
+
+.ec-drawer__title {
+  font-size: var(--ec-font-title, 32rpx);
+  font-weight: 600;
+  color: var(--ec-text-primary, #333);
+  line-height: 1.5;
+}
+
+.ec-drawer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ec-drawer__close:hover {
+  background: var(--ec-bg, #f7f8fa);
+}
+
+.ec-drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32rpx;
+}

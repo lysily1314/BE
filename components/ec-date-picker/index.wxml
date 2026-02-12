@@ -1,0 +1,37 @@
+<view class="ec-date-picker" wx:if="{{show}}">
+  <!-- 遮罩层 -->
+  <view class="ec-date-picker__overlay" bind:tap="onOverlayClick"></view>
+  
+  <!-- 选择器主体 -->
+  <view class="ec-date-picker__container">
+    <!-- 顶部栏 -->
+    <view class="ec-date-picker__toolbar">
+      <view class="ec-date-picker__cancel" bind:tap="onCancel" wx:if="{{showCancelButton}}">{{cancelButtonText}}</view>
+      <view class="ec-date-picker__title">{{title}}</view>
+      <view class="ec-date-picker__confirm" bind:tap="onConfirm">{{confirmButtonText}}</view>
+    </view>
+    
+    <!-- 选择器内容 -->
+    <picker-view 
+      class="ec-date-picker__picker" 
+      value="{{pickerValue}}" 
+      bind:change="onPickerChange"
+    >
+      <picker-view-column>
+        <view class="ec-date-picker__column-item" wx:for="{{years}}" wx:key="index">
+          {{item}}年
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="ec-date-picker__column-item" wx:for="{{months}}" wx:key="index">
+          {{item}}月
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="ec-date-picker__column-item" wx:for="{{days}}" wx:key="index">
+          {{item}}日
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

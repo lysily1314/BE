@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Pagination 分页",
+  "usingComponents": {
+    "ec-pagination": "/components/ec-pagination/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

@@ -1,0 +1,61 @@
+<view class="ec-tabs {{type}} {{position}} {{custom-class}}" style="{{background ? 'background:' + background : ''}}">
+  <!-- 标签栏 -->
+  <view class="ec-tabs__nav" style="{{tabHeight ? 'height:' + tabHeight : ''}}">
+    <scroll-view
+      wx:if="{{scrollable}}"
+      class="ec-tabs__scroll"
+      scroll-x
+      scroll-left="{{scrollLeft}}"
+      show-scrollbar="{{false}}"
+    >
+      <view class="ec-tabs__tabs">
+        <view
+          wx:for="{{tabs}}"
+          wx:key="index"
+          class="ec-tabs__tab {{currentIndex === index ? 'ec-tabs__tab--active' : ''}} {{item.disabled ? 'ec-tabs__tab--disabled' : ''}}"
+          style="height: {{tabHeight}}; {{color ? 'color:' + color : ''}}; {{currentIndex === index && activeColor ? 'color:' + activeColor : ''}}"
+          data-index="{{index}}"
+          bind:tap="onTabClick"
+        >
+          <text class="ec-tabs__tab-text">{{item.title}}</text>
+        </view>
+        <!-- 下划线 -->
+        <view
+          wx:if="{{type === 'line'}}"
+          class="ec-tabs__line"
+          style="width: {{lineWidth}}px; left: {{lineLeft}}px; {{activeColor ? 'background:' + activeColor : ''}}"
+        ></view>
+      </view>
+    </scroll-view>
+    
+    <view wx:else class="ec-tabs__tabs">
+      <view
+        wx:for="{{tabs}}"
+        wx:key="index"
+        class="ec-tabs__tab {{currentIndex === index ? 'ec-tabs__tab--active' : ''}} {{item.disabled ? 'ec-tabs__tab--disabled' : ''}}"
+        style="height: {{tabHeight}}; {{color ? 'color:' + color : ''}}; {{currentIndex === index && activeColor ? 'color:' + activeColor : ''}}"
+        data-index="{{index}}"
+        bind:tap="onTabClick"
+      >
+        <text class="ec-tabs__tab-text">{{item.title}}</text>
+      </view>
+      <!-- 下划线 -->
+      <view
+        wx:if="{{type === 'line'}}"
+        class="ec-tabs__line"
+        style="width: {{lineWidth}}px; left: {{lineLeft}}px; {{activeColor ? 'background:' + activeColor : ''}}"
+      ></view>
+    </view>
+  </view>
+
+  <!-- 内容区 -->
+  <view class="ec-tabs__content">
+    <view
+      wx:for="{{tabs}}"
+      wx:key="index"
+      class="ec-tabs__pane {{currentIndex === index ? 'ec-tabs__pane--active' : ''}} {{animated ? 'ec-tabs__pane--animated' : ''}}"
+    >
+      <ec-tab-pane index="{{index}}" />
+    </view>
+  </view>
+</view>

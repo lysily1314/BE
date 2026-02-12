@@ -1,0 +1,62 @@
+/* ec-panel 面板组件 */
+.ec-panel {
+  background: var(--ec-white, #fff);
+  position: relative;
+}
+
+.ec-panel--border {
+  border: 1rpx solid var(--ec-border, #eee);
+}
+
+.ec-panel__header {
+  position: relative;
+}
+
+.ec-panel__header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+}
+
+.ec-panel__title {
+  display: block;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 8rpx;
+}
+
+.ec-panel__desc {
+  display: block;
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-secondary, #666);
+  line-height: 1.4;
+}
+
+.ec-panel__body {
+  position: relative;
+}
+
+.ec-panel__footer {
+  position: relative;
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-secondary, #666);
+  line-height: 1.4;
+}
+
+.ec-panel__footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+}

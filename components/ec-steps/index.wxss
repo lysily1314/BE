@@ -1,0 +1,16 @@
+/* ec-steps 步骤条容器组件 */
+.ec-steps {
+  position: relative;
+  background: var(--ec-white, #fff);
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-secondary, #666);
+}
+
+.ec-steps--horizontal {
+  display: flex;
+  padding: 32rpx 0;
+}
+
+.ec-steps--vertical {
+  padding: 32rpx;
+}

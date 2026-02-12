@@ -1,0 +1,64 @@
+/* Icon 示例页样式 */
+.demo-page {
+  min-height: 100vh;
+  background: var(--ec-bg);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.demo-block {
+  padding: 0 32rpx;
+  margin-bottom: 16rpx;
+}
+
+.demo-block__title {
+  display: block;
+  font-size: var(--ec-font-sm);
+  color: var(--ec-text-placeholder);
+  font-weight: 600;
+  padding: 32rpx 0 20rpx;
+  text-transform: uppercase;
+  letter-spacing: 1rpx;
+}
+
+.demo-block__content {
+  background: var(--ec-white);
+  border-radius: var(--ec-radius-lg);
+  padding: 32rpx;
+}
+
+.demo-block__content--row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40rpx;
+  align-items: flex-end;
+}
+
+/* 图标网格 */
+.icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24rpx 0;
+}
+
+.icon-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 12rpx;
+}
+
+.icon-item__name {
+  font-size: 20rpx;
+  color: var(--ec-text-secondary);
+  text-align: center;
+  word-break: break-all;
+}

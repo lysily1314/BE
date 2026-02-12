@@ -1,0 +1,48 @@
+/* ec-ui 设计变量 */
+page {
+  /* 品牌色 */
+  --ec-primary: #FF4400;
+  --ec-primary-dark: #E63D00;
+  --ec-primary-light: #FFF0E8;
+
+  /* 中性色 */
+  --ec-text-primary: #333333;
+  --ec-text-secondary: #666666;
+  --ec-text-placeholder: #999999;
+  --ec-white: #FFFFFF;
+  --ec-bg: #F7F8FA;
+  --ec-border: #EEEEEE;
+
+  /* 功能色 */
+  --ec-success: #07C160;
+  --ec-error: #EE0A24;
+  --ec-warning: #FF976A;
+
+  /* 圆角 */
+  --ec-radius-sm: 4rpx;
+  --ec-radius: 8rpx;
+  --ec-radius-lg: 16rpx;
+  --ec-radius-round: 999rpx;
+
+  /* 阴影 */
+  --ec-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  --ec-shadow-lg: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+
+  /* 字体大小 */
+  --ec-font-xs: 20rpx;
+  --ec-font-sm: 24rpx;
+  --ec-font-body: 28rpx;
+  --ec-font-title: 32rpx;
+  --ec-font-lg: 36rpx;
+
+  /* 间距 */
+  --ec-padding-xs: 8rpx;
+  --ec-padding-sm: 16rpx;
+  --ec-padding: 24rpx;
+  --ec-padding-lg: 32rpx;
+  --ec-padding-xl: 48rpx;
+
+  /* 动画 */
+  --ec-anim-duration: 0.3s;
+  --ec-anim-ease: ease-out;
+}

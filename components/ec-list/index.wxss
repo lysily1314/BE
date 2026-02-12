@@ -1,0 +1,30 @@
+/* ec-list 列表容器组件 */
+.ec-list {
+  position: relative;
+  background: var(--ec-white, #fff);
+  overflow: hidden;
+}
+
+.ec-list--border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+  z-index: 1;
+}
+
+.ec-list--border-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+  z-index: 1;
+}

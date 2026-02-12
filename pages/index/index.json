@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "ec-ui 组件库",
+  "usingComponents": {
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

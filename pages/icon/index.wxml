@@ -1,0 +1,44 @@
+<view class="demo-page">
+  <!-- 图标列表 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础图标</text>
+    <view class="demo-block__content">
+      <view class="icon-grid">
+        <view
+          class="icon-item"
+          wx:for="{{icons}}"
+          wx:key="name"
+          data-name="{{item.name}}"
+          bind:tap="onIconTap"
+        >
+          <view class="icon-item__icon">
+            <ec-icon name="{{item.name}}" size="48rpx" color="#333" />
+          </view>
+          <text class="icon-item__name">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 图标颜色 -->
+  <view class="demo-block">
+    <text class="demo-block__title">图标颜色</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-icon name="cart" size="48rpx" color="#FF4400" />
+      <ec-icon name="heart" size="48rpx" color="#EE0A24" />
+      <ec-icon name="success" size="48rpx" color="#07C160" />
+      <ec-icon name="star-fill" size="48rpx" color="#FF976A" />
+    </view>
+  </view>
+
+  <!-- 图标大小 -->
+  <view class="demo-block">
+    <text class="demo-block__title">图标大小</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-icon name="search" size="32rpx" />
+      <ec-icon name="search" size="48rpx" />
+      <ec-icon name="search" size="64rpx" />
+      <ec-icon name="search" size="80rpx" />
+    </view>
+  </view>
+</view>

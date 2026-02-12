@@ -1,0 +1,37 @@
+<view class="ec-address-picker" wx:if="{{show}}">
+  <!-- 遮罩层 -->
+  <view class="ec-address-picker__overlay" bind:tap="onOverlayClick"></view>
+  
+  <!-- 选择器主体 -->
+  <view class="ec-address-picker__container">
+    <!-- 顶部栏 -->
+    <view class="ec-address-picker__toolbar">
+      <view class="ec-address-picker__cancel" bind:tap="onCancel" wx:if="{{showCancelButton}}">{{cancelButtonText}}</view>
+      <view class="ec-address-picker__title">{{title}}</view>
+      <view class="ec-address-picker__confirm" bind:tap="onConfirm">{{confirmButtonText}}</view>
+    </view>
+    
+    <!-- 选择器内容 -->
+    <picker-view 
+      class="ec-address-picker__picker" 
+      value="{{pickerValue}}" 
+      bind:change="onPickerChange"
+    >
+      <picker-view-column>
+        <view class="ec-address-picker__column-item" wx:for="{{provinces}}" wx:key="index">
+          {{item.name}}
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="ec-address-picker__column-item" wx:for="{{cities}}" wx:key="index">
+          {{item.name}}
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="ec-address-picker__column-item" wx:for="{{counties}}" wx:key="index">
+          {{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

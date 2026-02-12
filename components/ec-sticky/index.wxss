@@ -1,0 +1,45 @@
+/* ec-sticky 吸顶容器组件 */
+.ec-sticky {
+  position: relative;
+  width: 100%;
+}
+
+/* 锚点元素 */
+.ec-sticky__anchor {
+  position: relative;
+  pointer-events: none;
+}
+
+/* 内容容器 */
+.ec-sticky__content {
+  position: relative;
+  transition: all 0.3s ease;
+  will-change: transform, position;
+}
+
+/* 吸顶状态 */
+.ec-sticky__content--fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.1);
+  background: #fff;
+  animation: ecStickySlideDown 0.3s ease;
+}
+
+/* 吸顶动画 */
+@keyframes ecStickySlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 自定义吸顶样式 */
+.sticky-class {
+  /* 可通过外部类自定义吸顶时的样式 */
+}

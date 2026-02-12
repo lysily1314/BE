@@ -1,0 +1,43 @@
+<view wx:if="{{visible}}" class="ec-dialog custom-class" catch:touchmove="noop">
+  <!-- 遮罩 -->
+  <view
+    class="ec-dialog__mask {{animating ? 'ec-dialog__mask--show' : ''}}"
+    bind:tap="onMaskTap"
+  ></view>
+
+  <!-- 弹窗 -->
+  <view class="ec-dialog__wrapper {{animating ? 'ec-dialog__wrapper--show' : ''}}">
+    <!-- 标题 -->
+    <view wx:if="{{title}}" class="ec-dialog__header">
+      <text class="ec-dialog__title">{{title}}</text>
+    </view>
+
+    <!-- 内容 -->
+    <view class="ec-dialog__content">
+      <text wx:if="{{content}}" class="ec-dialog__message">{{content}}</text>
+      <slot />
+    </view>
+
+    <!-- 按钮组 -->
+    <view class="ec-dialog__footer">
+      <view
+        wx:if="{{showCancel}}"
+        class="ec-dialog__btn ec-dialog__btn--cancel"
+        hover-class="ec-dialog__btn--active"
+        hover-stay-time="80"
+        bind:tap="onCancel"
+      >
+        <text>{{cancelText}}</text>
+      </view>
+      <view
+        class="ec-dialog__btn ec-dialog__btn--confirm"
+        hover-class="ec-dialog__btn--active"
+        hover-stay-time="80"
+        style="{{confirmColor ? 'color:' + confirmColor : ''}}"
+        bind:tap="onConfirm"
+      >
+        <text>{{confirmText}}</text>
+      </view>
+    </view>
+  </view>
+</view>

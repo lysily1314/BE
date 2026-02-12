@@ -1,0 +1,9 @@
+<view class="ec-index-anchor-wrapper">
+  <view 
+    class="ec-index-anchor {{custom-class}} {{active ? 'ec-index-anchor--active' : ''}}" 
+    style="{{wrapperStyle}}"
+  >
+    <text style="{{anchorStyle}}">{{index}}</text>
+  </view>
+  <slot />
+</view>

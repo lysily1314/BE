@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ec-tab-pane": "../ec-tab-pane/index"
+  }
+}

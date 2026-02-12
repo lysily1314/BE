@@ -1,0 +1,193 @@
+/* 登录页面样式 */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0 32rpx 60rpx;
+  box-sizing: border-box;
+}
+
+/* 头部区域 */
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120rpx 0 80rpx;
+}
+
+.login-logo {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 32rpx;
+  border-radius: 32rpx;
+  background: #fff;
+  box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16rpx;
+}
+
+.login-subtitle {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 登录表单 */
+.login-form {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 48rpx 32rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 登录方式切换 */
+.login-type-switch {
+  display: flex;
+  background: #f5f5f5;
+  border-radius: 12rpx;
+  padding: 8rpx;
+  margin-bottom: 40rpx;
+}
+
+.login-type-item {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+  padding: 20rpx 0;
+  border-radius: 8rpx;
+  transition: all 0.3s;
+}
+
+.login-type-item--active {
+  background: #fff;
+  color: #FF4400;
+  font-weight: 600;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+/* 输入框组 */
+.login-input-group {
+  margin-bottom: 32rpx;
+}
+
+/* 密码显示切换 */
+.password-toggle {
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-icon {
+  font-size: 32rpx;
+}
+
+/* 验证码按钮 */
+.code-btn {
+  font-size: 26rpx;
+  color: #FF4400;
+  padding: 0 20rpx;
+  font-weight: 500;
+}
+
+.code-btn--disabled {
+  color: #ccc;
+}
+
+/* 协议同意 */
+.login-agree {
+  margin: 32rpx 0;
+}
+
+.agree-text {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.agree-link {
+  color: #FF4400;
+}
+
+/* 登录按钮 */
+.login-btn {
+  margin: 40rpx 0 32rpx;
+}
+
+/* 其他操作 */
+.login-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16rpx;
+}
+
+.action-link {
+  font-size: 26rpx;
+  color: #666;
+  text-decoration: underline;
+}
+
+/* 第三方登录 */
+.login-third-party {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 48rpx 32rpx;
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.1);
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: #eee;
+  z-index: 1;
+}
+
+.divider-text {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding: 0 32rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.third-party-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 16rpx;
+  border-radius: 50%;
+  background: #f5f5f5;
+  padding: 16rpx;
+  box-sizing: border-box;
+}
+
+.icon-text {
+  font-size: 24rpx;
+  color: #666;
+}

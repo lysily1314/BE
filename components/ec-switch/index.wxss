@@ -1,0 +1,55 @@
+/* ec-switch 开关组件 */
+.ec-switch {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 1.1em;
+  border-radius: 1em;
+  background: #dcdee0;
+  transition: background 0.3s ease-out;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+
+.ec-switch--on {
+  background: var(--ec-primary, #FF4400);
+}
+
+.ec-switch--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ec-switch__node {
+  position: absolute;
+  top: 50%;
+  left: 0.12em;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  background: var(--ec-white, #fff);
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ec-switch--on .ec-switch__node {
+  transform: translateY(-50%) translateX(0.9em);
+}
+
+.ec-switch__loading {
+  width: 0.55em;
+  height: 0.55em;
+  border: 2rpx solid var(--ec-primary, #FF4400);
+  border-color: var(--ec-primary, #FF4400) transparent var(--ec-primary, #FF4400) transparent;
+  border-radius: 50%;
+  animation: ecSwitchSpin 0.8s linear infinite;
+}
+
+@keyframes ecSwitchSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

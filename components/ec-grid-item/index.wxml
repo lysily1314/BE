@@ -1,0 +1,24 @@
+<view
+  class="ec-grid-item {{parent.data.clickable && !disabled ? 'ec-grid-item--clickable' : ''}} {{disabled ? 'ec-grid-item--disabled' : ''}} {{custom-class}}"
+  style="{{background ? 'background:' + background : ''}}"
+  hover-class="{{parent.data.clickable && !disabled ? 'ec-grid-item--hover' : ''}}"
+  hover-stay-time="80"
+  bind:tap="onClick"
+>
+  <view class="ec-grid-item__content" style="{{parent.data.direction === 'horizontal' ? 'flex-direction: row;' : ''}}">
+    <!-- 图标 -->
+    <view wx:if="{{icon}}" class="ec-grid-item__icon">
+      <ec-icon
+        name="{{icon}}"
+        size="{{parent.data.iconSize}}"
+        color="{{iconColor || '#333'}}"
+      />
+    </view>
+    
+    <!-- 内容 -->
+    <view class="ec-grid-item__text">
+      <text wx:if="{{title}}" class="ec-grid-item__title">{{title}}</text>
+      <text wx:if="{{desc}}" class="ec-grid-item__desc">{{desc}}</text>
+    </view>
+  </view>
+</view>

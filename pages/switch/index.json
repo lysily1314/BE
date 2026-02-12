@@ -1,0 +1,1 @@
+{ "navigationBarTitleText": "Switch 开关", "usingComponents": { "ec-switch": "/components/ec-switch/index", "ec-cell": "/components/ec-cell/index" } }

@@ -1,0 +1,3 @@
+<view class="ec-col {{custom-class}}" style="{{style}}">
+  <slot />
+</view>

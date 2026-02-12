@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "ContentCard 内容卡片",
+  "usingComponents": {
+    "ec-content-card": "/components/ec-content-card/index"
+  }
+}

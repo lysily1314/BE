@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "DatePicker 日期选择器",
+  "usingComponents": {
+    "ec-date-picker": "/components/ec-date-picker/index",
+    "ec-button": "/components/ec-button/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

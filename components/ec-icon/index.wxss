@@ -1,0 +1,769 @@
+/* ec-icon 图标组件 */
+.ec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  color: inherit;
+}
+
+.ec-icon__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ========== 箭头类图标 ========== */
+
+/* 右箭头 arrow-right */
+.ec-icon--arrow-right .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 36%;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: translate(-65%, -50%) rotate(45deg);
+}
+
+/* 左箭头 arrow-left */
+.ec-icon--arrow-left .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 36%;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  transform: translate(-35%, -50%) rotate(-45deg);
+}
+
+/* 上箭头 arrow-up */
+.ec-icon--arrow-up .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 36%;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  transform: translate(-50%, -35%) rotate(45deg);
+}
+
+/* 下箭头 arrow-down */
+.ec-icon--arrow-down .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 36%;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: translate(-50%, -65%) rotate(45deg);
+}
+
+/* ========== 功能类图标 ========== */
+
+/* 搜索 search */
+.ec-icon--search .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 22%;
+  left: 22%;
+  width: 40%;
+  height: 40%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.ec-icon--search .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 22%;
+  right: 22%;
+  width: 2px;
+  height: 28%;
+  background: currentColor;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+/* 关闭 close */
+.ec-icon--close .ec-icon__inner::before,
+.ec-icon--close .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: currentColor;
+}
+
+.ec-icon--close .ec-icon__inner::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.ec-icon--close .ec-icon__inner::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* 勾选 success / check */
+.ec-icon--success .ec-icon__inner::after,
+.ec-icon--check .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 50%;
+  height: 28%;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* 加号 plus */
+.ec-icon--plus .ec-icon__inner::before,
+.ec-icon--plus .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+.ec-icon--plus .ec-icon__inner::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* 减号 minus */
+.ec-icon--minus .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+/* ========== 电商类图标 ========== */
+
+/* 购物车 cart */
+.ec-icon--cart .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  border: 2px solid currentColor;
+  border-radius: 0 0 6px 6px;
+  border-top: none;
+}
+
+.ec-icon--cart .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  width: 14%;
+  height: 14%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  box-shadow: calc(100% + 2px) 0 0 0 currentColor;
+}
+
+/* 心形 heart */
+.ec-icon--heart .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  background: currentColor;
+  border-radius: 50% 50% 0 0;
+  transform: translate(-80%, -20%) rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.ec-icon--heart .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  background: currentColor;
+  border-radius: 50% 50% 0 0;
+  transform: translate(-20%, -20%) rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* 星星 star */
+.ec-icon--star .ec-icon__inner {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 星星实心 star-fill */
+.ec-icon--star-fill .ec-icon__inner {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF4400' stroke='%23FF4400' stroke-width='2'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 错误/警告 error */
+.ec-icon--error .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.ec-icon--error .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 30%;
+  background: currentColor;
+  transform: translate(-50%, -65%);
+  box-shadow: 0 calc(100% + 4px) 0 0 currentColor;
+}
+
+/* 加载中 loading */
+.ec-icon--loading .ec-icon__inner {
+  border: 2px solid var(--ec-border, #eee);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: ecSpin 0.8s linear infinite;
+}
+
+@keyframes ecSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 信息 info */
+.ec-icon--info .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.ec-icon--info .ec-icon__inner::after {
+  content: 'i';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.65em;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Georgia, serif;
+  color: currentColor;
+  line-height: 1;
+}
+
+/* 清除 clear (圆形 X) */
+.ec-icon--clear .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: currentColor;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.ec-icon--clear .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  width: 44%;
+  height: 2px;
+  background: currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  box-shadow: 0 0 0 0 currentColor;
+}
+
+.ec-icon--clear::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  width: 44%;
+  height: 2px;
+  background: currentColor;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* ========== 电商常用图标 ========== */
+
+/* 首页 home */
+.ec-icon--home .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 20% solid transparent;
+  border-right: 20% solid transparent;
+  border-bottom: 20% solid currentColor;
+  transform: translateX(-50%);
+}
+
+.ec-icon--home .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 60%;
+  height: 40%;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+}
+
+/* 分类 category */
+.ec-icon--category .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 20%;
+  height: 20%;
+  background: currentColor;
+  border-radius: 3px;
+}
+
+.ec-icon--category .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  width: 20%;
+  height: 20%;
+  background: currentColor;
+  border-radius: 3px;
+  box-shadow: -100% 0 0 0 currentColor, 0 100% 0 0 currentColor, -100% 100% 0 0 currentColor;
+}
+
+/* 用户 user */
+.ec-icon--user .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 35%;
+  height: 35%;
+  background: currentColor;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.ec-icon--user .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 60%;
+  height: 35%;
+  border: 2px solid currentColor;
+  border-top: none;
+  border-radius: 0 0 50% 50%;
+}
+
+/* 填充图标 */
+.ec-icon--home-fill .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 20% solid transparent;
+  border-right: 20% solid transparent;
+  border-bottom: 20% solid currentColor;
+  transform: translateX(-50%);
+}
+
+.ec-icon--home-fill .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 60%;
+  height: 40%;
+  background: currentColor;
+  border-radius: 4px;
+}
+
+.ec-icon--category-fill .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 20%;
+  height: 20%;
+  background: currentColor;
+  border-radius: 3px;
+}
+
+.ec-icon--category-fill .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  width: 20%;
+  height: 20%;
+  background: currentColor;
+  border-radius: 3px;
+  box-shadow: -100% 0 0 0 currentColor, 0 100% 0 0 currentColor, -100% 100% 0 0 currentColor;
+}
+
+.ec-icon--user-fill .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 35%;
+  height: 35%;
+  background: currentColor;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.ec-icon--user-fill .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 60%;
+  height: 35%;
+  background: currentColor;
+  border-radius: 0 0 50% 50%;
+}
+
+/* 购物车实心 cart-fill */
+.ec-icon--cart-fill .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  background: currentColor;
+  border-radius: 0 0 6px 6px;
+}
+
+.ec-icon--cart-fill .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  width: 14%;
+  height: 14%;
+  background: currentColor;
+  border-radius: 50%;
+  box-shadow: calc(100% + 2px) 0 0 0 currentColor;
+}
+
+/* 钱包 wallet */
+.ec-icon--wallet .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  width: 70%;
+  height: 50%;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+}
+
+.ec-icon--wallet .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 40%;
+  height: 20%;
+  background: currentColor;
+  border-radius: 3px;
+}
+
+/* 优惠券 coupon */
+.ec-icon--coupon .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  border: 2px dashed currentColor;
+  border-radius: 6px;
+}
+
+.ec-icon--coupon .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  width: 50%;
+  height: 30%;
+  background: currentColor;
+  border-radius: 4px;
+}
+
+/* 地址 address */
+.ec-icon--address .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  border: 2px solid currentColor;
+  border-radius: 50% 50% 50% 0;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.ec-icon--address .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  width: 2px;
+  height: 25%;
+  background: currentColor;
+  transform: translateX(-50%);
+}
+
+/* 收藏 favorite */
+.ec-icon--favorite .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  background: currentColor;
+  border-radius: 50% 50% 0 0;
+  transform: translate(-80%, -20%) rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.ec-icon--favorite .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  background: currentColor;
+  border-radius: 50% 50% 0 0;
+  transform: translate(-20%, -20%) rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* 历史 history */
+.ec-icon--history .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.ec-icon--history .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 2px;
+  background: currentColor;
+  transform-origin: 0 0;
+  transform: translate(0, -50%);
+  box-shadow: 0 0 0 0 currentColor, -100% -50% 0 0 currentColor;
+}
+
+/* 评论 comment */
+.ec-icon--comment .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 70%;
+  height: 50%;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+}
+
+.ec-icon--comment .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 30%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid currentColor;
+  transform: translateX(-50%);
+}
+
+/* 客服 service */
+.ec-icon--service .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  background: currentColor;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.ec-icon--service .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 25%;
+  left: 30%;
+  width: 40%;
+  height: 25%;
+  border: 2px solid currentColor;
+  border-top: none;
+  border-radius: 0 0 50% 50%;
+}
+
+/* 设置 setting */
+.ec-icon--setting .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ec-icon--setting .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  height: 20%;
+  background: currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: -100% -100% 0 0 currentColor, 100% -100% 0 0 currentColor, -100% 100% 0 0 currentColor, 100% 100% 0 0 currentColor;
+}
+
+/* 帮助 help */
+.ec-icon--help .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.ec-icon--help .ec-icon__inner::after {
+  content: '?';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7em;
+  font-weight: bold;
+  color: currentColor;
+  line-height: 1;
+}
+
+/* 发货 deliver */
+.ec-icon--deliver .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 60%;
+  height: 30%;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+}
+
+.ec-icon--deliver .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid currentColor;
+  transform: translateX(-50%);
+}
+
+/* 退款 refund */
+.ec-icon--refund .ec-icon__inner::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.ec-icon--refund .ec-icon__inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 2px;
+  background: currentColor;
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 0 0 currentColor, 0 2px 0 0 currentColor;
+}

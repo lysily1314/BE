@@ -1,0 +1,31 @@
+<view
+  class="ec-list-item {{disabled ? 'ec-list-item--disabled' : ''}} {{showBorder && !isLast ? 'ec-list-item--border' : ''}} custom-class"
+  hover-class="{{!disabled ? 'ec-list-item--active' : ''}}"
+  hover-stay-time="80"
+  bind:tap="onTap"
+>
+  <!-- 左侧图标 -->
+  <view class="ec-list-item__icon ec-list-item__icon--left" wx:if="{{leftIcon}}">
+    <ec-icon name="{{leftIcon}}" size="36rpx" />
+  </view>
+  <slot name="left-icon" />
+
+  <!-- 内容区 -->
+  <view class="ec-list-item__content">
+    <view class="ec-list-item__title-wrap">
+      <text wx:if="{{title}}" class="ec-list-item__title">{{title}}</text>
+      <slot name="title" />
+    </view>
+    <view wx:if="{{desc}}" class="ec-list-item__desc">{{desc}}</view>
+    <slot name="desc" />
+    <slot />
+  </view>
+
+  <!-- 右侧内容 -->
+  <view class="ec-list-item__right">
+    <slot name="right" />
+    <view wx:if="{{isLink}}" class="ec-list-item__icon ec-list-item__icon--right">
+      <ec-icon name="{{rightIcon}}" size="28rpx" color="#999" />
+    </view>
+  </view>
+</view>

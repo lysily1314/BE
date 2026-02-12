@@ -1,0 +1,42 @@
+<view class="ec-search custom-class" style="{{background ? 'background:' + background : ''}}">
+  <view class="ec-search__content {{focused ? 'ec-search__content--focus' : ''}}">
+    <!-- 搜索图标 -->
+    <view class="ec-search__icon">
+      <ec-icon name="search" size="32rpx" color="#999" />
+    </view>
+    <!-- 输入框 -->
+    <input
+      class="ec-search__input"
+      type="text"
+      value="{{innerValue}}"
+      placeholder="{{placeholder}}"
+      placeholder-class="ec-search__placeholder"
+      disabled="{{disabled}}"
+      maxlength="{{maxlength}}"
+      confirm-type="search"
+      bindinput="onInput"
+      bindfocus="onFocus"
+      bindblur="onBlur"
+      bindconfirm="onConfirm"
+    />
+    <!-- 清除按钮 -->
+    <view
+      wx:if="{{innerValue && !disabled}}"
+      class="ec-search__clear"
+      bind:tap="onClear"
+    >
+      <ec-icon name="clear" size="32rpx" color="#999" />
+    </view>
+  </view>
+
+  <!-- 搜索按钮 -->
+  <view
+    wx:if="{{showAction || focused}}"
+    class="ec-search__action {{focused || showAction ? 'ec-search__action--show' : ''}}"
+    hover-class="ec-search__action--active"
+    hover-stay-time="80"
+    bind:tap="onSearch"
+  >
+    <text class="ec-search__action-text">{{actionText}}</text>
+  </view>
+</view>

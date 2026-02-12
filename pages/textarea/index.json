@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Textarea 文本域",
+  "usingComponents": {
+    "ec-textarea": "/components/ec-textarea/index"
+  }
+}

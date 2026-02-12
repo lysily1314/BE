@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ec-list-item": "../ec-list-item/index"
+  }
+}

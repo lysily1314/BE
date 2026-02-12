@@ -1,0 +1,107 @@
+<view class="demo-page">
+  <!-- 成功提示 -->
+  <view class="demo-block">
+    <text class="demo-block__title">成功提示</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-alert
+        wx:if="{{show1}}"
+        type="success"
+        title="操作成功"
+        message="您的订单已提交成功，预计3天内送达"
+        closable
+        bind:close="onClose1"
+      />
+    </view>
+  </view>
+
+  <!-- 信息提示 -->
+  <view class="demo-block">
+    <text class="demo-block__title">信息提示</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-alert
+        wx:if="{{show2}}"
+        type="info"
+        title="系统通知"
+        message="您的会员等级已升级为VIP用户"
+        closable
+        bind:close="onClose2"
+      />
+    </view>
+  </view>
+
+  <!-- 警告提示 -->
+  <view class="demo-block">
+    <text class="demo-block__title">警告提示</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-alert
+        wx:if="{{show3}}"
+        type="warning"
+        title="库存紧张"
+        message="该商品库存仅剩5件，请尽快下单"
+        closable
+        bind:close="onClose3"
+      />
+    </view>
+  </view>
+
+  <!-- 错误提示 -->
+  <view class="demo-block">
+    <text class="demo-block__title">错误提示</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-alert
+        wx:if="{{show4}}"
+        type="error"
+        title="支付失败"
+        message="网络异常，请检查网络连接后重试"
+        closable
+        bind:close="onClose4"
+      />
+    </view>
+  </view>
+
+  <!-- 无标题 -->
+  <view class="demo-block">
+    <text class="demo-block__title">无标题</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-alert type="info" message="这是一条简单的信息提示" />
+    </view>
+  </view>
+
+  <!-- 无图标 -->
+  <view class="demo-block">
+    <text class="demo-block__title">无图标</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-alert type="success" title="无图标提示" message="不显示左侧图标" show-icon="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 自定义样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义样式</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-alert
+        type="info"
+        title="自定义颜色"
+        message="自定义背景、边框、文字颜色"
+        background="#FFF0E8"
+        color="#FF4400"
+        border-color="#FF4400"
+        radius="16rpx"
+        padding="32rpx"
+      />
+    </view>
+  </view>
+
+  <!-- Slot 内容 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义内容</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-alert type="success">
+        <view style="display: flex; align-items: center; justify-content: space-between;">
+          <text>自定义内容区域</text>
+          <button size="mini" type="primary">查看详情</button>
+        </view>
+      </ec-alert>
+    </view>
+  </view>
+</view>

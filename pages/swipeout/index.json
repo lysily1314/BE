@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Swipeout 滑动菜单",
+  "usingComponents": {
+    "ec-swipeout": "/components/ec-swipeout/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

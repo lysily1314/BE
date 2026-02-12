@@ -1,0 +1,74 @@
+<view class="demo-page">
+  <!-- 横向步骤条 -->
+  <view class="demo-block">
+    <text class="demo-block__title">横向步骤条</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-steps active="{{active1}}">
+        <ec-step title="购物车" desc="2件商品" />
+        <ec-step title="填写订单" desc="确认收货地址" />
+        <ec-step title="付款" desc="选择支付方式" />
+        <ec-step title="完成" desc="等待收货" />
+      </ec-steps>
+    </view>
+    <view class="demo-block__actions">
+      <ec-button size="small" bind:tap="onPrev1">上一步</ec-button>
+      <ec-button size="small" type="primary" bind:tap="onNext1">下一步</ec-button>
+    </view>
+  </view>
+
+  <!-- 纵向步骤条 -->
+  <view class="demo-block">
+    <text class="demo-block__title">纵向步骤条</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-steps active="{{active2}}" direction="vertical">
+        <ec-step title="提交订单" desc="2023-12-01 10:00" />
+        <ec-step title="商家接单" desc="2023-12-01 10:05" />
+        <ec-step title="商品出库" desc="2023-12-01 14:30" />
+        <ec-step title="等待收货" desc="预计2023-12-03送达" />
+      </ec-steps>
+    </view>
+    <view class="demo-block__actions">
+      <ec-button size="small" bind:tap="onPrev2">上一步</ec-button>
+      <ec-button size="small" type="primary" bind:tap="onNext2">下一步</ec-button>
+    </view>
+  </view>
+
+  <!-- 自定义图标 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义图标</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-steps active="{{active3}}" active-color="#07C160" inactive-color="#C8C9CC">
+        <ec-step icon="cart" title="购物车" />
+        <ec-step icon="edit" title="填写订单" />
+        <ec-step icon="pay" title="付款" />
+        <ec-step icon="success" title="完成" />
+      </ec-steps>
+    </view>
+  </view>
+
+  <!-- 自定义颜色 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义颜色</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-steps
+        active="{{active4}}"
+        active-color="#1989fa"
+        inactive-color="#c8c9cc"
+        active-icon-color="#1989fa"
+        inactive-icon-color="#c8c9cc"
+      >
+        <ec-step title="步骤一" />
+        <ec-step title="步骤二" />
+        <ec-step title="步骤三" />
+      </ec-steps>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">步骤条 Steps</text>
+      <text class="demo-desc__text">引导用户按照流程完成任务的导航条。支持横向和纵向两种布局，可自定义图标、颜色、描述文字等。</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<view class="ec-color-panel {{direction}} {{custom-class}}">
+  <view 
+    class="ec-color-item {{size}} {{direction}}" 
+    wx:for="{{colors.length > 0 ? colors : defaultColors}}" 
+    wx:key="index"
+    style="background-color: {{item.value}};"
+    data-color="{{item}}"
+    bind:tap="onClick"
+  >
+    <view class="ec-color-info" wx:if="{{showName || showValue}}">
+      <text class="ec-color-name" wx:if="{{showName}}">{{item.name}}</text>
+      <text class="ec-color-value" wx:if="{{showValue}}">{{item.value}}</text>
+      <text class="ec-color-desc" wx:if="{{item.desc}}">{{item.desc}}</text>
+    </view>
+  </view>
+</view>

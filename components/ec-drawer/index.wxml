@@ -1,0 +1,27 @@
+<view class="ec-drawer__wrapper" style="{{wrapperStyle}}" wx:if="{{currentShow}}">
+  <!-- 遮罩层 -->
+  <view 
+    class="ec-drawer__overlay" 
+    wx:if="{{showOverlay}}" 
+    bind:tap="onOverlayClick"
+  />
+
+  <!-- 抽屉内容 -->
+  <view 
+    class="ec-drawer {{placement}} {{round ? 'ec-drawer--round' : ''}} {{custom-class}}" 
+    style="{{contentStyle}}"
+  >
+    <!-- 标题栏 -->
+    <view class="ec-drawer__header" wx:if="{{title || showClose}}">
+      <view class="ec-drawer__title">{{title}}</view>
+      <view class="ec-drawer__close" wx:if="{{showClose}}" bind:tap="onClose">
+        <ec-icon name="close" size="32rpx" />
+      </view>
+    </view>
+
+    <!-- 内容区域 -->
+    <view class="ec-drawer__body">
+      <slot />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view
+  class="ec-cell {{border ? 'ec-cell--border' : ''}} {{isLink || clickable ? 'ec-cell--clickable' : ''}} custom-class"
+  hover-class="{{isLink || clickable ? 'ec-cell--active' : ''}}"
+  hover-stay-time="80"
+  bind:tap="onTap"
+>
+  <!-- 左侧图标 -->
+  <view class="ec-cell__left-icon" wx:if="{{icon}}">
+    <ec-icon name="{{icon}}" size="36rpx" />
+  </view>
+  <slot name="left-icon" />
+
+  <!-- 标题区 -->
+  <view class="ec-cell__title" style="{{titleWidth ? 'max-width:' + titleWidth + ';flex:none;' : ''}}">
+    <text wx:if="{{title}}" class="ec-cell__title-text">{{title}}</text>
+    <text wx:if="{{label}}" class="ec-cell__label">{{label}}</text>
+    <slot name="title" />
+  </view>
+
+  <!-- 右侧内容 -->
+  <view class="ec-cell__value">
+    <text wx:if="{{value}}" class="ec-cell__value-text">{{value}}</text>
+    <slot name="value" />
+    <slot />
+  </view>
+
+  <!-- 右侧箭头 -->
+  <view class="ec-cell__right-icon" wx:if="{{isLink}}">
+    <ec-icon name="arrow-right" size="28rpx" color="#999" />
+  </view>
+  <slot name="right-icon" />
+</view>

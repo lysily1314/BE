@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ec-tab-bar-item": "../ec-tab-bar-item/index"
+  }
+}

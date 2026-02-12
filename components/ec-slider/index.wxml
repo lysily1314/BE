@@ -1,0 +1,16 @@
+<view class="ec-slider {{custom-class}}">
+  <slider
+    class="ec-slider__slider"
+    value="{{value}}"
+    min="{{min}}"
+    max="{{max}}"
+    step="{{step}}"
+    disabled="{{disabled}}"
+    activeColor="{{activeColor}}"
+    backgroundColor="{{inactiveColor}}"
+    blockSize="{{blockSize}}"
+    blockColor="{{blockColor}}"
+    bindchange="onSliderChange"
+    bindchanging="onSliderChanging"
+  />
+</view>

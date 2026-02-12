@@ -1,0 +1,37 @@
+<view
+  class="ec-card custom-class"
+  hover-class="ec-card--active"
+  hover-stay-time="100"
+  bind:tap="onTap"
+>
+  <!-- 商品图片 -->
+  <view class="ec-card__thumb">
+    <image
+      wx:if="{{image}}"
+      class="ec-card__image"
+      src="{{image}}"
+      mode="{{imageMode}}"
+      lazy-load="{{lazyLoad}}"
+      bind:load="onImageLoad"
+      bind:error="onImageError"
+    />
+    <view wx:if="{{tag}}" class="ec-card__tag">
+      <text class="ec-card__tag-text">{{tag}}</text>
+    </view>
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="ec-card__info">
+    <text wx:if="{{title}}" class="ec-card__title">{{title}}</text>
+    <text wx:if="{{desc}}" class="ec-card__desc">{{desc}}</text>
+    <view class="ec-card__bottom">
+      <view class="ec-card__price-wrap">
+        <text wx:if="{{price !== ''}}" class="ec-card__price">
+          <text class="ec-card__price-symbol">¥</text>{{price}}
+        </text>
+        <text wx:if="{{originalPrice !== ''}}" class="ec-card__origin-price">¥{{originalPrice}}</text>
+      </view>
+      <slot name="footer" />
+    </view>
+  </view>
+</view>

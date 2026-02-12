@@ -1,0 +1,14 @@
+<view
+  class="ec-radio {{checked ? 'ec-radio--checked' : ''}} {{disabled ? 'ec-radio--disabled' : ''}} custom-class"
+  bind:tap="onTap"
+>
+  <view
+    class="ec-radio__icon ec-radio__icon--{{shape}}"
+    style="width: {{iconSize}}; height: {{iconSize}}; {{checked && checkedColor ? 'border-color:' + checkedColor + ';background:' + checkedColor : ''}}"
+  >
+    <view wx:if="{{checked}}" class="ec-radio__check"></view>
+  </view>
+  <view class="ec-radio__label">
+    <slot />
+  </view>
+</view>

@@ -1,0 +1,99 @@
+<view class="ec-pagination {{size}} {{custom-class}}" wx:if="{{total > 0}}">
+  <!-- 总数显示 -->
+  <view class="ec-pagination__total" wx:if="{{showTotal}}">
+    共 {{total}} 条
+  </view>
+
+  <!-- 上一页 -->
+  <view 
+    class="ec-pagination__btn ec-pagination__btn--prev {{current <= 1 || disabled ? 'ec-pagination__btn--disabled' : ''}}" 
+    bind:tap="onPrev"
+    data-page="{{current - 1}}"
+  >
+    <ec-icon name="arrow-left" size="{{size === 'small' ? '24rpx' : size === 'large' ? '32rpx' : '28rpx'}}" />
+  </view>
+
+  <!-- 页码 -->
+  <view class="ec-pagination__pager">
+    <view 
+      class="ec-pagination__num {{current === 1 ? 'ec-pagination__num--active' : ''}} {{disabled ? 'ec-pagination__num--disabled' : ''}}" 
+      wx:if="{{pageNumList[0] !== 1}}"
+      bind:tap="onPageTap"
+      data-page="1"
+    >
+      1
+    </view>
+    
+    <view 
+      class="ec-pagination__ellipsis" 
+      wx:if="{{showEllipsis && pageNumList[0] > 2}}"
+    >
+      ...
+    </view>
+    
+    <view 
+      class="ec-pagination__num {{current === page ? 'ec-pagination__num--active' : ''}} {{disabled ? 'ec-pagination__num--disabled' : ''}}" 
+      wx:for="{{pageNumList}}" 
+      wx:if="{{item !== 1 && item !== Math.ceil(total / pageSize)}}"
+      wx:key="index"
+      bind:tap="onPageTap"
+      data-page="{{item}}"
+    >
+      {{item}}
+    </view>
+    
+    <view 
+      class="ec-pagination__ellipsis" 
+      wx:if="{{showEllipsis && pageNumList[pageNumList.length - 1] < Math.ceil(total / pageSize)}}"
+    >
+      ...
+    </view>
+    
+    <view 
+      class="ec-pagination__num {{current === Math.ceil(total / pageSize) ? 'ec-pagination__num--active' : ''}} {{disabled ? 'ec-pagination__num--disabled' : ''}}" 
+      wx:if="{{pageNumList[pageNumList.length - 1] !== Math.ceil(total / pageSize)}}"
+      bind:tap="onPageTap"
+      data-page="{{Math.ceil(total / pageSize)}}"
+    >
+      {{Math.ceil(total / pageSize)}}
+    </view>
+  </view>
+
+  <!-- 下一页 -->
+  <view 
+    class="ec-pagination__btn ec-pagination__btn--next {{current >= Math.ceil(total / pageSize) || disabled ? 'ec-pagination__btn--disabled' : ''}}" 
+    bind:tap="onNext"
+    data-page="{{current + 1}}"
+  >
+    <ec-icon name="arrow-right" size="{{size === 'small' ? '24rpx' : size === 'large' ? '32rpx' : '28rpx'}}" />
+  </view>
+
+  <!-- 每页条数选择器 -->
+  <view class="ec-pagination__size-selector" wx:if="{{showPageSizeSelector}}">
+    <picker 
+      class="ec-pagination__size-picker" 
+      range="{{pageSizeOptions}}" 
+      bind:change="onPageSizeChange"
+      value="{{pageSizeOptions.indexOf(pageSize)}}"
+      disabled="{{disabled}}"
+    >
+      <view class="ec-pagination__size-text">
+        {{pageSize}}条/页
+        <ec-icon name="arrow-down" size="24rpx" />
+      </view>
+    </picker>
+  </view>
+
+  <!-- 快速跳转 -->
+  <view class="ec-pagination__quick-jump" wx:if="{{showQuickJump}}">
+    <text>跳至</text>
+    <input 
+      class="ec-pagination__jump-input" 
+      type="number" 
+      placeholder="页码" 
+      bind:blur="onQuickJump"
+      disabled="{{disabled}}"
+    />
+    <text>页</text>
+  </view>
+</view>

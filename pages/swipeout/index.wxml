@@ -1,0 +1,75 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法（右侧操作）</text>
+    <view class="demo-block__content">
+      <ec-swipeout 
+        right-actions="{{rightActions}}" 
+        bind:action="onAction"
+      >
+        <ec-cell title="商品标题" value="向左滑动" is-link="{{false}}" />
+      </ec-swipeout>
+    </view>
+  </view>
+
+  <!-- 左侧操作 -->
+  <view class="demo-block">
+    <text class="demo-block__title">左侧操作</text>
+    <view class="demo-block__content">
+      <ec-swipeout 
+        left-actions="{{leftActions}}" 
+        bind:action="onAction"
+      >
+        <ec-cell title="消息内容" value="向右滑动" is-link="{{false}}" />
+      </ec-swipeout>
+    </view>
+  </view>
+
+  <!-- 两侧操作 -->
+  <view class="demo-block">
+    <text class="demo-block__title">两侧操作</text>
+    <view class="demo-block__content">
+      <ec-swipeout 
+        left-actions="{{leftActions}}" 
+        right-actions="{{rightActions}}" 
+        bind:action="onAction"
+      >
+        <ec-cell title="联系人" value="左右均可滑动" is-link="{{false}}" />
+      </ec-swipeout>
+    </view>
+  </view>
+
+  <!-- 复杂操作 -->
+  <view class="demo-block">
+    <text class="demo-block__title">复杂操作</text>
+    <view class="demo-block__content">
+      <ec-swipeout 
+        right-actions="{{complexActions}}" 
+        bind:action="onAction"
+      >
+        <ec-cell title="订单详情" value="多选项" is-link="{{false}}" />
+      </ec-swipeout>
+    </view>
+  </view>
+
+  <!-- 自定义按钮样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义按钮样式</text>
+    <view class="demo-block__content">
+      <ec-swipeout 
+        right-actions="{{[{text: '编辑', color: '#07c160', width: 100, className: 'custom-btn'}, {text: '删除', color: '#ff976a', width: 100}]}}" 
+        bind:action="onAction"
+      >
+        <ec-cell title="自定义按钮" value="不同宽度" is-link="{{false}}" />
+      </ec-swipeout>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">滑动菜单 Swipeout</text>
+      <text class="demo-desc__text">通过左右滑动显示操作菜单的组件。支持左侧和右侧操作按钮，可自定义按钮样式、颜色、宽度等，常用于列表项的操作菜单。</text>
+    </view>
+  </view>
+</view>

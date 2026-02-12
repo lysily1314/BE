@@ -1,0 +1,57 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-search-bar placeholder="搜索商品" />
+    </view>
+  </view>
+
+  <!-- 带搜索按钮 -->
+  <view class="demo-block">
+    <text class="demo-block__title">带搜索按钮</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-search-bar
+        placeholder="搜索商品"
+        show-action
+        value="{{searchValue}}"
+        bind:change="onSearchChange"
+        bind:search="onSearch"
+        bind:clear="onClear"
+      />
+    </view>
+    <text wx:if="{{searchResult}}" class="demo-result">{{searchResult}}</text>
+  </view>
+
+  <!-- 自定义占位文字 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义占位文字</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-search-bar placeholder="输入商品名称、品牌、型号" />
+    </view>
+  </view>
+
+  <!-- 禁用状态 -->
+  <view class="demo-block">
+    <text class="demo-block__title">禁用状态</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-search-bar placeholder="搜索商品" disabled />
+    </view>
+  </view>
+
+  <!-- 自定义背景 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义背景色</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-search-bar placeholder="搜索商品" background="#FFF0E8" />
+    </view>
+  </view>
+
+  <!-- 自定义操作按钮 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义按钮文字</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-search-bar placeholder="搜索" show-action action-text="取消" />
+    </view>
+  </view>
+</view>

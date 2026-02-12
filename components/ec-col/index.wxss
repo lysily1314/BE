@@ -1,0 +1,6 @@
+/* ec-col 样式 */
+.ec-col {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1px;
+}

@@ -1,0 +1,91 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <view class="tag-row">
+        <ec-tag content="标签一" />
+        <ec-tag content="标签二" type="success" />
+        <ec-tag content="标签三" type="warning" />
+        <ec-tag content="标签四" type="danger" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 不同尺寸 -->
+  <view class="demo-block">
+    <text class="demo-block__title">不同尺寸</text>
+    <view class="demo-block__content">
+      <view class="tag-row">
+        <ec-tag content="小标签" size="small" />
+        <ec-tag content="普通标签" size="medium" />
+        <ec-tag content="大标签" size="large" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 不同形状 -->
+  <view class="demo-block">
+    <text class="demo-block__title">不同形状</text>
+    <view class="demo-block__content">
+      <view class="tag-row">
+        <ec-tag content="圆角" shape="round" />
+        <ec-tag content="方形" shape="square" />
+        <ec-tag content="标记" shape="mark" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 空心样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">空心样式</text>
+    <view class="demo-block__content">
+      <view class="tag-row">
+        <ec-tag content="空心标签" plain="{{true}}" />
+        <ec-tag content="空心成功" type="success" plain="{{true}}" />
+        <ec-tag content="空心警告" type="warning" plain="{{true}}" />
+        <ec-tag content="空心危险" type="danger" plain="{{true}}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 可关闭标签 -->
+  <view class="demo-block">
+    <text class="demo-block__title">可关闭标签</text>
+    <view class="demo-block__content">
+      <view class="tag-row">
+        <ec-tag content="可关闭" closable="{{true}}" bind:close="onClose" />
+        <ec-tag content="空心可关" plain="{{true}}" closable="{{true}}" bind:close="onClose" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 块级标签 -->
+  <view class="demo-block">
+    <text class="demo-block__title">块级标签</text>
+    <view class="demo-block__content">
+      <ec-tag content="块级标签" block="{{true}}" />
+      <ec-tag content="块级成功" type="success" block="{{true}}" style="margin-top: 16rpx;" />
+    </view>
+  </view>
+
+  <!-- 自定义颜色 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义颜色</text>
+    <view class="demo-block__content">
+      <view class="tag-row">
+        <ec-tag content="自定义背景" color="#7232dd" />
+        <ec-tag content="自定义文字" color="#ffe1e1" text-color="#ad0000" />
+        <ec-tag content="自定义空心" color="#7232dd" plain="{{true}}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">标签 Tag</text>
+      <text class="demo-desc__text">用于标记关键词和概括主要内容，常用于分类、筛选等场景。支持多种类型、尺寸、形状等配置，可设置为可关闭、块级等特殊样式。</text>
+    </view>
+  </view>
+</view>

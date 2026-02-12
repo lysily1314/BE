@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "ColorPanel 颜色面板",
+  "usingComponents": {
+    "ec-color-panel": "/components/ec-color-panel/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

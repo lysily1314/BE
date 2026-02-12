@@ -1,0 +1,108 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-button type="primary" bind:tap="showRightDrawer" style="margin-bottom: 20rpx;">右侧抽屉</ec-button>
+      <ec-button type="success" bind:tap="showLeftDrawer" style="margin-bottom: 20rpx;">左侧抽屉</ec-button>
+      <ec-button type="warning" bind:tap="showTopDrawer" style="margin-bottom: 20rpx;">顶部抽屉</ec-button>
+      <ec-button type="danger" bind:tap="showBottomDrawer">底部抽屉</ec-button>
+    </view>
+  </view>
+
+  <!-- 自定义样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义样式</text>
+    <view class="demo-block__content">
+      <ec-button type="primary" bind:tap="showCustomDrawer">圆角抽屉</ec-button>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">抽屉 Drawer</text>
+      <text class="demo-desc__text">用于在屏幕边缘显示一个可滑出的面板。支持从四个方向滑出，可用于筛选、菜单、详情展示等场景。</text>
+    </view>
+  </view>
+
+  <!-- 右侧抽屉 -->
+  <ec-drawer
+    show="{{showRightDrawer}}"
+    placement="right"
+    title="右侧抽屉"
+    bind:close="onClose"
+  >
+    <view class="drawer-content">
+      <text>这是右侧抽屉的内容区域</text>
+      <text>可以放置任意内容</text>
+      <ec-cell title="菜单项一" is-link="{{true}}" />
+      <ec-cell title="菜单项二" is-link="{{true}}" />
+      <ec-cell title="菜单项三" is-link="{{true}}" />
+    </view>
+  </ec-drawer>
+
+  <!-- 左侧抽屉 -->
+  <ec-drawer
+    show="{{showLeftDrawer}}"
+    placement="left"
+    width="60%"
+    title="左侧抽屉"
+    bind:close="onClose"
+  >
+    <view class="drawer-content">
+      <text>这是左侧抽屉的内容区域</text>
+      <text>适用于侧边栏菜单</text>
+      <ec-cell title="首页" is-link="{{true}}" />
+      <ec-cell title="分类" is-link="{{true}}" />
+      <ec-cell title="购物车" is-link="{{true}}" />
+      <ec-cell title="我的" is-link="{{true}}" />
+    </view>
+  </ec-drawer>
+
+  <!-- 顶部抽屉 -->
+  <ec-drawer
+    show="{{showTopDrawer}}"
+    placement="top"
+    height="40%"
+    title="顶部抽屉"
+    bind:close="onClose"
+  >
+    <view class="drawer-content">
+      <text>这是顶部抽屉的内容区域</text>
+      <text>适用于快捷操作面板</text>
+    </view>
+  </ec-drawer>
+
+  <!-- 底部抽屉 -->
+  <ec-drawer
+    show="{{showBottomDrawer}}"
+    placement="bottom"
+    height="60%"
+    title="底部抽屉"
+    bind:close="onClose"
+  >
+    <view class="drawer-content">
+      <text>这是底部抽屉的内容区域</text>
+      <text>适用于操作菜单或筛选面板</text>
+      <ec-cell title="分享到微信" is-link="{{true}}" />
+      <ec-cell title="分享到朋友圈" is-link="{{true}}" />
+      <ec-cell title="复制链接" is-link="{{true}}" />
+    </view>
+  </ec-drawer>
+
+  <!-- 圆角抽屉 -->
+  <ec-drawer
+    show="{{showCustomDrawer}}"
+    placement="bottom"
+    height="50%"
+    title="圆角抽屉"
+    round="{{true}}"
+    bind:close="onClose"
+  >
+    <view class="drawer-content">
+      <text>这是圆角样式的抽屉</text>
+      <text>具有更柔和的视觉效果</text>
+    </view>
+  </ec-drawer>
+</view>

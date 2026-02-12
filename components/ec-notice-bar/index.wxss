@@ -1,0 +1,72 @@
+/* ec-notice-bar 通告栏组件 */
+.ec-notice-bar {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  color: var(--ec-text-primary, #333);
+  font-size: var(--ec-font-sm, 24rpx);
+  line-height: 1.5;
+  background: var(--ec-bg, #f7f8fa);
+  min-height: 60rpx;
+  box-sizing: border-box;
+}
+
+.ec-notice-bar--default {
+  background: var(--ec-bg, #f7f8fa);
+  color: var(--ec-text-primary, #333);
+}
+
+.ec-notice-bar--primary {
+  background: var(--ec-primary-bg, #fff8f2);
+  color: var(--ec-primary, #FF4400);
+}
+
+.ec-notice-bar--success {
+  background: var(--ec-success-bg, #f2fdf9);
+  color: var(--ec-success, #07c160);
+}
+
+.ec-notice-bar--warning {
+  background: var(--ec-warning-bg, #fff9f0);
+  color: var(--ec-warning, #ff976a);
+}
+
+.ec-notice-bar--danger {
+  background: var(--ec-danger-bg, #fef9f9);
+  color: var(--ec-danger, #ee0a24);
+}
+
+.ec-notice-bar__left-icon,
+.ec-notice-bar__right-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.ec-notice-bar__right-icon {
+  margin-left: 16rpx;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.ec-notice-bar__content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.ec-notice-bar__text {
+  display: block;
+  width: 100%;
+}
+
+.ec-notice-bar--wrapable .ec-notice-bar__content {
+  align-self: stretch;
+}
+
+.ec-notice-bar--wrapable .ec-notice-bar__text {
+  display: block;
+  white-space: normal;
+}

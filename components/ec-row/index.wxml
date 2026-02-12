@@ -1,0 +1,3 @@
+<view class="ec-row {{custom-class}}" style="{{style}}display: flex; flex-wrap: wrap; align-items: {{align === 'top' ? 'flex-start' : align === 'middle' ? 'center' : 'flex-end'}}; justify-content: {{justify === 'start' ? 'flex-start' : justify === 'end' ? 'flex-end' : justify === 'center' ? 'center' : justify === 'space-around' ? 'space-around' : 'space-between'}};">
+  <slot />
+</view>

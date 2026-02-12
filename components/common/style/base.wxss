@@ -1,0 +1,20 @@
+/* ec-ui 基础重置样式 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', STHeiti, 'Microsoft Yahei', Tahoma, Simsun, sans-serif;
+  font-size: var(--ec-font-body);
+  color: var(--ec-text-primary);
+  background-color: var(--ec-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+view, text, image, scroll-view, swiper, input, textarea, navigator {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+image {
+  vertical-align: middle;
+}

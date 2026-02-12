@@ -1,0 +1,1 @@
+{ "navigationBarTitleText": "Rate 评分", "usingComponents": { "ec-rate": "/components/ec-rate/index", "ec-cell": "/components/ec-cell/index" } }

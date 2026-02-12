@@ -1,0 +1,56 @@
+/* ec-radio 单选组件 */
+.ec-radio {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ec-radio--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ec-radio__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid #dcdee0;
+  background: var(--ec-white, #fff);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.ec-radio__icon--round {
+  border-radius: 50%;
+}
+
+.ec-radio__icon--square {
+  border-radius: var(--ec-radius-sm, 4rpx);
+}
+
+.ec-radio--checked .ec-radio__icon {
+  border-color: var(--ec-primary, #FF4400);
+  background: var(--ec-primary, #FF4400);
+}
+
+.ec-radio__check {
+  width: 40%;
+  height: 22%;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-10%);
+}
+
+.ec-radio__label {
+  margin-left: 16rpx;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  line-height: 1.5;
+}
+
+.ec-radio--disabled .ec-radio__label {
+  color: var(--ec-text-placeholder, #999);
+}

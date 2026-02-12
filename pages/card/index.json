@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Card 商品卡片",
+  "usingComponents": {
+    "ec-card": "/components/ec-card/index"
+  }
+}

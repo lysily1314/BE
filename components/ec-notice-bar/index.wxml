@@ -1,0 +1,29 @@
+<view 
+  class="ec-notice-bar ec-notice-bar--{{type}} {{wrapable ? 'ec-notice-bar--wrapable' : ''}} {{custom-class}}" 
+  wx:if="{{show}}"
+  bind:tap="onClick"
+>
+  <!-- 左侧图标 -->
+  <view class="ec-notice-bar__left-icon" wx:if="{{leftIcon}}">
+    <ec-icon name="{{leftIcon}}" size="32rpx" />
+  </view>
+
+  <!-- 文本内容 -->
+  <view class="ec-notice-bar__content" wx:if="{{!wrapable}}">
+    <view 
+      class="ec-notice-bar__text" 
+      style="{{isScroll ? 'white-space: nowrap;' : ''}}"
+      animation="{{animationData}}"
+    >
+      {{text}}
+    </view>
+  </view>
+
+  <!-- 换行文本 -->
+  <view class="ec-notice-bar__text" wx:if="{{wrapable}}">{{text}}</view>
+
+  <!-- 右侧关闭按钮 -->
+  <view class="ec-notice-bar__right-icon" wx:if="{{closeable}}" bind:tap="onClose">
+    <ec-icon name="close" size="32rpx" />
+  </view>
+</view>

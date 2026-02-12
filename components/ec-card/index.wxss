@@ -1,0 +1,111 @@
+/* ec-card 商品卡片组件 */
+.ec-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--ec-white, #fff);
+  border-radius: var(--ec-radius-lg, 16rpx);
+  overflow: hidden;
+  box-shadow: var(--ec-shadow);
+  transition: transform 0.1s ease;
+}
+
+.ec-card--active {
+  transform: scale(0.98);
+}
+
+/* 商品图片 */
+.ec-card__thumb {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+  background: var(--ec-bg, #f7f8fa);
+}
+
+.ec-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 标签 */
+.ec-card__tag {
+  position: absolute;
+  top: 16rpx;
+  left: 0;
+  padding: 4rpx 16rpx 4rpx 12rpx;
+  background: var(--ec-primary, #FF4400);
+  border-radius: 0 20rpx 20rpx 0;
+}
+
+.ec-card__tag-text {
+  font-size: var(--ec-font-xs, 20rpx);
+  color: #fff;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* 商品信息 */
+.ec-card__info {
+  padding: 20rpx 20rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.ec-card__title {
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  font-weight: 500;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ec-card__desc {
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-placeholder, #999);
+  margin-top: 8rpx;
+  line-height: 1.4;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ec-card__bottom {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 16rpx;
+}
+
+.ec-card__price-wrap {
+  display: flex;
+  align-items: baseline;
+}
+
+.ec-card__price {
+  font-size: 36rpx;
+  color: var(--ec-primary, #FF4400);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ec-card__price-symbol {
+  font-size: 24rpx;
+  font-weight: 500;
+  margin-right: 2rpx;
+}
+
+.ec-card__origin-price {
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-placeholder, #999);
+  text-decoration: line-through;
+  margin-left: 12rpx;
+  line-height: 1;
+}

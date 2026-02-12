@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ec-grid-item": "../ec-grid-item/index"
+  }
+}

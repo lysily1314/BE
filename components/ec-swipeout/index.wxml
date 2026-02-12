@@ -1,0 +1,50 @@
+<view class="ec-swipeout {{custom-class}}">
+  <!-- 左侧按钮 -->
+  <view 
+    class="ec-swipeout__left" 
+    style="width: {{leftWidth}}rpx;"
+    wx:if="{{leftActions.length > 0}}"
+  >
+    <view 
+      class="ec-swipeout__btn {{item.className || ''}}" 
+      style="background: {{item.color || '#ccc'}}; width: {{item.width || 80}}rpx;" 
+      wx:for="{{leftActions}}" 
+      wx:key="index"
+      data-index="{{index}}"
+      catchtap="onLeftButtonClick"
+    >
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+  
+  <!-- 右侧按钮 -->
+  <view 
+    class="ec-swipeout__right" 
+    style="width: {{rightWidth}}rpx;"
+    wx:if="{{rightActions.length > 0}}"
+  >
+    <view 
+      class="ec-swipeout__btn {{item.className || ''}}" 
+      style="background: {{item.color || '#ccc'}}; width: {{item.width || 80}}rpx;" 
+      wx:for="{{rightActions}}" 
+      wx:key="index"
+      data-index="{{index}}"
+      catchtap="onRightButtonClick"
+    >
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+  
+  <!-- 内容区域 -->
+  <view 
+    class="ec-swipeout__content" 
+    style="transform: translateX({{translateX}}rpx); transition: {{dragging ? 'none' : 'transform 0.3s ease'}};"
+    bindtouchstart="onTouchStart"
+    bindtouchmove="onTouchMove"
+    bindtouchend="onTouchEnd"
+    bindtouchcancel="onTouchCancel"
+    catchtap="onContentClick"
+  >
+    <slot />
+  </view>
+</view>

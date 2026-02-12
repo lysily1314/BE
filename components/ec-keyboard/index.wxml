@@ -1,0 +1,188 @@
+<view class="ec-keyboard {{show ? 'ec-keyboard--show' : ''}} {{custom-class}}" style="z-index: {{zIndex}};">
+  <!-- 遮罩层 -->
+  <view class="ec-keyboard__overlay" wx:if="{{overlay}}" bind:tap="onOverlayTap"></view>
+  
+  <!-- 键盘主体 -->
+  <view class="ec-keyboard__body">
+    <!-- 根据键盘类型显示不同的键 -->
+    <block wx:if="{{type === 'car'}}">
+      <!-- 车牌键盘 -->
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--province" data-key="{{keys[27]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[27].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--province" data-key="{{keys[28]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[28].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--province" data-key="{{keys[29]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[29].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--province" data-key="{{keys[30]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[30].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--province" data-key="{{keys[31]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[31].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--province" data-key="{{keys[32]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[32].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--province" data-key="{{keys[33]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[33].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--province" data-key="{{keys[34]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[34].text}}</text>
+        </view>
+      </view>
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[0]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[0].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[1]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[1].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[2]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[2].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[3]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[3].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[4]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[4].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[5]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[5].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[6]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[6].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[7]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[7].text}}</text>
+        </view>
+      </view>
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[8]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[8].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[9]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[9].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[10]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[10].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[11]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[11].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[12]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[12].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[13]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[13].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[14]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[14].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[15]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[15].text}}</text>
+        </view>
+      </view>
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[16]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[16].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[17]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[17].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[18]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[18].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[19]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[19].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[20]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[20].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[21]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[21].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[22]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[22].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[23]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[23].text}}</text>
+        </view>
+      </view>
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[24]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[24].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[25]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[25].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[26]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[26].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--delete" data-key="{{keys[keys.length - 2]}}" bind:tap="onKeyTap" wx:if="{{!hideDelete}}">
+          <text class="ec-keyboard__text">{{deleteText}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--confirm" data-key="{{keys[keys.length - 1]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{confirmText}}</text>
+        </view>
+      </view>
+    </block>
+    
+    <block wx:else>
+      <!-- 数字键盘和身份证键盘 -->
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[0]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[0].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[1]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[1].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[2]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[2].text}}</text>
+        </view>
+      </view>
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[3]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[3].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[4]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[4].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[5]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[5].text}}</text>
+        </view>
+      </view>
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[6]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[6].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[7]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[7].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[8]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[8].text}}</text>
+        </view>
+      </view>
+      <view class="ec-keyboard__row">
+        <view class="ec-keyboard__key ec-keyboard__key--delete" data-key="{{keys[keys.length - 3]}}" bind:tap="onKeyTap" wx:if="{{!hideDelete}}">
+          <text class="ec-keyboard__text">{{deleteText}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--number" data-key="{{keys[keys.length - 2]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[keys.length - 2].text}}</text>
+        </view>
+        <view class="ec-keyboard__key ec-keyboard__key--confirm" data-key="{{keys[keys.length - 1]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{confirmText}}</text>
+        </view>
+      </view>
+      
+      <!-- 如果是身份证键盘，添加X键 -->
+      <view class="ec-keyboard__row" wx:if="{{type === 'idcard'}}">
+        <view class="ec-keyboard__key ec-keyboard__key--letter" data-key="{{keys[10]}}" bind:tap="onKeyTap">
+          <text class="ec-keyboard__text">{{keys[10].text}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

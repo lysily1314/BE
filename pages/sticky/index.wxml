@@ -1,0 +1,126 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <scroll-view 
+        scroll-y="true" 
+        style="height: 400rpx;"
+        scroll-with-animation="true"
+      >
+        <view style="height: 200rpx; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+          <text>向下滚动查看吸顶效果</text>
+        </view>
+        
+        <ec-sticky id="sticky" offset-top="0">
+          <ec-cell title="吸顶容器" value="固定在顶部" is-link="{{false}}" />
+        </ec-sticky>
+        
+        <view style="height: 1000rpx; padding: 20rpx; background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);">
+          <text>这里是很多内容...</text>
+          <view style="margin-top: 20rpx;" wx:for="{{['内容区域1', '内容区域2', '内容区域3', '内容区域4', '内容区域5']}}" wx:key="index">
+            <ec-cell title="{{item}}" value="滚动内容" is-link="{{false}}" />
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 指定吸顶位置 -->
+  <view class="demo-block">
+    <text class="demo-block__title">指定吸顶位置</text>
+    <view class="demo-block__content">
+      <scroll-view 
+        scroll-y="true" 
+        style="height: 400rpx;"
+        scroll-with-animation="true"
+      >
+        <view style="height: 100rpx; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+          <text>这段区域高度100rpx</text>
+        </view>
+        <view style="height: 100rpx; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+          <text>这段区域高度100rpx</text>
+        </view>
+        
+        <ec-sticky id="sticky2" offset-top="200">
+          <ec-cell title="从200rpx开始吸顶" value="指定位置" is-link="{{false}}" />
+        </ec-sticky>
+        
+        <view style="height: 1000rpx; padding: 20rpx; background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);">
+          <text>从200rpx滚动位置开始，组件会吸顶...</text>
+          <view style="margin-top: 20rpx;" wx:for="{{['内容区域1', '内容区域2', '内容区域3', '内容区域4', '内容区域5']}}" wx:key="index">
+            <ec-cell title="{{item}}" value="滚动内容" is-link="{{false}}" />
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 结合Tabs使用 -->
+  <view class="demo-block">
+    <text class="demo-block__title">结合Tabs使用</text>
+    <view class="demo-block__content">
+      <scroll-view 
+        scroll-y="true" 
+        style="height: 600rpx;"
+        scroll-with-animation="true"
+      >
+        <view style="height: 100rpx; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+          <text>商品信息区域</text>
+        </view>
+        
+        <ec-sticky id="sticky3" offset-top="100">
+          <ec-tabs 
+            active="{{activeTab}}" 
+            bind:change="onTabChange"
+            items="{{tabs}}"
+          />
+        </ec-sticky>
+        
+        <ec-tab-pane active="{{activeTab === 0}}">
+          <view style="padding: 20rpx; background: #fff;">
+            <text>商品介绍内容...</text>
+            <view style="margin-top: 20rpx; height: 400rpx; background: #f9f9f9; display: flex; align-items: center; justify-content: center;">
+              <text>商品详情内容区域</text>
+            </view>
+          </view>
+        </ec-tab-pane>
+        
+        <ec-tab-pane active="{{activeTab === 1}}">
+          <view style="padding: 20rpx; background: #fff;">
+            <text>评价内容...</text>
+            <view style="margin-top: 20rpx; height: 400rpx; background: #f9f9f9; display: flex; align-items: center; justify-content: center;">
+              <text>评价详情区域</text>
+            </view>
+          </view>
+        </ec-tab-pane>
+        
+        <ec-tab-pane active="{{activeTab === 2}}">
+          <view style="padding: 20rpx; background: #fff;">
+            <text>详情内容...</text>
+            <view style="margin-top: 20rpx; height: 400rpx; background: #f9f9f9; display: flex; align-items: center; justify-content: center;">
+              <text>详细信息区域</text>
+            </view>
+          </view>
+        </ec-tab-pane>
+        
+        <ec-tab-pane active="{{activeTab === 3}}">
+          <view style="padding: 20rpx; background: #fff;">
+            <text>推荐内容...</text>
+            <view style="margin-top: 20rpx; height: 400rpx; background: #f9f9f9; display: flex; align-items: center; justify-content: center;">
+              <text>推荐商品区域</text>
+            </view>
+          </view>
+        </ec-tab-pane>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">吸顶容器 Sticky</text>
+      <text class="demo-desc__text">可以将内容固定在屏幕顶部的容器组件。常用于导航栏、标签栏等需要在滚动时保持可见的场景。</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+/* ec-cell 单元格组件 */
+.ec-cell {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  background: var(--ec-white);
+  position: relative;
+  line-height: 1.5;
+  transition: transform 0.1s ease;
+}
+
+.ec-cell--border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 32rpx;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border);
+  transform: scaleY(0.5);
+}
+
+.ec-cell--clickable {
+  cursor: pointer;
+}
+
+.ec-cell--active {
+  background: #f5f5f5;
+}
+
+/* 左侧图标 */
+.ec-cell__left-icon {
+  margin-right: 16rpx;
+  display: flex;
+  align-items: center;
+}
+
+/* 标题区 */
+.ec-cell__title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ec-cell__title-text {
+  font-size: var(--ec-font-body);
+  color: var(--ec-text-primary);
+  line-height: 1.5;
+}
+
+.ec-cell__label {
+  font-size: var(--ec-font-sm);
+  color: var(--ec-text-placeholder);
+  margin-top: 6rpx;
+  line-height: 1.4;
+}
+
+/* 右侧内容 */
+.ec-cell__value {
+  flex: none;
+  display: flex;
+  align-items: center;
+  color: var(--ec-text-secondary);
+  font-size: var(--ec-font-body);
+  text-align: right;
+  padding-left: 16rpx;
+}
+
+.ec-cell__value-text {
+  color: var(--ec-text-secondary);
+}
+
+/* 右侧箭头 */
+.ec-cell__right-icon {
+  margin-left: 8rpx;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}

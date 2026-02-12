@@ -1,0 +1,60 @@
+/* ec-swipeout 滑动菜单组件 */
+.ec-swipeout {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--ec-white, #fff);
+  touch-action: pan-y;
+}
+
+.ec-swipeout__left,
+.ec-swipeout__right {
+  display: flex;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.ec-swipeout__left {
+  left: 0;
+}
+
+.ec-swipeout__right {
+  right: 0;
+}
+
+.ec-swipeout__content {
+  position: relative;
+  width: 100%;
+  background: var(--ec-white, #fff);
+  z-index: 1;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.ec-swipeout__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80rpx;
+  height: 100%;
+  color: var(--ec-white, #fff);
+  font-size: var(--ec-font-body, 28rpx);
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.ec-swipeout__btn:first-child {
+  border-radius: 0;
+}
+
+.ec-swipeout__btn:last-child {
+  border-radius: 0 ;
+}
+
+/* 禁用状态 */
+.ec-swipeout--disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}

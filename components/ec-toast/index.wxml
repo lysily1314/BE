@@ -1,0 +1,21 @@
+<view wx:if="{{visible}}" class="ec-toast custom-class">
+  <!-- 遮罩层 -->
+  <view wx:if="{{mask}}" class="ec-toast__mask {{animating ? 'ec-toast__mask--show' : ''}}" bind:tap="noop"></view>
+
+  <!-- 内容区 -->
+  <view class="ec-toast__container {{type !== 'text' ? 'ec-toast__container--icon' : ''}} {{animating ? 'ec-toast__container--show' : ''}}">
+    <!-- 图标 -->
+    <view wx:if="{{type === 'loading'}}" class="ec-toast__icon">
+      <ec-icon name="loading" size="48rpx" color="#fff" />
+    </view>
+    <view wx:elif="{{type === 'success'}}" class="ec-toast__icon">
+      <ec-icon name="success" size="48rpx" color="#fff" />
+    </view>
+    <view wx:elif="{{type === 'error'}}" class="ec-toast__icon">
+      <ec-icon name="close" size="48rpx" color="#fff" />
+    </view>
+
+    <!-- 文字 -->
+    <text wx:if="{{message}}" class="ec-toast__text">{{message}}</text>
+  </view>
+</view>

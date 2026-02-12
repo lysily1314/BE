@@ -1,0 +1,29 @@
+<view 
+  class="ec-content-card {{shadow !== 'none' ? 'ec-content-card--shadow-' + shadow : ''}} {{clickable ? 'ec-content-card--clickable' : ''}} {{custom-class}}" 
+  style="{{background ? 'background:' + background + ';' : ''}}{{borderColor ? 'border-color:' + borderColor + ';' : ''}}{{radius ? 'border-radius:' + radius + ';' : ''}}"
+  hover-class="{{clickable ? 'ec-content-card--hover' : ''}}"
+  hover-stay-time="80"
+  bind:tap="onClick"
+>
+  <!-- 标签 -->
+  <view wx:if="{{showTag && tag}}" class="ec-content-card__tag ec-content-card__tag--{{tagType}}">{{tag}}</view>
+
+  <!-- 头部区域 -->
+  <view wx:if="{{title || desc}}" class="ec-content-card__header">
+    <text wx:if="{{title}}" class="ec-content-card__title" style="color: {{titleColor}};">{{title}}</text>
+    <text wx:if="{{desc}}" class="ec-content-card__desc" style="color: {{descColor}};">{{desc}}</text>
+  </view>
+
+  <!-- 内容区域 -->
+  <view class="ec-content-card__body">
+    <slot />
+  </view>
+
+  <!-- 底部区域 -->
+  <view class="ec-content-card__footer" wx:if="{{hasFooter}}">
+    <slot name="footer" />
+  </view>
+
+  <!-- 底部边框 -->
+  <view wx:if="{{showBottomBorder}}" class="ec-content-card__bottom-border" style="border-color: {{borderColor}};"></view>
+</view>

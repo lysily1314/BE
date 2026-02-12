@@ -1,0 +1,14 @@
+<view
+  class="ec-checkbox {{checked ? 'ec-checkbox--checked' : ''}} {{disabled ? 'ec-checkbox--disabled' : ''}} custom-class"
+  bind:tap="onTap"
+>
+  <view
+    class="ec-checkbox__icon ec-checkbox__icon--{{shape}}"
+    style="width: {{iconSize}}; height: {{iconSize}}; {{checked && checkedColor ? 'border-color:' + checkedColor + ';background:' + checkedColor : ''}}"
+  >
+    <view wx:if="{{checked}}" class="ec-checkbox__check"></view>
+  </view>
+  <view class="ec-checkbox__label">
+    <slot />
+  </view>
+</view>

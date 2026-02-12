@@ -1,0 +1,8 @@
+/* ec-slider 滑块组件 */
+.ec-slider {
+  padding: 20rpx 40rpx;
+}
+
+.ec-slider__slider {
+  width: 100%;
+}

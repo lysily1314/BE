@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "List 列表",
+  "usingComponents": {
+    "ec-list": "/components/ec-list/index",
+    "ec-list-item": "/components/ec-list-item/index"
+  }
+}

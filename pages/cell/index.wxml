@@ -1,0 +1,40 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="单元格" value="内容" />
+      <ec-cell title="单元格" value="内容" label="描述信息" border="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 展示箭头 -->
+  <view class="demo-block">
+    <text class="demo-block__title">展示箭头</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="单元格" is-link bind:tap="onCellTap" />
+      <ec-cell title="单元格" value="内容" is-link bind:tap="onCellTap" />
+      <ec-cell title="单元格" value="内容" is-link label="描述信息" border="{{false}}" bind:tap="onCellTap" />
+    </view>
+  </view>
+
+  <!-- 带图标 -->
+  <view class="demo-block">
+    <text class="demo-block__title">带图标</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="购物车" icon="cart" is-link />
+      <ec-cell title="收藏" icon="heart" is-link />
+      <ec-cell title="搜索" icon="search" is-link border="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 分组展示 -->
+  <view class="demo-block">
+    <text class="demo-block__title">分组展示</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="订单管理" value="查看" is-link />
+      <ec-cell title="地址管理" value="5个地址" is-link />
+      <ec-cell title="优惠券" value="3张可用" is-link border="{{false}}" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,69 @@
+<view class="demo-page">
+  <!-- Radio 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">Radio 单选</text>
+    <view class="demo-block__content">
+      <view class="form-group">
+        <ec-radio name="1" checked="{{radioValue === '1'}}" bind:change="onRadioChange">选项一</ec-radio>
+        <ec-radio name="2" checked="{{radioValue === '2'}}" bind:change="onRadioChange">选项二</ec-radio>
+        <ec-radio name="3" checked="{{radioValue === '3'}}" bind:change="onRadioChange">选项三</ec-radio>
+      </view>
+    </view>
+  </view>
+
+  <!-- Radio 禁用 -->
+  <view class="demo-block">
+    <text class="demo-block__title">Radio 禁用</text>
+    <view class="demo-block__content">
+      <view class="form-group">
+        <ec-radio name="a" checked disabled>已选禁用</ec-radio>
+        <ec-radio name="b" disabled>未选禁用</ec-radio>
+      </view>
+    </view>
+  </view>
+
+  <!-- Radio 自定义颜色 -->
+  <view class="demo-block">
+    <text class="demo-block__title">Radio 自定义颜色</text>
+    <view class="demo-block__content">
+      <view class="form-group">
+        <ec-radio name="c" checked checked-color="#07C160">绿色选中</ec-radio>
+        <ec-radio name="d" checked checked-color="#1989FA">蓝色选中</ec-radio>
+      </view>
+    </view>
+  </view>
+
+  <!-- Checkbox 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">Checkbox 复选</text>
+    <view class="demo-block__content">
+      <view class="form-group">
+        <ec-checkbox name="apple" checked="{{cb1}}" bind:change="onCb1Change">苹果</ec-checkbox>
+        <ec-checkbox name="banana" checked="{{cb2}}" bind:change="onCb2Change">香蕉</ec-checkbox>
+        <ec-checkbox name="orange" checked="{{cb3}}" bind:change="onCb3Change">橙子</ec-checkbox>
+      </view>
+    </view>
+  </view>
+
+  <!-- Checkbox 禁用 -->
+  <view class="demo-block">
+    <text class="demo-block__title">Checkbox 禁用</text>
+    <view class="demo-block__content">
+      <view class="form-group">
+        <ec-checkbox checked disabled>已选禁用</ec-checkbox>
+        <ec-checkbox disabled>未选禁用</ec-checkbox>
+      </view>
+    </view>
+  </view>
+
+  <!-- Checkbox 圆形 -->
+  <view class="demo-block">
+    <text class="demo-block__title">Checkbox 圆形</text>
+    <view class="demo-block__content">
+      <view class="form-group">
+        <ec-checkbox checked shape="round">圆形选中</ec-checkbox>
+        <ec-checkbox shape="round">圆形未选</ec-checkbox>
+      </view>
+    </view>
+  </view>
+</view>

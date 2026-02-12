@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Grid 九宫格",
+  "usingComponents": {
+    "ec-grid": "/components/ec-grid/index",
+    "ec-grid-item": "/components/ec-grid-item/index"
+  }
+}

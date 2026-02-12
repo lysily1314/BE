@@ -1,0 +1,114 @@
+/* ec-input 输入框组件 */
+.ec-input {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 24rpx 32rpx;
+  background: var(--ec-white, #fff);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.ec-input--border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 32rpx;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+}
+
+.ec-input--focus::after {
+  background: var(--ec-primary, #FF4400);
+}
+
+.ec-input--error::after {
+  background: var(--ec-error, #EE0A24);
+}
+
+.ec-input--disabled {
+  opacity: 0.5;
+}
+
+/* 前缀图标 */
+.ec-input__prefix {
+  display: flex;
+  align-items: center;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+/* 标签 */
+.ec-input__label {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 24rpx;
+}
+
+.ec-input__required {
+  color: var(--ec-error, #EE0A24);
+  font-size: var(--ec-font-body, 28rpx);
+  margin-right: 4rpx;
+}
+
+.ec-input__label-text {
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  line-height: 1.5;
+}
+
+/* 输入体 */
+.ec-input__body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.ec-input__control {
+  flex: 1;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  height: 48rpx;
+  line-height: 48rpx;
+  min-height: 0;
+}
+
+.ec-input__placeholder {
+  color: var(--ec-text-placeholder, #999);
+  font-size: var(--ec-font-body, 28rpx);
+}
+
+/* 清除按钮 */
+.ec-input__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rpx;
+  margin-left: 12rpx;
+  flex-shrink: 0;
+}
+
+/* 后缀图标 */
+.ec-input__suffix {
+  display: flex;
+  align-items: center;
+  margin-left: 12rpx;
+  flex-shrink: 0;
+}
+
+/* 错误信息 */
+.ec-input__error-msg {
+  width: 100%;
+  padding-top: 8rpx;
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-error, #EE0A24);
+  line-height: 1.4;
+}
+
+.ec-input--error .ec-input__control {
+  color: var(--ec-error, #EE0A24);
+}

@@ -1,0 +1,36 @@
+<view class="demo-page">
+  <!-- 文字提示 -->
+  <view class="demo-block">
+    <text class="demo-block__title">提示类型</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-button type="primary" bind:tap="showTextToast">文字提示</ec-button>
+      <ec-button type="primary" bind:tap="showSuccessToast">成功提示</ec-button>
+      <ec-button type="primary" bind:tap="showErrorToast">失败提示</ec-button>
+    </view>
+  </view>
+
+  <!-- 加载提示 -->
+  <view class="demo-block">
+    <text class="demo-block__title">加载提示</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-button type="primary" bind:tap="showLoadingToast">加载提示</ec-button>
+    </view>
+  </view>
+
+  <!-- 命令式调用 -->
+  <view class="demo-block">
+    <text class="demo-block__title">命令式调用</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-button type="default" bind:tap="showCommandToast">命令式调用</ec-button>
+    </view>
+  </view>
+
+  <!-- Toast 组件 -->
+  <ec-toast
+    id="toast"
+    show="{{showToast}}"
+    type="{{toastType}}"
+    message="{{toastMessage}}"
+    bind:close="onToastClose"
+  />
+</view>

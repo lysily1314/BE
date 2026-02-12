@@ -1,0 +1,108 @@
+/* ec-tabs 标签页组件 */
+.ec-tabs {
+  display: flex;
+  flex-direction: column;
+  background: var(--ec-white, #fff);
+  overflow: hidden;
+}
+
+/* 标签栏 */
+.ec-tabs__nav {
+  position: relative;
+  background: var(--ec-white, #fff);
+  flex-shrink: 0;
+}
+
+.ec-tabs__scroll {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.ec-tabs__tabs {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: max-content;
+  min-width: 100%;
+}
+
+.ec-tabs__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 120rpx;
+  padding: 0 20rpx;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-secondary, #666);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.ec-tabs__tab--active {
+  color: var(--ec-primary, #FF4400);
+  font-weight: 500;
+}
+
+.ec-tabs__tab--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ec-tabs__tab-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 下划线 */
+.ec-tabs__line {
+  position: absolute;
+  bottom: 0;
+  height: 4rpx;
+  background: var(--ec-primary, #FF4400);
+  border-radius: 2rpx;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 卡片类型 */
+.ec-tabs.card .ec-tabs__tab {
+  margin: 0 8rpx;
+  border-radius: var(--ec-radius, 8rpx);
+}
+
+.ec-tabs.card .ec-tabs__tab--active {
+  background: var(--ec-primary-light, #FFF0E8);
+  color: var(--ec-primary, #FF4400);
+}
+
+/* 标签位置 - 底部 */
+.ec-tabs.bottom {
+  flex-direction: column-reverse;
+}
+
+/* 内容区 */
+.ec-tabs__content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.ec-tabs__pane {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ec-tabs__pane--active {
+  display: block;
+}
+
+/* 动画 */
+.ec-tabs__pane--animated {
+  transition: opacity 0.3s ease-out;
+}

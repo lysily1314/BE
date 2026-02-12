@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Index 索引选择器",
+  "usingComponents": {
+    "ec-index-bar": "/components/ec-index-bar/index",
+    "ec-index-anchor": "/components/ec-index-anchor/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

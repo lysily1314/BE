@@ -1,0 +1,11 @@
+<view
+  class="ec-tab-bar {{fixed ? 'ec-tab-bar--fixed' : ''}} {{border ? 'ec-tab-bar--border' : ''}} {{custom-class}}"
+  style="{{background ? 'background:' + background + ';' : ''}}{{zIndex ? 'z-index:' + zIndex + ';' : ''}}{{safeAreaInsetBottom ? 'padding-bottom:env(safe-area-inset-bottom);' : ''}}"
+>
+  <view
+    class="ec-tab-bar__content"
+    style="--icon-size: {{iconSize}}; --text-size: {{textSize}}; --gap: {{gap}};"
+  >
+    <slot />
+  </view>
+</view>

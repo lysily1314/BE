@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Sticky 吸顶容器",
+  "usingComponents": {
+    "ec-sticky": "/components/ec-sticky/index",
+    "ec-tabs": "/components/ec-tabs/index",
+    "ec-tab-pane": "/components/ec-tab-pane/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

@@ -1,0 +1,81 @@
+<view class="ec-step {{custom-class}}" style="{{direction === 'horizontal' ? 'flex: 1' : ''}}">
+  <!-- 横向步骤 -->
+  <view wx:if="{{direction === 'horizontal'}}" class="ec-step__horizontal">
+    <!-- 图标 -->
+    <view class="ec-step__icon-wrap">
+      <view
+        wx:if="{{icon}}"
+        class="ec-step__icon"
+        style="{{active ? 'background:' + (parent.data.activeIconColor || '#FF4400') + ';' : 'background:' + (parent.data.inactiveIconColor || '#C8C9CC') + ';'}}"
+      >
+        <ec-icon name="{{icon}}" size="24rpx" color="{{active ? '#fff' : '#999'}}" />
+      </view>
+      <view
+        wx:elif="{{active}}"
+        class="ec-step__icon ec-step__icon--active"
+        style="{{parent.data.activeIconColor ? 'background:' + parent.data.activeIconColor : ''}}"
+      ></view>
+      <view
+        wx:else
+        class="ec-step__icon"
+        style="{{parent.data.inactiveIconColor ? 'background:' + parent.data.inactiveIconColor : ''}}"
+      ></view>
+    </view>
+    
+    <!-- 连接线 -->
+    <view
+      wx:if="{{!isLast}}"
+      class="ec-step__line"
+      style="{{active ? 'background:' + (parent.data.activeColor || '#FF4400') : 'background:' + (parent.data.inactiveColor || '#C8C9CC')}}"
+    ></view>
+    
+    <!-- 文字 -->
+    <view class="ec-step__content">
+      <text
+        class="ec-step__title"
+        style="{{active ? 'color:' + (parent.data.activeColor || '#FF4400') : 'color:' + (parent.data.inactiveColor || '#999')}}"
+      >{{title}}</text>
+      <text wx:if="{{desc}}" class="ec-step__desc">{{desc}}</text>
+    </view>
+  </view>
+
+  <!-- 纵向步骤 -->
+  <view wx:else class="ec-step__vertical">
+    <!-- 左侧图标区域 -->
+    <view class="ec-step__left">
+      <view
+        wx:if="{{icon}}"
+        class="ec-step__icon"
+        style="{{active ? 'background:' + (parent.data.activeIconColor || '#FF4400') + ';' : 'background:' + (parent.data.inactiveIconColor || '#C8C9CC') + ';'}}"
+      >
+        <ec-icon name="{{icon}}" size="24rpx" color="{{active ? '#fff' : '#999'}}" />
+      </view>
+      <view
+        wx:elif="{{active}}"
+        class="ec-step__icon ec-step__icon--active"
+        style="{{parent.data.activeIconColor ? 'background:' + parent.data.activeIconColor : ''}}"
+      ></view>
+      <view
+        wx:else
+        class="ec-step__icon"
+        style="{{parent.data.inactiveIconColor ? 'background:' + parent.data.inactiveIconColor : ''}}"
+      ></view>
+      
+      <!-- 垂直线 -->
+      <view
+        wx:if="{{!isLast}}"
+        class="ec-step__line"
+        style="{{active ? 'background:' + (parent.data.activeColor || '#FF4400') : 'background:' + (parent.data.inactiveColor || '#C8C9CC')}}"
+      ></view>
+    </view>
+    
+    <!-- 右侧内容 -->
+    <view class="ec-step__right">
+      <text
+        class="ec-step__title"
+        style="{{active ? 'color:' + (parent.data.activeColor || '#FF4400') : 'color:' + (parent.data.inactiveColor || '#999')}}"
+      >{{title}}</text>
+      <text wx:if="{{desc}}" class="ec-step__desc">{{desc}}</text>
+    </view>
+  </view>
+</view>

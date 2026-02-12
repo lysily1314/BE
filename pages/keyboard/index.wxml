@@ -1,0 +1,108 @@
+<view class="demo-page">
+  <!-- 数字键盘 -->
+  <view class="demo-block">
+    <text class="demo-block__title">数字键盘</text>
+    <view class="demo-block__content">
+      <ec-input
+        placeholder="请输入数字"
+        value="{{inputValue}}"
+        bind:focus="onInputFocus"
+        data-type="number"
+        readonly="{{true}}"
+      />
+    </view>
+  </view>
+
+  <!-- 身份证键盘 -->
+  <view class="demo-block">
+    <text class="demo-block__title">身份证键盘</text>
+    <view class="demo-block__content">
+      <ec-input
+        placeholder="请输入身份证号码"
+        bind:focus="onInputFocus"
+        data-type="idcard"
+        readonly="{{true}}"
+      />
+    </view>
+  </view>
+
+  <!-- 车牌键盘 -->
+  <view class="demo-block">
+    <text class="demo-block__title">车牌键盘</text>
+    <view class="demo-block__content">
+      <ec-input
+        placeholder="请输入车牌号"
+        value="{{carInputValue}}"
+        bind:focus="onInputFocus"
+        data-type="car"
+        readonly="{{true}}"
+      />
+    </view>
+  </view>
+
+  <!-- 随机键盘 -->
+  <view class="demo-block">
+    <text class="demo-block__title">随机数字键盘</text>
+    <view class="demo-block__content">
+      <ec-input
+        placeholder="随机数字键盘"
+        bind:focus="onInputFocus"
+        data-type="random"
+        readonly="{{true}}"
+      />
+    </view>
+  </view>
+
+  <!-- 数字键盘弹窗 -->
+  <ec-keyboard
+    show="{{showNumberKeyboard}}"
+    type="number"
+    bind:input="onInput"
+    bind:delete="onDelete"
+    bind:confirm="onConfirm"
+    bind:close="onClose"
+    data-type="number"
+  />
+
+  <!-- 身份证键盘弹窗 -->
+  <ec-keyboard
+    show="{{showIdCardKeyboard}}"
+    type="idcard"
+    bind:input="onInput"
+    bind:delete="onDelete"
+    bind:confirm="onConfirm"
+    bind:close="onClose"
+    data-type="idcard"
+  />
+
+  <!-- 车牌键盘弹窗 -->
+  <ec-keyboard
+    show="{{showCarKeyboard}}"
+    type="car"
+    bind:input="onInput"
+    bind:delete="onDelete"
+    bind:confirm="onConfirm"
+    bind:close="onClose"
+    data-type="car"
+  />
+
+  <!-- 随机数字键盘弹窗 -->
+  <ec-keyboard
+    show="{{showRandomKeyboard}}"
+    type="number"
+    random="{{true}}"
+    bind:input="onInput"
+    bind:delete="onDelete"
+    bind:confirm="onConfirm"
+    bind:close="onClose"
+    data-type="random"
+  />
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">数字键盘 Keyboard</text>
+      <text class="demo-desc__text">专为移动端设计的虚拟键盘组件，支持数字、身份证、车牌等多种输入场景。可自定义按键内容和样式，提供良好的用户体验。</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+.demo-page { min-height: 100vh; background: var(--ec-bg); padding-bottom: env(safe-area-inset-bottom); }
+.demo-block { padding: 0 32rpx; margin-bottom: 16rpx; }
+.demo-block__title { display: block; font-size: var(--ec-font-sm); color: var(--ec-text-placeholder); font-weight: 600; padding: 32rpx 0 20rpx; text-transform: uppercase; letter-spacing: 1rpx; }
+.demo-block__content { background: var(--ec-white); border-radius: var(--ec-radius-lg); padding: 32rpx; }

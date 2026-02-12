@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Dialog 对话框",
+  "usingComponents": {
+    "ec-button": "/components/ec-button/index",
+    "ec-dialog": "/components/ec-dialog/index"
+  }
+}

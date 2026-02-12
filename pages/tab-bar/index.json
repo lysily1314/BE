@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "TabBar 标签栏",
+  "usingComponents": {
+    "ec-tab-bar": "/components/ec-tab-bar/index",
+    "ec-tab-bar-item": "/components/ec-tab-bar-item/index"
+  }
+}

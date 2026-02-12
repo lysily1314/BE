@@ -1,0 +1,21 @@
+<view class="ec-index-bar {{custom-class}}" style="height: 100%;">
+  <slot />
+  
+  <!-- 右侧索引栏 -->
+  <view 
+    class="ec-index-bar__sidebar" 
+    wx:if="{{showSidebar}}" 
+    style="top: {{stickyOffsetTop}}px;"
+    catch:touchmove="onSidebarTouchMove"
+  >
+    <view 
+      class="ec-index-bar__index {{activeAnchorIndex === index ? 'ec-index-bar__index--active' : ''}}" 
+      wx:for="{{indexList.length > 0 ? indexList : ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']}}" 
+      wx:key="index"
+      data-index="{{item}}"
+      bind:tap="onClick"
+    >
+      {{item}}
+    </view>
+  </view>
+</view>

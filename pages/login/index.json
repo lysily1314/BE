@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "登录",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "ec-input": "/components/ec-input/index",
+    "ec-button": "/components/ec-button/index",
+    "ec-checkbox": "/components/ec-checkbox/index"
+  }
+}

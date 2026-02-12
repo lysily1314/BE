@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "SwiperCard 图片卡片轮播",
+  "usingComponents": {
+    "ec-swiper-card": "/components/ec-swiper-card/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

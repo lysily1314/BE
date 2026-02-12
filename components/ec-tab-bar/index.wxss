@@ -1,0 +1,37 @@
+/* ec-tab-bar 标签栏容器组件 */
+.ec-tab-bar {
+  background: var(--ec-white, #fff);
+  position: relative;
+  transition: all 0.3s;
+  height: 180rpx;
+}
+
+.ec-tab-bar--fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.ec-tab-bar--border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+}
+
+.ec-tab-bar__content {
+  display: flex;
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+}

@@ -1,0 +1,112 @@
+<view class="login-page">
+  <!-- Logo区域 -->
+  <view class="login-header">
+    <image class="login-logo" src="/static/images/logo.png" mode="aspectFit" />
+    <text class="login-title">欢迎回来</text>
+    <text class="login-subtitle">登录您的账户</text>
+  </view>
+
+  <!-- 登录表单 -->
+  <view class="login-form">
+    <!-- 切换登录方式 -->
+    <view class="login-type-switch">
+      <text class="login-type-item {{loginType === 'phone' ? 'login-type-item--active' : ''}}" bind:tap="switchLoginType">密码登录</text>
+      <text class="login-type-item {{loginType === 'code' ? 'login-type-item--active' : ''}}" bind:tap="switchLoginType">验证码登录</text>
+    </view>
+
+    <!-- 手机号输入 -->
+    <view class="login-input-group">
+      <ec-input
+        label="手机号"
+        placeholder="请输入手机号"
+        type="number"
+        value="{{formData.phone}}"
+        error="{{errors.phone}}"
+        bind:input="onInput"
+        data-field="phone"
+      />
+    </view>
+
+    <!-- 密码输入 -->
+    <view wx:if="{{loginType === 'phone'}}" class="login-input-group">
+      <ec-input
+        label="密码"
+        placeholder="请输入密码"
+        value="{{formData.password}}"
+        password="{{!showPassword}}"
+        error="{{errors.password}}"
+        bind:input="onInput"
+        data-field="password"
+        use-suffix-icon="{{true}}"
+      >
+        <view slot="suffix" class="password-toggle" bind:tap="togglePassword">
+          <text class="password-icon">{{showPassword ? '👁️' : '🙈'}}</text>
+        </view>
+      </ec-input>
+    </view>
+
+    <!-- 验证码输入 -->
+    <view wx:elif="{{loginType === 'code'}}" class="login-input-group">
+      <ec-input
+        label="验证码"
+        placeholder="请输入验证码"
+        value="{{formData.code}}"
+        error="{{errors.code}}"
+        maxlength="6"
+        bind:input="onInput"
+        data-field="code"
+        use-suffix-icon="{{true}}"
+      >
+        <view slot="suffix">
+          <text wx:if="{{countdown === 0}}" class="code-btn" bind:tap="getCode">获取验证码</text>
+          <text wx:else class="code-btn code-btn--disabled">{{countdown}}s后重试</text>
+        </view>
+      </ec-input>
+    </view>
+
+    <!-- 协议同意 -->
+    <view class="login-agree">
+      <ec-checkbox
+        checked="{{agree}}"
+        bind:change="onAgreeChange"
+      >
+           我已阅读并同意
+          <text class="agree-link">《用户协议》</text>
+          和
+          <text class="agree-link">《隐私政策》</text>
+      </ec-checkbox>
+    </view>
+
+    <!-- 登录按钮 -->
+    <view class="login-btn">
+      <ec-button type="primary" block round bind:tap="onLogin">登录</ec-button>
+    </view>
+
+    <!-- 其他操作 -->
+    <view class="login-actions">
+      <text class="action-link" bind:tap="onForget">忘记密码</text>
+      <text class="action-link" bind:tap="onRegister">立即注册</text>
+    </view>
+  </view>
+
+  <!-- 第三方登录 -->
+  <view class="login-third-party">
+    <view class="divider">
+      <text class="divider-text">第三方登录</text>
+    </view>
+    <view class="third-party-icons">
+      <view class="icon-item">
+        <image class="icon-image" src="/static/images/wechat.png" mode="aspectFit" />
+        <text class="icon-text">微信</text>
+      </view>
+      <view class="icon-item">
+        <image class="icon-image" src="/static/images/qq.png" mode="aspectFit" />
+        <text class="icon-text">QQ</text>
+      </view>
+      <view class="icon-item">
+        <image class="icon-image" src="/static/images/alipay.png" mode="aspectFit" />
+        <text class="icon-text">支付宝</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-list border>
+        <ec-list-item
+          wx:for="{{list1}}"
+          wx:key="id"
+          title="{{item.title}}"
+          desc="{{item.desc}}"
+          left-icon="{{item.icon}}"
+          is-link
+          data-id="{{item.id}}"
+          bind:tap="onItemTap"
+        />
+      </ec-list>
+    </view>
+  </view>
+
+  <!-- 无描述 -->
+  <view class="demo-block">
+    <text class="demo-block__title">无描述</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-list border>
+        <ec-list-item
+          wx:for="{{list2}}"
+          wx:key="id"
+          title="{{item.title}}"
+          left-icon="{{item.icon}}"
+          is-link
+          data-id="{{item.id}}"
+          bind:tap="onItemTap"
+        />
+      </ec-list>
+    </view>
+  </view>
+
+  <!-- 自定义右侧 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义右侧内容</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-list border>
+        <ec-list-item title="消息通知" desc="已开启">
+          <view slot="right" style="color: #07C160;">已开启</view>
+        </ec-list-item>
+        <ec-list-item title="夜间模式" desc="护眼模式">
+          <switch slot="right" checked style="transform: scale(0.8);" />
+        </ec-list-item>
+        <ec-list-item title="清除缓存" desc="释放存储空间">
+          <text slot="right" style="color: #999;">12.5MB</text>
+        </ec-list-item>
+      </ec-list>
+    </view>
+  </view>
+
+  <!-- 无边框 -->
+  <view class="demo-block">
+    <text class="demo-block__title">无边框</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-list border="{{false}}">
+        <ec-list-item title="无边框列表项1" />
+        <ec-list-item title="无边框列表项2" />
+        <ec-list-item title="无边框列表项3" />
+      </ec-list>
+    </view>
+  </view>
+
+  <!-- 禁用状态 -->
+  <view class="demo-block">
+    <text class="demo-block__title">禁用状态</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-list border>
+        <ec-list-item title="正常项" is-link />
+        <ec-list-item title="禁用项" disabled />
+        <ec-list-item title="正常项" is-link />
+      </ec-list>
+    </view>
+  </view>
+</view>

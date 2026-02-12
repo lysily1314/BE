@@ -1,0 +1,85 @@
+/* ec-search-bar 搜索栏组件 */
+.ec-search {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 24rpx;
+  background: var(--ec-white, #fff);
+}
+
+.ec-search__content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 72rpx;
+  padding: 0 20rpx;
+  background: var(--ec-bg, #f7f8fa);
+  border-radius: var(--ec-radius-round, 999rpx);
+  border: 2rpx solid transparent;
+  transition: all 0.3s ease-out;
+}
+
+.ec-search__content--focus {
+  border-color: var(--ec-primary, #FF4400);
+  background: var(--ec-white, #fff);
+  box-shadow: 0 0 0 2rpx var(--ec-primary-light, #FFF0E8);
+}
+
+/* 搜索图标 */
+.ec-search__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+
+/* 输入框 */
+.ec-search__input {
+  flex: 1;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  height: 100%;
+  min-height: 0;
+  line-height: normal;
+}
+
+.ec-search__placeholder {
+  color: var(--ec-text-placeholder, #999);
+  font-size: var(--ec-font-body, 28rpx);
+}
+
+/* 清除按钮 */
+.ec-search__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12rpx;
+  flex-shrink: 0;
+  padding: 4rpx;
+}
+
+/* 搜索按钮 */
+.ec-search__action {
+  flex-shrink: 0;
+  padding-left: 20rpx;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.ec-search__action--show {
+  opacity: 1;
+  width: auto;
+}
+
+.ec-search__action-text {
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-primary, #FF4400);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ec-search__action--active {
+  opacity: 0.7;
+}

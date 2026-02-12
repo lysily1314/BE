@@ -1,0 +1,106 @@
+/* ec-tag 标签组件 */
+.ec-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4rpx 12rpx;
+  font-size: var(--ec-font-xs, 20rpx);
+  line-height: 1.4;
+  color: var(--ec-white, #fff);
+  background: var(--ec-primary, #FF4400);
+  border-radius: var(--ec-radius, 8rpx);
+  position: relative;
+  box-sizing: border-box;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+/* 块级标签 */
+.ec-tag--block {
+  display: flex;
+  width: 100%;
+}
+
+/* 不同类型 */
+.ec-tag--primary {
+  background: var(--ec-primary, #FF4400);
+}
+
+.ec-tag--success {
+  background: var(--ec-success, #07c160);
+}
+
+.ec-tag--warning {
+  background: var(--ec-warning, #ff976a);
+}
+
+.ec-tag--danger {
+  background: var(--ec-danger, #ee0a24);
+}
+
+/* 不同尺寸 */
+.ec-tag--small {
+  padding: 2rpx 8rpx;
+  font-size: var(--ec-font-xs, 18rpx);
+}
+
+.ec-tag--large {
+  padding: 6rpx 16rpx;
+  font-size: var(--ec-font-sm, 24rpx);
+}
+
+/* 不同形状 */
+.ec-tag--square {
+  border-radius: 4rpx;
+}
+
+.ec-tag--round {
+  border-radius: 999px;
+}
+
+/* 标记样式 */
+.ec-tag--mark {
+  border-radius: 0 999px 999px 0;
+}
+
+/* 空心样式 */
+.ec-tag--plain {
+  background: transparent;
+  border: 1rpx solid currentColor;
+  color: var(--ec-primary, #FF4400);
+}
+
+.ec-tag--plain.ec-tag--success {
+  color: var(--ec-success, #07c160);
+}
+
+.ec-tag--plain.ec-tag--warning {
+  color: var(--ec-warning, #ff976a);
+}
+
+.ec-tag--plain.ec-tag--danger {
+  color: var(--ec-danger, #ee0a24);
+}
+
+/* 可关闭标签 */
+.ec-tag--closable {
+  padding-right: 8rpx;
+}
+
+.ec-tag__close-icon {
+  margin-left: 4rpx;
+  cursor: pointer;
+  padding: 4rpx;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.ec-tag__close-icon:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* 标签文本 */
+.ec-tag__text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

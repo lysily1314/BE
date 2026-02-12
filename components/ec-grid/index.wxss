@@ -1,0 +1,54 @@
+/* ec-grid 九宫格容器组件 */
+.ec-grid {
+  background: var(--ec-white, #fff);
+  overflow: hidden;
+  position: relative;
+}
+
+.ec-grid__content {
+  display: grid;
+  grid-template-columns: repeat(var(--column, 3), 1fr);
+  position: relative;
+}
+
+/* 边框样式 */
+.ec-grid--border {
+  border: 1rpx solid var(--ec-border, #eee);
+  border-left: none;
+  border-top: none;
+}
+
+.ec-grid--border .ec-grid-item {
+  position: relative;
+}
+
+.ec-grid--border .ec-grid-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-right: 1rpx solid var(--ec-border, #eee);
+  border-bottom: 1rpx solid var(--ec-border, #eee);
+  box-sizing: border-box;
+  pointer-events: none;
+  transform-origin: 0 0;
+}
+
+.ec-grid--border .ec-grid-item:last-child::after,
+.ec-grid--border .ec-grid-item:nth-child(3n)::after {
+  border-right: none;
+}
+
+/* 仅列边框 */
+.ec-grid--column-border .ec-grid-item::after {
+  border-right: 1rpx solid var(--ec-border, #eee);
+  border-bottom: none;
+}
+
+/* 仅行边框 */
+.ec-grid--row-border .ec-grid-item::after {
+  border-right: none;
+  border-bottom: 1rpx solid var(--ec-border, #eee);
+}

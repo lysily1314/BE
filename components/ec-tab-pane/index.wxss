@@ -1,0 +1,6 @@
+/* ec-tab-pane 标签面板组件 */
+.ec-tab-pane {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}

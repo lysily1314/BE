@@ -1,0 +1,52 @@
+<view wx:if="{{visible}}" class="ec-action-sheet custom-class" catch:touchmove="noop">
+  <!-- 遮罩层 -->
+  <view
+    wx:if="{{mask}}"
+    class="ec-action-sheet__mask {{animating ? 'ec-action-sheet__mask--show' : ''}}"
+    bind:tap="onOverlay"
+  ></view>
+
+  <!-- 面板 -->
+  <view class="ec-action-sheet__panel {{animating ? 'ec-action-sheet__panel--show' : ''}}" style="{{borderRadius ? 'border-radius:' + borderRadius + ' ' + borderRadius + ' 0 0;' : ''}}{{safeAreaInsetBottom ? 'padding-bottom:env(safe-area-inset-bottom);' : ''}}">
+    <!-- 标题 -->
+    <view wx:if="{{title}}" class="ec-action-sheet__header">
+      <text class="ec-action-sheet__title">{{title}}</text>
+    </view>
+
+    <!-- 选项列表 -->
+    <view class="ec-action-sheet__content">
+      <view
+        wx:for="{{actions}}"
+        wx:key="name"
+        class="ec-action-sheet__item {{item.disabled ? 'ec-action-sheet__item--disabled' : ''}} {{item.loading ? 'ec-action-sheet__item--loading' : ''}} {{index === 0 && !title ? 'ec-action-sheet__item--first' : ''}}"
+        hover-class="{{!item.disabled && !item.loading ? 'ec-action-sheet__item--active' : ''}}"
+        hover-stay-time="80"
+        data-index="{{index}}"
+        bind:tap="onSelect"
+      >
+        <!-- 加载图标 -->
+        <view wx:if="{{item.loading}}" class="ec-action-sheet__loading-icon"></view>
+        
+        <!-- 文字 -->
+        <text
+          class="ec-action-sheet__name"
+          style="{{item.color ? 'color:' + item.color + ';' : ''}}{{item.fontSize ? 'font-size:' + item.fontSize + ';' : ''}}"
+        >{{item.name}}</text>
+        
+        <!-- 描述 -->
+        <text wx:if="{{item.subname}}" class="ec-action-sheet__subname">{{item.subname}}</text>
+      </view>
+    </view>
+
+    <!-- 取消按钮 -->
+    <view
+      wx:if="{{showCancel}}"
+      class="ec-action-sheet__cancel"
+      hover-class="ec-action-sheet__cancel--active"
+      hover-stay-time="80"
+      bind:tap="onCancel"
+    >
+      <text class="ec-action-sheet__cancel-text">{{cancelText}}</text>
+    </view>
+  </view>
+</view>

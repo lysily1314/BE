@@ -1,0 +1,16 @@
+<view class="ec-rate {{disabled ? 'ec-rate--disabled' : ''}} {{readonly ? 'ec-rate--readonly' : ''}} custom-class">
+  <view
+    wx:for="{{count}}"
+    wx:key="index"
+    class="ec-rate__item"
+    data-index="{{index}}"
+    bind:tap="{{touchable && !disabled && !readonly ? 'onTap' : ''}}"
+    style="margin-right: 4rpx; font-size: {{size}};"
+  >
+    <ec-icon
+      name="{{index + 0.5 <= innerValue ? 'star-fill' : 'star'}}"
+      size="{{size}}"
+      color="{{index + 1 <= innerValue ? color : (index + 0.5 <= innerValue ? color : voidColor)}}"
+    />
+  </view>
+</view>

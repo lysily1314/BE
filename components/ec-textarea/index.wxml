@@ -1,0 +1,21 @@
+<view class="ec-textarea {{border ? 'ec-textarea--border' : ''}} {{focused ? 'ec-textarea--focus' : ''}} {{disabled ? 'ec-textarea--disabled' : ''}} custom-class">
+  <textarea
+    class="ec-textarea__control"
+    value="{{innerValue}}"
+    placeholder="{{placeholder}}"
+    placeholder-class="ec-textarea__placeholder"
+    disabled="{{disabled || readonly}}"
+    maxlength="{{maxlength}}"
+    auto-height="{{autoHeight}}"
+    style="{{autoHeight ? '' : 'height: ' + (rows * 48) + 'rpx;'}}"
+    bindinput="onInput"
+    bindfocus="onFocus"
+    bindblur="onBlur"
+    bindconfirm="onConfirm"
+  />
+  <view wx:if="{{showCount}}" class="ec-textarea__count">
+    <text class="ec-textarea__count-current {{innerValue.length >= maxlength ? 'ec-textarea__count-current--max' : ''}}">{{innerValue.length}}</text>
+    <text class="ec-textarea__count-divider">/</text>
+    <text>{{maxlength}}</text>
+  </view>
+</view>

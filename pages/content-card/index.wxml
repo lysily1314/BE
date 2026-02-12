@@ -1,0 +1,130 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-content-card 
+        title="{{cardData.basic.title}}" 
+        desc="{{cardData.basic.desc}}"
+        tag="{{cardData.basic.tag}}"
+        tag-type="{{cardData.basic.tagType}}"
+      >
+        <view class="card-content">
+          <text>这是卡片的主要内容区域</text>
+          <text>可以放置任意内容</text>
+        </view>
+      </ec-content-card>
+    </view>
+  </view>
+
+  <!-- 无标签卡片 -->
+  <view class="demo-block">
+    <text class="demo-block__title">无标签卡片</text>
+    <view class="demo-block__content">
+      <ec-content-card 
+        title="{{cardData.noTag.title}}" 
+        desc="{{cardData.noTag.desc}}"
+        show-tag="{{false}}"
+      >
+        <view class="card-content">
+          <text>这是一个没有标签的内容卡片</text>
+          <text>适用于简洁的信息展示</text>
+        </view>
+      </ec-content-card>
+    </view>
+  </view>
+
+  <!-- 自定义样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义样式</text>
+    <view class="demo-block__content">
+      <ec-content-card
+        title="{{cardData.customStyle.title}}"
+        desc="{{cardData.customStyle.desc}}"
+        tag="{{cardData.customStyle.tag}}"
+        tag-type="{{cardData.customStyle.tagType}}"
+        background="#f9f9f9"
+        title-color="#1989fa"
+        desc-color="#999"
+        radius="20rpx"
+        shadow="heavy"
+      >
+        <view class="card-content">
+          <text>通过属性自定义卡片样式</text>
+          <text>满足不同场景的需求</text>
+        </view>
+      </ec-content-card>
+    </view>
+  </view>
+
+  <!-- 不同阴影效果 -->
+  <view class="demo-block">
+    <text class="demo-block__title">阴影效果</text>
+    <view class="demo-block__content">
+      <view class="shadow-cards">
+        <ec-content-card
+          title="无阴影"
+          desc="shadow='none'"
+          shadow="none"
+          padding="{{false}}"
+        >
+          <view class="card-content">
+            <text>无阴影效果</text>
+          </view>
+        </ec-content-card>
+        
+        <ec-content-card
+          title="轻阴影"
+          desc="shadow='light'"
+          shadow="light"
+          padding="{{false}}"
+          style="margin-top: 32rpx;"
+        >
+          <view class="card-content">
+            <text>轻阴影效果</text>
+          </view>
+        </ec-content-card>
+        
+        <ec-content-card
+          title="重阴影"
+          desc="shadow='heavy'"
+          shadow="heavy"
+          padding="{{false}}"
+          style="margin-top: 32rpx;"
+        >
+          <view class="card-content">
+            <text>重阴影效果</text>
+          </view>
+        </ec-content-card>
+      </view>
+    </view>
+  </view>
+
+  <!-- 可点击卡片 -->
+  <view class="demo-block">
+    <text class="demo-block__title">可点击卡片</text>
+    <view class="demo-block__content">
+      <ec-content-card
+        title="{{cardData.clickable.title}}"
+        desc="{{cardData.clickable.desc}}"
+        tag="{{cardData.clickable.tag}}"
+        tag-type="{{cardData.clickable.tagType}}"
+        clickable="{{true}}"
+        bind:click="onCardClick"
+      >
+        <view class="card-content">
+          <text>这是一个可点击的卡片</text>
+          <text>点击会有交互反馈</text>
+        </view>
+      </ec-content-card>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">内容卡片 ContentCard</text>
+      <text class="demo-desc__text">用于展示结构化内容的卡片容器，常用于信息展示、列表项等场景。支持标题、描述、标签等配置，可自定义阴影、圆角、颜色等样式。</text>
+    </view>
+  </view>
+</view>

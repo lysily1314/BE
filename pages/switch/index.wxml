@@ -1,0 +1,43 @@
+<view class="demo-page">
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="开关" border>
+        <ec-switch slot="value" checked="{{s1}}" bind:change="onS1Change" />
+      </ec-cell>
+      <ec-cell title="默认开启" border="{{false}}">
+        <ec-switch slot="value" checked="{{s2}}" bind:change="onS2Change" />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">禁用状态</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="禁用（关）" border>
+        <ec-switch slot="value" disabled />
+      </ec-cell>
+      <ec-cell title="禁用（开）" border="{{false}}">
+        <ec-switch slot="value" checked disabled />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">自定义颜色</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="自定义颜色" border="{{false}}">
+        <ec-switch slot="value" checked active-color="#07C160" inactive-color="#ee0a24" />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">自定义大小</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-switch checked size="40rpx" />
+      <ec-switch checked size="52rpx" />
+      <ec-switch checked size="64rpx" />
+    </view>
+  </view>
+</view>

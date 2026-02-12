@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Tag 标签",
+  "usingComponents": {
+    "ec-tag": "/components/ec-tag/index"
+  }
+}

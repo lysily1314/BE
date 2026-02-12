@@ -1,0 +1,52 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-cell 
+        title="选择地址" 
+        value="{{selectedAddress || '请选择地址'}}" 
+        is-link="{{true}}"
+        bind:tap="onShowPicker"
+      />
+      <ec-button 
+        type="primary" 
+        size="small" 
+        style="margin-top: 20rpx;" 
+        bind:tap="onClearAddress"
+      >
+        清空地址
+      </ec-button>
+    </view>
+  </view>
+
+  <!-- 显示当前选择的地址 -->
+  <view class="demo-block" wx:if="{{selectedAddress}}">
+    <text class="demo-block__title">当前选择</text>
+    <view class="demo-block__content">
+      <view class="selected-address">
+        <text>{{selectedAddress}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">地址选择器 AddressPicker</text>
+      <text class="demo-desc__text">用于选择省、市、区三级地址的组件。支持自定义标题、按钮文字，可通过 value 属性设置初始值，支持确认、取消、关闭等事件回调。</text>
+    </view>
+  </view>
+
+  <!-- 地址选择器组件 -->
+  <ec-address-picker
+    show="{{showAddressPicker}}"
+    value="{{addressValue}}"
+    title="请选择收货地址"
+    confirm-button-text="确定"
+    cancel-button-text="取消"
+    bind:confirm="onAddressConfirm"
+    bind:cancel="onAddressCancel"
+    bind:close="onAddressClose"
+  />
+</view>

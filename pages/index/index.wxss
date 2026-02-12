@@ -1,0 +1,94 @@
+/* 首页样式 */
+.page {
+  min-height: 100vh;
+  background: var(--ec-bg);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 头部品牌区 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 40rpx 60rpx;
+  background: var(--ec-white);
+}
+
+.header__logo {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20rpx;
+}
+
+.header__logo-text {
+  font-size: 72rpx;
+  font-weight: 700;
+  color: var(--ec-text-primary);
+  letter-spacing: -2rpx;
+}
+
+.header__logo-dot {
+  font-size: 72rpx;
+  font-weight: 700;
+  color: var(--ec-primary);
+  margin: 0 4rpx;
+}
+
+.header__desc {
+  font-size: var(--ec-font-body);
+  color: var(--ec-text-secondary);
+  margin-bottom: 12rpx;
+}
+
+.header__version {
+  font-size: var(--ec-font-sm);
+  color: var(--ec-text-placeholder);
+  background: var(--ec-bg);
+  padding: 6rpx 20rpx;
+  border-radius: var(--ec-radius-round);
+}
+
+/* 分组 */
+.section {
+  margin-top: 24rpx;
+}
+
+.section__title {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 32rpx 16rpx;
+}
+
+.section__title-text {
+  font-size: var(--ec-font-sm);
+  color: var(--ec-text-placeholder);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2rpx;
+}
+
+.section__title-badge {
+  font-size: 20rpx;
+  color: var(--ec-primary);
+  background: var(--ec-primary-light);
+  padding: 2rpx 12rpx;
+  border-radius: var(--ec-radius-round);
+  margin-left: 12rpx;
+  font-weight: 600;
+}
+
+.section__list {
+  background: var(--ec-white);
+  border-radius: 0;
+}
+
+/* 底部 */
+.footer {
+  padding: 60rpx 0 40rpx;
+  text-align: center;
+}
+
+.footer__text {
+  font-size: var(--ec-font-sm);
+  color: var(--ec-text-placeholder);
+}

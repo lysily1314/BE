@@ -1,0 +1,15 @@
+<view 
+  class="ec-tag ec-tag--{{type}} ec-tag--{{size}} ec-tag--{{shape}} {{plain ? 'ec-tag--plain' : ''}} {{mark ? 'ec-tag--mark' : ''}} {{block ? 'ec-tag--block' : ''}} {{closable ? 'ec-tag--closable' : ''}} {{custom-class}}" 
+  style="{{color && !plain ? 'background:' + color + ';' : ''}}{{color && plain ? 'border-color:' + color + ';' : ''}}{{textColor ? 'color:' + textColor + ';' : ''}}{{tagSize !== 'auto' ? 'font-size:' + tagSize + ';' : ''}}"
+  hover-class="{{closable ? 'ec-tag--hover' : ''}}"
+  hover-stay-time="70"
+>
+  <text class="ec-tag__text">{{content}}</text>
+  <ec-icon 
+    wx:if="{{closable}}" 
+    class="ec-tag__close-icon" 
+    name="close" 
+    size="{{size === 'small' ? '20rpx' : size === 'large' ? '24rpx' : '22rpx'}}"
+    bind:tap="onClose"
+  />
+</view>

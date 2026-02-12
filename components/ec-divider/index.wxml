@@ -1,0 +1,14 @@
+<view class="ec-divider {{custom-class}}" style="{{customStyle}}">
+  <view 
+    class="ec-divider__inner {{contentPosition}}" 
+    style="{{dividerStyle}}"
+  >
+    <view 
+      class="ec-divider__text" 
+      wx:if="{{true}}" 
+      style="{{textStyle}}"
+    >
+      <slot />
+    </view>
+  </view>
+</view>

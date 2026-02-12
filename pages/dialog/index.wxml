@@ -1,0 +1,68 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-button type="primary" bind:tap="showBasic">标准对话框</ec-button>
+      <ec-button type="default" bind:tap="showNoTitle">无标题对话框</ec-button>
+    </view>
+  </view>
+
+  <!-- 仅确认 -->
+  <view class="demo-block">
+    <text class="demo-block__title">仅确认按钮</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-button type="primary" bind:tap="showConfirm">仅确认按钮</ec-button>
+    </view>
+  </view>
+
+  <!-- 自定义 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义内容</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-button type="primary" bind:tap="showCustom">自定义内容</ec-button>
+    </view>
+  </view>
+
+  <!-- 对话框实例 -->
+  <ec-dialog
+    show="{{showBasicDialog}}"
+    title="提示"
+    content="确定要删除该商品吗？删除后不可恢复。"
+    bind:confirm="onBasicConfirm"
+    bind:cancel="onBasicCancel"
+  />
+
+  <ec-dialog
+    show="{{showNoTitleDialog}}"
+    content="当前商品已加入购物车"
+    confirm-text="知道了"
+    bind:confirm="onNoTitleConfirm"
+    bind:close="onNoTitleClose"
+  />
+
+  <ec-dialog
+    show="{{showConfirmOnly}}"
+    title="温馨提示"
+    content="您的订单已提交成功，预计3天内送达。"
+    show-cancel="{{false}}"
+    confirm-text="好的"
+    bind:confirm="onConfirmOnly"
+  />
+
+  <ec-dialog
+    show="{{showCustomDialog}}"
+    title="选择规格"
+    bind:confirm="onCustomConfirm"
+    bind:close="onCustomClose"
+  >
+    <view class="custom-dialog-content">
+      <text class="custom-dialog-text">请选择您需要的商品规格：</text>
+      <view class="custom-dialog-tags">
+        <text class="custom-dialog-tag custom-dialog-tag--active">红色 M</text>
+        <text class="custom-dialog-tag">蓝色 L</text>
+        <text class="custom-dialog-tag">黑色 XL</text>
+      </view>
+    </view>
+  </ec-dialog>
+</view>

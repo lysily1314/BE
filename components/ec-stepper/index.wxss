@@ -1,0 +1,59 @@
+/* ec-stepper 步进器组件 */
+.ec-stepper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ec-stepper--disabled {
+  opacity: 0.5;
+}
+
+.ec-stepper__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56rpx;
+  height: 56rpx;
+  background: var(--ec-bg, #f7f8fa);
+  border-radius: var(--ec-radius, 8rpx);
+  transition: background 0.1s;
+}
+
+.ec-stepper__btn--disabled {
+  opacity: 0.4;
+}
+
+.ec-stepper__btn--active {
+  background: #e8e8e8;
+}
+
+/* 加减号图标 */
+.ec-stepper__btn-icon {
+  position: relative;
+  width: 24rpx;
+  height: 2rpx;
+  background: var(--ec-text-primary, #333);
+}
+
+.ec-stepper__btn-icon--plus::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2rpx;
+  height: 24rpx;
+  background: var(--ec-text-primary, #333);
+  transform: translate(-50%, -50%);
+}
+
+.ec-stepper__input {
+  height: 56rpx;
+  margin: 0 4rpx;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  text-align: center;
+  background: var(--ec-bg, #f7f8fa);
+  border-radius: var(--ec-radius, 8rpx);
+  border: none;
+  min-height: 0;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Divider 分割线",
+  "usingComponents": {
+    "ec-divider": "/components/ec-divider/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

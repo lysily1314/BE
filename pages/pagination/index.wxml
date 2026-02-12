@@ -1,0 +1,92 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-cell title="当前页码" value="{{basicPagination.current}}" is-link="{{false}}" />
+      <ec-pagination
+        current="{{basicPagination.current}}"
+        total="{{basicPagination.total}}"
+        page-size="{{basicPagination.pageSize}}"
+        data-type="basicPagination"
+        bind:change="onPageChange"
+      />
+    </view>
+  </view>
+
+  <!-- 显示总数 -->
+  <view class="demo-block">
+    <text class="demo-block__title">显示总数</text>
+    <view class="demo-block__content">
+      <ec-pagination
+        current="{{totalPagination.current}}"
+        total="{{totalPagination.total}}"
+        page-size="{{totalPagination.pageSize}}"
+        show-total="{{true}}"
+        data-type="totalPagination"
+        bind:change="onPageChange"
+      />
+    </view>
+  </view>
+
+  <!-- 条数选择器 -->
+  <view class="demo-block">
+    <text class="demo-block__title">条数选择器</text>
+    <view class="demo-block__content">
+      <ec-pagination
+        current="{{selectorPagination.current}}"
+        total="{{selectorPagination.total}}"
+        page-size="{{selectorPagination.pageSize}}"
+        show-page-size-selector="{{true}}"
+        data-type="selectorPagination"
+        bind:change="onPageChange"
+        bind:pageSizeChange="onPageSizeChange"
+      />
+    </view>
+  </view>
+
+  <!-- 跳转分页 -->
+  <view class="demo-block">
+    <text class="demo-block__title">跳转分页</text>
+    <view class="demo-block__content">
+      <ec-pagination
+        current="{{jumpPagination.current}}"
+        total="{{jumpPagination.total}}"
+        page-size="{{jumpPagination.pageSize}}"
+        show-quick-jump="{{true}}"
+        data-type="jumpPagination"
+        bind:change="onPageChange"
+      />
+    </view>
+  </view>
+
+  <!-- 不同样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">不同大小</text>
+    <view class="demo-block__content">
+      <ec-pagination
+        current="1"
+        total="50"
+        page-size="10"
+        size="small"
+        show-total="{{true}}"
+        style="margin-bottom: 24rpx;"
+      />
+      <ec-pagination
+        current="1"
+        total="50"
+        page-size="10"
+        size="large"
+        show-total="{{true}}"
+      />
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">分页 Pagination</text>
+      <text class="demo-desc__text">用于分页显示数据的组件。支持显示总数、每页条数选择、快速跳转等功能，可自定义大小和样式。</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,73 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-cell title="内容区域" is-link="{{false}}" />
+      <ec-divider />
+      <ec-cell title="内容区域" is-link="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 设置文字 -->
+  <view class="demo-block">
+    <text class="demo-block__title">设置文字</text>
+    <view class="demo-block__content">
+      <ec-cell title="内容区域" is-link="{{false}}" />
+      <ec-divider>分割线</ec-divider>
+      <ec-cell title="内容区域" is-link="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 文字位置 -->
+  <view class="demo-block">
+    <text class="demo-block__title">文字位置</text>
+    <view class="demo-block__content">
+      <ec-cell title="内容区域" is-link="{{false}}" />
+      <ec-divider content-position="left">左边</ec-divider>
+      <ec-cell title="内容区域" is-link="{{false}}" />
+      <ec-divider content-position="right">右边</ec-divider>
+      <ec-cell title="内容区域" is-link="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 虚线样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">虚线样式</text>
+    <view class="demo-block__content">
+      <ec-cell title="内容区域" is-link="{{false}}" />
+      <ec-divider dashed="true">虚线分割线</ec-divider>
+      <ec-cell title="内容区域" is-link="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 自定义样式 -->
+  <view class="demo-block">
+    <text class="demo-block__title">自定义样式</text>
+    <view class="demo-block__content">
+      <ec-cell title="内容区域" is-link="{{false}}" />
+      <ec-divider color="#FF4400" text-color="#FF4400" font-size="28">红色分割线</ec-divider>
+      <ec-cell title="内容区域" is-link="{{false}}" />
+      <ec-divider color="#07c160" text-color="#07c160" font-size="32" dashed="true">绿色虚线</ec-divider>
+      <ec-cell title="内容区域" is-link="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 不同粗细 -->
+  <view class="demo-block">
+    <text class="demo-block__title">不同粗细</text>
+    <view class="demo-block__content">
+      <ec-cell title="内容区域" is-link="{{false}}" />
+      <ec-divider hairline="{{false}}">加粗分割线</ec-divider>
+      <ec-cell title="内容区域" is-link="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">分割线 Divider</text>
+      <text class="demo-desc__text">用于分隔内容的分割线组件。支持设置文字内容、位置、虚线样式、颜色等，可自定义粗细和样式。</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+/* ec-index-anchor 索引锚点组件 */
+.ec-index-anchor-wrapper {
+  position: relative;
+}
+
+.ec-index-anchor {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 16rpx 32rpx;
+  color: var(--ec-text-primary, #333);
+  font-size: var(--ec-font-sm, 24rpx);
+  line-height: 1.5;
+  background: var(--ec-bg, #f7f8fa);
+}
+
+.ec-index-anchor--active {
+  color: var(--ec-primary, #FF4400);
+  background: #fff;
+  font-weight: 600;
+}

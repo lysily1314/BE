@@ -1,0 +1,42 @@
+<view class="demo-page">
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="评分" border="{{false}}">
+        <ec-rate slot="value" value="{{rate1}}" bind:change="onRate1Change" />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">半星评分</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="半星" border="{{false}}">
+        <ec-rate slot="value" value="{{rate2}}" allow-half bind:change="onRate2Change" />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">自定义颜色</text>
+    <view class="demo-block__content demo-block__content--flush">
+      <ec-cell title="自定义" border="{{false}}">
+        <ec-rate slot="value" value="{{rate3}}" color="#FF4400" void-color="#FFE5D9" bind:change="onRate3Change" />
+      </ec-cell>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">自定义个数</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-rate value="{{3}}" count="{{6}}" size="40rpx" />
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <text class="demo-block__title">只读状态</text>
+    <view class="demo-block__content demo-block__content--row">
+      <ec-rate value="{{4}}" readonly size="40rpx" />
+    </view>
+  </view>
+</view>

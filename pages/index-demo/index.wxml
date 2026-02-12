@@ -1,0 +1,27 @@
+<view class="demo-page">
+  <!-- 基础用法 -->
+  <view class="demo-block">
+    <text class="demo-block__title">基础用法</text>
+    <view class="demo-block__content">
+      <ec-index-bar 
+        index-list="{{indexList}}" 
+        bind:select="onSelect"
+      >
+        <view wx:for="{{indexList}}" wx:key="index">
+          <ec-index-anchor index="{{item}}" />
+          <view class="index-item" wx:for="{{5}}" wx:key="index">
+            <ec-cell title="{{item}}{{index + 1}}" is-link="{{true}}" />
+          </view>
+        </view>
+      </ec-index-bar>
+    </view>
+  </view>
+
+  <!-- 选项说明 -->
+  <view class="demo-block">
+    <view class="demo-block__content demo-block__content--desc">
+      <text class="demo-desc__title">索引选择器 Index</text>
+      <text class="demo-desc__text">用于快速定位到列表的某个位置。由索引选择器（ec-index-bar）和索引锚点（ec-index-anchor）两个组件配合使用，支持滑动选择和点击选择。</text>
+    </view>
+  </view>
+</view>

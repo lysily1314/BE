@@ -1,0 +1,47 @@
+<view class="ec-swiper-card {{custom-class}}">
+  <!-- 轮播图容器 -->
+  <swiper
+    class="ec-swiper-card__swiper"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+    circular="{{circular}}"
+    current="{{currentIndex}}"
+    bind:change="onChange"
+    bind:touchstart="onTouchStart"
+    bind:touchmove="onTouchMove"
+    bind:touchend="onTouchEnd"
+    style="height: {{cardHeight}}rpx;"
+  >
+    <swiper-item wx:for="{{list}}" wx:key="index">
+      <view class="ec-swiper-card__item" style="width: {{cardWidth}}rpx; margin: 0 {{cardMargin / 2}}rpx;">
+        <image
+          class="ec-swiper-card__image {{showRadius ? 'ec-swiper-card__image--radius' : ''}} {{showShadow ? 'ec-swiper-card__image--shadow' : ''}}"
+          src="{{item.url || item}}"
+          mode="aspectFill"
+          bind:tap="onImageTap"
+          data-index="{{index}}"
+          style="width: {{cardWidth}}rpx; height: {{cardHeight}}rpx;"
+        />
+        <view class="ec-swiper-card__title" wx:if="{{item.title}}">
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  
+  <!-- 指示器 -->
+  <view 
+    class="ec-swiper-card__indicator ec-swiper-card__indicator--{{indicatorDots}}" 
+    wx:if="{{indicatorDots !== 'none'}}"
+  >
+    <view
+      class="ec-swiper-card__indicator-dot {{currentIndex === index ? 'ec-swiper-card__indicator-dot--active' : ''}}"
+      wx:for="{{list}}" 
+      wx:key="index"
+      data-index="{{index}}"
+      bind:tap="onIndicatorTap"
+      style="background-color: {{currentIndex === index ? indicatorActiveColor : indicatorColor}};"
+    ></view>
+  </view>
+</view>

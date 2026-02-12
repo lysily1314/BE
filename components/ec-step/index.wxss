@@ -1,0 +1,127 @@
+/* ec-step 步骤项组件 */
+.ec-step {
+  position: relative;
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-secondary, #666);
+}
+
+/* 横向步骤 */
+.ec-step__horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.ec-step__icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.ec-step__icon {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: var(--ec-border, #C8C9CC);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.ec-step__icon--active {
+  background: var(--ec-primary, #FF4400);
+  position: relative;
+}
+
+.ec-step__icon--active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16rpx;
+  height: 16rpx;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 横向连接线 */
+.ec-step__line {
+  position: absolute;
+  top: 20rpx;
+  left: 50%;
+  right: -50%;
+  height: 2rpx;
+  background: var(--ec-border, #C8C9CC);
+  z-index: 1;
+  transition: background 0.3s;
+}
+
+.ec-step__content {
+  text-align: center;
+  margin-top: 16rpx;
+  padding: 0 8rpx;
+}
+
+.ec-step__title {
+  display: block;
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-secondary, #999);
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+
+.ec-step__desc {
+  display: block;
+  font-size: var(--ec-font-xs, 20rpx);
+  color: var(--ec-text-placeholder, #ccc);
+  margin-top: 8rpx;
+  line-height: 1.4;
+}
+
+/* 纵向步骤 */
+.ec-step__vertical {
+  display: flex;
+  position: relative;
+  padding-bottom: 40rpx;
+}
+
+.ec-step__left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60rpx;
+  flex-shrink: 0;
+}
+
+.ec-step__right {
+  flex: 1;
+  padding-left: 20rpx;
+  min-width: 0;
+}
+
+/* 纵向连接线 */
+.ec-step__vertical .ec-step__line {
+  position: absolute;
+  top: 40rpx;
+  left: 50%;
+  bottom: -40rpx;
+  width: 2rpx;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.ec-step__vertical .ec-step__title {
+  text-align: left;
+  font-size: var(--ec-font-body, 28rpx);
+}
+
+.ec-step__vertical .ec-step__desc {
+  text-align: left;
+  margin-top: 12rpx;
+}

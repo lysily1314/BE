@@ -1,0 +1,51 @@
+/* ec-divider 分割线组件 */
+.ec-divider {
+  position: relative;
+  margin: 24rpx 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ec-divider__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ec-divider__inner.left {
+  justify-content: flex-start;
+}
+
+.ec-divider__inner.center {
+  justify-content: center;
+}
+
+.ec-divider__inner.right {
+  justify-content: flex-end;
+}
+
+.ec-divider__inner::before,
+.ec-divider__inner::after {
+  content: '';
+  display: block;
+  flex: 1;
+  border-top: 1px solid var(--ec-border, #eee);
+  border-bottom: 0;
+}
+
+.ec-divider__inner.left::before {
+  display: none;
+}
+
+.ec-divider__inner.right::after {
+  display: none;
+}
+
+.ec-divider__text {
+  padding: 0 32rpx;
+  white-space: nowrap;
+  color: var(--ec-text-secondary, #666);
+  font-size: var(--ec-font-sm, 24rpx);
+}

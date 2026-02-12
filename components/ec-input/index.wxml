@@ -1,0 +1,50 @@
+<view class="ec-input {{border ? 'ec-input--border' : ''}} {{focused ? 'ec-input--focus' : ''}} {{error ? 'ec-input--error' : ''}} {{disabled ? 'ec-input--disabled' : ''}} custom-class">
+  <!-- 左侧前缀图标 -->
+  <view wx:if="{{prefixIcon}}" class="ec-input__prefix">
+    <ec-icon name="{{prefixIcon}}" size="32rpx" />
+  </view>
+
+  <!-- 标签 -->
+  <view wx:if="{{label}}" class="ec-input__label" style="width: {{labelWidth}}; min-width: {{labelWidth}};">
+    <text wx:if="{{required}}" class="ec-input__required">*</text>
+    <text class="ec-input__label-text">{{label}}</text>
+  </view>
+
+  <!-- 输入区域 -->
+  <view class="ec-input__body">
+    <input
+      class="ec-input__control"
+      style="text-align: {{inputAlign}};"
+      type="{{type === 'password' ? 'text' : type}}"
+      password="{{type === 'password'}}"
+      value="{{innerValue}}"
+      placeholder="{{placeholder}}"
+      placeholder-class="ec-input__placeholder"
+      disabled="{{disabled || readonly}}"
+      maxlength="{{maxlength}}"
+      bindinput="onInput"
+      bindfocus="onFocus"
+      bindblur="onBlur"
+      bindconfirm="onConfirm"
+    />
+
+    <!-- 清除按钮 -->
+    <view
+      wx:if="{{clearable && innerValue && focused && !disabled && !readonly}}"
+      class="ec-input__clear"
+      bind:tap="onClear"
+    >
+      <ec-icon name="clear" size="28rpx" color="#999" />
+    </view>
+
+    <!-- 后缀图标 -->
+    <view wx:if="{{suffixIcon}}" class="ec-input__suffix" bind:tap="onSuffixIconTap">
+      <ec-icon name="{{suffixIcon}}" size="32rpx" color="#999" />
+    </view>
+  </view>
+
+  <!-- 错误信息 -->
+  <view wx:if="{{errorMessage}}" class="ec-input__error-msg">
+    <text>{{errorMessage}}</text>
+  </view>
+</view>

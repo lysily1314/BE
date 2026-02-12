@@ -1,0 +1,74 @@
+/* ec-toast 轻提示组件 */
+.ec-toast {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* 遮罩 */
+.ec-toast__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.ec-toast__mask--show {
+  opacity: 1;
+}
+
+/* 内容容器 */
+.ec-toast__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 70%;
+  padding: 20rpx 40rpx;
+  background: rgba(0, 0, 0, 0.72);
+  border-radius: var(--ec-radius-lg);
+  pointer-events: auto;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 0.3s ease-out;
+}
+
+.ec-toast__container--show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 带图标模式 */
+.ec-toast__container--icon {
+  flex-direction: column;
+  min-width: 240rpx;
+  padding: 48rpx 40rpx 36rpx;
+}
+
+/* 图标 */
+.ec-toast__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16rpx;
+}
+
+/* 文字 */
+.ec-toast__text {
+  color: #fff;
+  font-size: var(--ec-font-body);
+  text-align: center;
+  word-break: break-all;
+  line-height: 1.5;
+}

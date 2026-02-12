@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "NoticeBar 通告栏",
+  "usingComponents": {
+    "ec-notice-bar": "/components/ec-notice-bar/index",
+    "ec-button": "/components/ec-button/index",
+    "ec-cell": "/components/ec-cell/index"
+  }
+}

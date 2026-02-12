@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Panel 面板",
+  "usingComponents": {
+    "ec-panel": "/components/ec-panel/index"
+  }
+}

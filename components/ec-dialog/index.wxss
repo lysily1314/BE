@@ -1,0 +1,105 @@
+/* ec-dialog 对话框组件 */
+.ec-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 遮罩 */
+.ec-dialog__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.ec-dialog__mask--show {
+  opacity: 1;
+}
+
+/* 弹窗容器 */
+.ec-dialog__wrapper {
+  position: relative;
+  width: 580rpx;
+  background: var(--ec-white, #fff);
+  border-radius: 24rpx;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 0.3s ease-out;
+}
+
+.ec-dialog__wrapper--show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 标题 */
+.ec-dialog__header {
+  padding: 48rpx 40rpx 0;
+  text-align: center;
+}
+
+.ec-dialog__title {
+  font-size: var(--ec-font-title, 32rpx);
+  font-weight: 600;
+  color: var(--ec-text-primary, #333);
+  line-height: 1.5;
+}
+
+/* 内容 */
+.ec-dialog__content {
+  padding: 24rpx 40rpx 40rpx;
+  text-align: center;
+  min-height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ec-dialog__message {
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-secondary, #666);
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+/* 按钮组 */
+.ec-dialog__footer {
+  display: flex;
+  border-top: 1rpx solid var(--ec-border, #eee);
+}
+
+.ec-dialog__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  font-size: var(--ec-font-title, 32rpx);
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.ec-dialog__btn--cancel {
+  color: var(--ec-text-secondary, #666);
+  border-right: 1rpx solid var(--ec-border, #eee);
+}
+
+.ec-dialog__btn--confirm {
+  color: var(--ec-primary, #FF4400);
+}
+
+.ec-dialog__btn--active {
+  background: #f5f5f5;
+}

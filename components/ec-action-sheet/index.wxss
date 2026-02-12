@@ -1,0 +1,183 @@
+/* ec-action-sheet 动作面板组件 */
+.ec-action-sheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10002;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* 遮罩层 */
+.ec-action-sheet__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.ec-action-sheet__mask--show {
+  opacity: 1;
+}
+
+/* 面板 */
+.ec-action-sheet__panel {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  background: var(--ec-white, #fff);
+  border-radius: var(--ec-radius-lg, 16rpx) var(--ec-radius-lg, 16rpx) 0 0;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.ec-action-sheet__panel--show {
+  transform: translateY(0);
+}
+
+/* 标题 */
+.ec-action-sheet__header {
+  padding: 32rpx;
+  text-align: center;
+  position: relative;
+}
+
+.ec-action-sheet__header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+}
+
+.ec-action-sheet__title {
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* 内容区 */
+.ec-action-sheet__content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ec-action-sheet__item {
+  display: flex;
+  align-items: center;
+  min-height: 100rpx;
+  padding: 0 32rpx;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.ec-action-sheet__item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 32rpx;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+}
+
+.ec-action-sheet__item:last-child::after {
+  display: none;
+}
+
+.ec-action-sheet__item--first {
+  border-top-left-radius: var(--ec-radius-lg, 16rpx);
+  border-top-right-radius: var(--ec-radius-lg, 16rpx);
+}
+
+.ec-action-sheet__item--active {
+  background: #f5f5f5;
+}
+
+.ec-action-sheet__item--disabled {
+  opacity: 0.5;
+}
+
+.ec-action-sheet__item--loading {
+  opacity: 0.7;
+}
+
+/* 加载图标 */
+.ec-action-sheet__loading-icon {
+  width: 28rpx;
+  height: 28rpx;
+  border: 2rpx solid var(--ec-primary, #FF4400);
+  border-color: var(--ec-primary, #FF4400) transparent var(--ec-primary, #FF4400) transparent;
+  border-radius: 50%;
+  margin-right: 16rpx;
+  animation: ecActionSheetSpin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ecActionSheetSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 文字 */
+.ec-action-sheet__name {
+  flex: 1;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.ec-action-sheet__subname {
+  font-size: var(--ec-font-sm, 24rpx);
+  color: var(--ec-text-placeholder, #999);
+  margin-left: 16rpx;
+  line-height: 1.4;
+}
+
+/* 取消按钮 */
+.ec-action-sheet__cancel {
+  padding: 20rpx 32rpx;
+  text-align: center;
+  margin-top: 16rpx;
+  background: var(--ec-bg, #f7f8fa);
+  transition: background 0.2s;
+}
+
+.ec-action-sheet__cancel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: var(--ec-border, #eee);
+  transform: scaleY(0.5);
+}
+
+.ec-action-sheet__cancel--active {
+  background: #e8e8e8;
+}
+
+.ec-action-sheet__cancel-text {
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  font-weight: 500;
+  line-height: 1.5;
+}

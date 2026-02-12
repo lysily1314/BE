@@ -1,0 +1,56 @@
+/* ec-checkbox 复选组件 */
+.ec-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ec-checkbox--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ec-checkbox__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid #dcdee0;
+  background: var(--ec-white, #fff);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.ec-checkbox__icon--square {
+  border-radius: var(--ec-radius-sm, 4rpx);
+}
+
+.ec-checkbox__icon--round {
+  border-radius: 50%;
+}
+
+.ec-checkbox--checked .ec-checkbox__icon {
+  border-color: var(--ec-primary, #FF4400);
+  background: var(--ec-primary, #FF4400);
+}
+
+.ec-checkbox__check {
+  width: 40%;
+  height: 22%;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-10%);
+}
+
+.ec-checkbox__label {
+  margin-left: 16rpx;
+  font-size: var(--ec-font-body, 28rpx);
+  color: var(--ec-text-primary, #333);
+  line-height: 1.5;
+}
+
+.ec-checkbox--disabled .ec-checkbox__label {
+  color: var(--ec-text-placeholder, #999);
+}
