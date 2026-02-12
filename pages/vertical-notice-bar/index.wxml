@@ -1,0 +1,205 @@
+<view class="demo-page">
+  <view class="demo-header">
+    <text class="demo-header__title">VerticalNoticeBar 纵向通告栏</text>
+    <text class="demo-header__desc">支持垂直方向滚动展示多条通知</text>
+  </view>
+
+  <view class="demo-section">
+    <view class="demo-block">
+      <text class="demo-block__title">基础用法</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{basicNotices}}"
+          bind:click="onItemClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">带标签的通告</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{taggedNotices}}"
+          bind:click="onItemClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">可跳转链接的通告</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{linkNotices}}"
+          bind:click="onItemClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">不同类型的通告</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{typeNotices}}"
+          type="default"
+          bind:click="onItemClick"
+        />
+      </view>
+      <view class="demo-block__content" style="margin-top: 20rpx;">
+        <ec-vertical-notice-bar
+          data="{{typeNotices}}"
+          type="primary"
+          bind:click="onItemClick"
+        />
+      </view>
+      <view class="demo-block__content" style="margin-top: 20rpx;">
+        <ec-vertical-notice-bar
+          data="{{typeNotices}}"
+          type="success"
+          bind:click="onItemClick"
+        />
+      </view>
+      <view class="demo-block__content" style="margin-top: 20rpx;">
+        <ec-vertical-notice-bar
+          data="{{typeNotices}}"
+          type="warning"
+          bind:click="onItemClick"
+        />
+      </view>
+      <view class="demo-block__content" style="margin-top: 20rpx;">
+        <ec-vertical-notice-bar
+          data="{{typeNotices}}"
+          type="danger"
+          bind:click="onItemClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">自定义样式</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{customNotices}}"
+          height="100rpx"
+          fontSize="32rpx"
+          lineHeight="2"
+          padding="0 40rpx"
+          borderRadius="16rpx"
+          backgroundColor="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          textColor="#ffffff"
+          iconColor="#ffffff"
+          bind:click="onItemClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">自定义滚动速度</text>
+      <view class="demo-block__content">
+        <text class="info-text">快速滚动 (1000ms)</text>
+        <view style="margin-top: 20rpx;">
+          <ec-vertical-notice-bar
+            data="{{speedNotices}}"
+            speed="1000"
+            bind:click="onItemClick"
+          />
+        </view>
+      </view>
+      <view class="demo-block__content" style="margin-top: 20rpx;">
+        <text class="info-text">慢速滚动 (5000ms)</text>
+        <view style="margin-top: 20rpx;">
+          <ec-vertical-notice-bar
+            data="{{speedNotices}}"
+            speed="5000"
+            bind:click="onItemClick"
+          />
+        </view>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">单条通告</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{singleNotice}}"
+          bind:click="onItemClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">可关闭的通告栏</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{closeableNotices}}"
+          closeable="{{true}}"
+          bind:click="onItemClick"
+          bind:close="onClose"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">触摸暂停</text>
+      <view class="demo-block__content">
+        <text class="info-text">触摸通告栏可以暂停滚动，松开后继续</text>
+        <view style="margin-top: 20rpx;">
+          <ec-vertical-notice-bar
+            id="pauseNoticeBar"
+            data="{{pauseNotices}}"
+            pause-on-touch="{{true}}"
+            bind:click="onItemClick"
+          />
+        </view>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">手动控制</text>
+      <view class="demo-block__content">
+        <text class="info-text">当前: 第{{currentIndex + 1}}条</text>
+        <text class="info-text" wx:if="{{currentItem}}">内容: {{currentItem.text}}</text>
+        <view style="margin-top: 20rpx;">
+          <ec-vertical-notice-bar
+            id="pauseNoticeBar"
+            data="{{pauseNotices}}"
+            auto-scroll="{{false}}"
+            bind:click="onItemClick"
+          />
+        </view>
+        <view class="demo-block__content--row" style="margin-top: 20rpx;">
+          <ec-button type="primary" size="small" bind:tap="prevNotice">上一条</ec-button>
+          <ec-button type="default" size="small" bind:tap="nextNotice">下一条</ec-button>
+          <ec-button type="default" size="small" bind:tap="goToIndex">回到第一条</ec-button>
+        </view>
+        <view class="demo-block__content--row" style="margin-top: 20rpx;">
+          <ec-button type="primary" size="small" bind:tap="pauseScroll">暂停</ec-button>
+          <ec-button type="default" size="small" bind:tap="resumeScroll">恢复</ec-button>
+          <ec-button type="default" size="small" bind:tap="getCurrentInfo">获取当前信息</ec-button>
+        </view>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">隐藏图标</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{basicNotices}}"
+          show-icon="{{false}}"
+          bind:click="onItemClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">自定义图标</text>
+      <view class="demo-block__content">
+        <ec-vertical-notice-bar
+          data="{{basicNotices}}"
+          default-icon="notification"
+          bind:click="onItemClick"
+          bind:iconclick="onIconClick"
+        />
+      </view>
+    </view>
+  </view>
+</view>

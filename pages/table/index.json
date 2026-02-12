@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Table 表格",
+  "usingComponents": {
+    "ec-table": "/components/ec-table/index",
+    "ec-button": "/components/ec-button/index"
+  }
+}

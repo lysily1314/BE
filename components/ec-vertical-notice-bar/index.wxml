@@ -1,0 +1,54 @@
+<view 
+  class="ec-vertical-notice-bar ec-vertical-notice-bar--{{type}} {{custom-class}}" 
+  wx:if="{{show}}"
+  style="height: {{height}}; padding: {{padding}}; border-radius: {{borderRadius}}; background: {{backgroundColor}};"
+  bind:touchstart="onTouchStart"
+  bind:touchmove="onTouchMove"
+  bind:touchend="onTouchEnd"
+>
+  <view class="ec-vertical-notice-bar__content">
+    <view 
+      class="ec-vertical-notice-bar__icon" 
+      wx:if="{{showIcon}}" 
+      bind:tap="onIconClick"
+      style="color: {{iconColor}};"
+    >
+      <ec-icon name="{{defaultIcon}}" size="32rpx" />
+    </view>
+    
+    <view class="ec-vertical-notice-bar__scroll">
+      <view 
+        class="ec-vertical-notice-bar__wrapper" 
+        animation="{{animationData}}"
+      >
+        <view 
+          class="ec-vertical-notice-bar__item" 
+          wx:for="{{displayData}}" 
+          wx:key="index"
+          data-index="{{index}}"
+          bind:tap="onItemClick"
+          style="font-size: {{fontSize}}; line-height: {{lineHeight}}; color: {{textColor}};"
+        >
+          <view class="ec-vertical-notice-bar__item-content">
+            <text class="ec-vertical-notice-bar__item-text">{{item.text}}</text>
+            <text 
+              class="ec-vertical-notice-bar__item-tag" 
+              wx:if="{{item.tag}}"
+              style="background: {{item.tagColor || 'var(--ec-primary, #FF4400)'}};"
+            >
+              {{item.tag}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view 
+      class="ec-vertical-notice-bar__close" 
+      wx:if="{{showClose || closeable}}" 
+      bind:tap="onClose"
+    >
+      <ec-icon name="close" size="28rpx" />
+    </view>
+  </view>
+</view>

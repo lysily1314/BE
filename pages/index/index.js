@@ -43,7 +43,11 @@ Page({
       { name: 'Pagination', desc: '分页', path: '/pages/pagination/index' },
       { name: 'Swipeout', desc: '滑动菜单', path: '/pages/swipeout/index' },
       { name: 'Sticky', desc: '吸顶容器', path: '/pages/sticky/index' },
-      { name: 'SwiperCard', desc: '图片卡片轮播', path: '/pages/swiper-card/index' }
+      { name: 'SwiperCard', desc: '图片卡片轮播', path: '/pages/swiper-card/index' },
+      { name: 'RollNew', desc: '滚动容器', path: '/pages/roll-new/index' },
+      { name: 'VerticalNoticeBar', desc: '纵向通告栏', path: '/pages/vertical-notice-bar/index' },
+      { name: 'Chart', desc: '图表', path: '/pages/chart/index' },
+      { name: 'Table', desc: '表格', path: '/pages/table/index' }
     ],
     templatePages: [
       { name: 'Login', desc: '登录页模板', path: '/pages/login/index' },

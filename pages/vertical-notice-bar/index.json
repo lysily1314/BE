@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "VerticalNoticeBar 纵向通告栏",
+  "usingComponents": {
+    "ec-vertical-notice-bar": "/components/ec-vertical-notice-bar/index",
+    "ec-button": "/components/ec-button/index"
+  }
+}

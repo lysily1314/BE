@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Chart 图表",
+  "usingComponents": {
+    "ec-chart": "/components/ec-chart/index",
+    "ec-button": "/components/ec-button/index"
+  }
+}

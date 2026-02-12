@@ -1,0 +1,107 @@
+<view class="ec-table {{custom-class}}" style="width: {{width}}; height: {{height}}; max-height: {{maxHeight}};">
+  <scroll-view
+    class="ec-table__scroll"
+    scroll-x="{{scrollX}}"
+    scroll-y="{{scrollY}}"
+    show-scrollbar="{{showScrollbar}}"
+    scroll-top="{{scrollTop}}"
+    scroll-left="{{scrollLeft}}"
+    bindscroll="onScroll"
+    enable-flex="{{true}}"
+  >
+    <view class="ec-table__container">
+      <view class="ec-table__header {{fixedHeader ? 'ec-table__header--fixed' : ''}}" style="background: {{headerBackground}};">
+        <view class="ec-table__row">
+          <view 
+            class="ec-table__cell ec-table__cell--header" 
+            wx:if="{{selectionColumn}}"
+            style="width: 60rpx; text-align: center;"
+          >
+            <checkbox 
+              checked="{{selectedKeys.length > 0 && selectedKeys.length === data.length}}"
+              bindtap="selectAll"
+            />
+          </view>
+          <view 
+            class="ec-table__cell ec-table__cell--header" 
+            wx:if="{{indexColumn}}"
+            style="width: 80rpx; text-align: center; color: {{headerColor}}; font-size: {{headerFontSize}}; font-weight: {{headerFontWeight}};"
+          >
+            {{indexTitle}}
+          </view>
+          <view 
+            class="ec-table__cell ec-table__cell--header" 
+            wx:for="{{columns}}" 
+            wx:key="key"
+            style="width: {{getColumnWidth(item)}}; text-align: {{item.align || headerAlign}}; color: {{headerColor}}; font-size: {{headerFontSize}}; font-weight: {{headerFontWeight}};"
+          >
+            {{item.title}}
+          </view>
+        </view>
+      </view>
+      
+      <view class="ec-table__body" style="background: {{bodyBackground}};">
+        <view 
+          class="ec-table__row {{stripe && index % 2 === 1 ? 'ec-table__row--stripe' : ''}} {{hover ? 'ec-table__row--hover' : ''}} {{isRowSelected(item) ? 'ec-table__row--selected' : ''}}"
+          wx:for="{{visibleData}}" 
+          wx:key="rowKey"
+          data-row="{{index}}"
+          bindtap="onRowClick"
+          style="min-height: {{rowHeight}};"
+        >
+          <view 
+            class="ec-table__cell" 
+            wx:if="{{selectionColumn}}"
+            style="width: 60rpx; text-align: center;"
+            catchtap="onSelectionChange"
+            data-row="{{item}}"
+            data-key="{{item[rowKey]}}"
+          >
+            <checkbox 
+              checked="{{isRowSelected(item)}}"
+            />
+          </view>
+          <view 
+            class="ec-table__cell" 
+            wx:if="{{indexColumn}}"
+            style="width: 80rpx; text-align: center; color: {{bodyColor}}; font-size: {{bodyFontSize}};"
+          >
+            {{index + 1}}
+          </view>
+          <view 
+            class="ec-table__cell {{hover ? 'ec-table__cell--hover' : ''}}" 
+            wx:for="{{columns}}" 
+            wx:for-item="column"
+            wx:key="key"
+            style="width: {{getColumnWidth(column)}}; text-align: {{column.align || bodyAlign}}; color: {{bodyColor}}; font-size: {{bodyFontSize}}; padding: {{cellPadding}};"
+            data-row="{{index}}"
+            data-column="{{columnIndex}}"
+            data-value="{{item[column.key]}}"
+            catchtap="onCellClick"
+          >
+            <block wx:if="{{column.render}}">
+              <slot name="cell-{{column.key}}" row="{{item}}" column="{{column.key}}" value="{{item[column.key]}}"></slot>
+            </block>
+            <block wx:else>
+              {{item[column.key]}}
+            </block>
+          </view>
+        </view>
+        
+        <view 
+          class="ec-table__empty" 
+          wx:if="{{visibleData.length === 0 && !loading}}"
+        >
+          <text class="ec-table__empty-text">{{emptyText}}</text>
+        </view>
+        
+        <view 
+          class="ec-table__loading" 
+          wx:if="{{loading}}"
+        >
+          <text class="ec-table__loading-text">{{loadingText}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,38 @@
+.ec-roll-new {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--ec-white, #fff);
+}
+
+.ec-roll-new__scroll {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.ec-roll-new__content {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.ec-roll-new__content::before,
+.ec-roll-new__content::after {
+  content: '';
+  display: table;
+}
+
+.ec-roll-new__content::after {
+  clear: both;
+}
+
+.ec-roll-new::-webkit-scrollbar {
+  display: none;
+}
+
+.ec-roll-new__scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

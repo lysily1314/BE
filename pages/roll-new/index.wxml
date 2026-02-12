@@ -1,0 +1,158 @@
+<view class="demo-page">
+  <view class="demo-header">
+    <text class="demo-header__title">RollNew 滚动容器</text>
+    <text class="demo-header__desc">支持水平和垂直滚动的容器组件</text>
+  </view>
+
+  <view class="demo-section">
+    <view class="demo-block">
+      <text class="demo-block__title">基础用法 - 垂直滚动</text>
+      <view class="demo-block__content">
+        <ec-roll-new
+          id="verticalRollNew"
+          height="400rpx"
+          scroll-y="{{true}}"
+          show-scrollbar="{{true}}"
+          lower-threshold="50"
+          upper-threshold="50"
+          bind:scroll="onScroll"
+          bind:scrollstart="onScrollStart"
+          bind:scrollend="onScrollEnd"
+          bind:scrolltoupper="onScrollToUpper"
+          bind:scrolltolower="onScrollToLower"
+        >
+          <view
+            class="list-item"
+            wx:for="{{verticalList}}"
+            wx:key="id"
+            id="item-{{item.id}}"
+          >
+            <text class="list-item__title">{{item.title}}</text>
+            <text class="list-item__desc">{{item.desc}}</text>
+          </view>
+        </ec-roll-new>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">滚动信息</text>
+      <view class="demo-block__content">
+        <text class="info-text">{{scrollInfo}}</text>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">滚动控制</text>
+      <view class="demo-block__content demo-block__content--row">
+        <ec-button type="primary" size="small" bind:tap="scrollToTop">回到顶部</ec-button>
+        <ec-button type="default" size="small" bind:tap="scrollToBottom">滚动到底部</ec-button>
+        <ec-button type="default" size="small" bind:tap="scrollToElement">滚动到第25项</ec-button>
+        <ec-button type="default" size="small" bind:tap="scrollBy">向下滚动200rpx</ec-button>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">基础用法 - 水平滚动</text>
+      <view class="demo-block__content">
+        <ec-roll-new
+          height="300rpx"
+          scroll-x="{{true}}"
+          show-scrollbar="{{true}}"
+          bind:scroll="onHorizontalScroll"
+        >
+          <view class="horizontal-scroll-container">
+            <view class="horizontal-card" wx:for="{{horizontalList}}" wx:key="id">
+              <text class="horizontal-card__title">{{item.title}}</text>
+            </view>
+          </view>
+        </ec-roll-new>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">隐藏滚动条</text>
+      <view class="demo-block__content">
+        <ec-roll-new
+          height="300rpx"
+          scroll-y="{{true}}"
+          show-scrollbar="{{false}}"
+        >
+          <view class="list-item" wx:for="{{verticalList}}" wx:key="id" wx:if="{{index < 10}}">
+            <text class="list-item__title">{{item.title}}</text>
+            <text class="list-item__desc">{{item.desc}}</text>
+          </view>
+        </ec-roll-new>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">带动画滚动</text>
+      <view class="demo-block__content">
+        <ec-roll-new
+          height="300rpx"
+          scroll-y="{{true}}"
+          scroll-with-animation="{{true}}"
+          scroll-into-view="{{scrollIntoView}}"
+        >
+          <view class="list-item" wx:for="{{verticalList}}" wx:key="id" wx:if="{{index < 15}}">
+            <text class="list-item__title">{{item.title}}</text>
+            <text class="list-item__desc">{{item.desc}}</text>
+          </view>
+        </ec-roll-new>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">自定义高度</text>
+      <view class="demo-block__content">
+        <text class="info-text">当前高度: {{customHeight}}rpx</text>
+        <view style="margin-top: 20rpx;">
+          <ec-button type="primary" size="small" bind:tap="changeHeight">切换高度</ec-button>
+        </view>
+        <view style="margin-top: 20rpx;">
+          <ec-roll-new
+            height="{{customHeight}}rpx"
+            scroll-y="{{true}}"
+            show-scrollbar="{{true}}"
+          >
+            <view class="list-item" wx:for="{{verticalList}}" wx:key="id" wx:if="{{index < 20}}">
+              <text class="list-item__title">{{item.title}}</text>
+              <text class="list-item__desc">{{item.desc}}</text>
+            </view>
+          </ec-roll-new>
+        </view>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">分页滚动</text>
+      <view class="demo-block__content">
+        <ec-roll-new
+          height="300rpx"
+          scroll-y="{{true}}"
+          paging-enabled="{{true}}"
+        >
+          <view class="page-item" wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="*this">
+            <text class="page-item__text">第 {{item}} 页</text>
+          </view>
+        </ec-roll-new>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">弹性效果</text>
+      <view class="demo-block__content">
+        <ec-roll-new
+          height="300rpx"
+          scroll-y="{{true}}"
+          bounces="{{true}}"
+        >
+          <view class="list-item" wx:for="{{verticalList}}" wx:key="id" wx:if="{{index < 10}}">
+            <text class="list-item__title">{{item.title}}</text>
+            <text class="list-item__desc">{{item.desc}}</text>
+          </view>
+        </ec-roll-new>
+      </view>
+    </view>
+  </view>
+</view>

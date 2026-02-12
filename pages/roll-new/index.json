@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "RollNew 滚动容器",
+  "usingComponents": {
+    "ec-roll-new": "/components/ec-roll-new/index",
+    "ec-button": "/components/ec-button/index"
+  }
+}

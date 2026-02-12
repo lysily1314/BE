@@ -1,0 +1,27 @@
+<view class="ec-roll-new {{custom-class}}" style="height: {{height}}; width: {{width}}; max-height: {{maxHeight}}; max-width: {{maxWidth}};">
+  <scroll-view
+    class="ec-roll-new__scroll"
+    scroll-x="{{scrollX}}"
+    scroll-y="{{scrollY}}"
+    scroll-top="{{scrollTop}}"
+    scroll-left="{{scrollLeft}}"
+    scroll-into-view="{{scrollIntoView}}"
+    scroll-with-animation="{{scrollWithAnimation}}"
+    enable-flex="{{enableFlex}}"
+    enable-back-to-top="{{enableBackToTop}}"
+    enhanced="{{enhanced}}"
+    bounces="{{bounces}}"
+    show-scrollbar="{{showScrollbar}}"
+    paging-enabled="{{pagingEnabled}}"
+    fast-deceleration="{{fastDeceleration}}"
+    lower-threshold="{{lowerThreshold}}"
+    upper-threshold="{{upperThreshold}}"
+    bindscroll="onScroll"
+    bindscrolltoupper="onScrollToUpper"
+    bindscrolltolower="onScrollToLower"
+  >
+    <view class="ec-roll-new__content">
+      <slot />
+    </view>
+  </scroll-view>
+</view>

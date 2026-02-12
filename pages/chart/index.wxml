@@ -1,0 +1,212 @@
+<view class="demo-page">
+  <view class="demo-header">
+    <text class="demo-header__title">Chart 图表</text>
+    <text class="demo-header__desc">适用于电商场景的图表展示组件</text>
+  </view>
+
+  <view class="demo-section">
+    <view class="demo-block">
+      <text class="demo-block__title">柱状图</text>
+      <view class="demo-block__content">
+        <ec-chart
+          id="barChart"
+          type="bar"
+          data="{{barData}}"
+          height="400rpx"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          show-value="{{showValue}}"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">折线图</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="line"
+          data="{{lineData}}"
+          height="400rpx"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          show-value="{{showValue}}"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">饼图</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="pie"
+          data="{{pieData}}"
+          height="400rpx"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">环形图</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="doughnut"
+          data="{{doughnutData}}"
+          height="400rpx"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          doughnut-radius="0.7"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">平滑折线图</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="line"
+          data="{{smoothLineData}}"
+          height="400rpx"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          smooth="{{true}}"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">面积图</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="line"
+          data="{{areaLineData}}"
+          height="400rpx"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          area="{{true}}"
+          area-color="rgba(25, 137, 250, 0.2)"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">自定义颜色</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="bar"
+          data="{{multiBarData}}"
+          colors="{{customColors}}"
+          height="400rpx"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          show-value="{{showValue}}"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">显示数值</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="bar"
+          data="{{barData}}"
+          height="400rpx"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          show-value="{{true}}"
+          value-position="top"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">图表控制</text>
+      <view class="demo-block__content">
+        <view class="control-row">
+          <text class="control-label">图例显示: {{showLegend ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleLegend">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">提示框: {{showTooltip ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleTooltip">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">动画效果: {{animation ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleAnimation">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">显示数值: {{showValue ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleValue">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">刷新图表</text>
+          <ec-button type="default" size="small" bind:tap="refreshChart">刷新</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">导出图片</text>
+          <ec-button type="default" size="small" bind:tap="exportChart">导出</ec-button>
+        </view>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">电商场景 - 销售趋势</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="line"
+          data="{{smoothLineData}}"
+          height="400rpx"
+          colors="#FF4400"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          smooth="{{true}}"
+          area="{{true}}"
+          area-color="rgba(255, 68, 0, 0.1)"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">电商场景 - 商品分类占比</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="doughnut"
+          data="{{pieData}}"
+          height="400rpx"
+          colors="{{customColors}}"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          doughnut-radius="0.6"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">电商场景 - 月度销量对比</text>
+      <view class="demo-block__content">
+        <ec-chart
+          type="bar"
+          data="{{barData}}"
+          height="400rpx"
+          colors="#07c160"
+          show-legend="{{showLegend}}"
+          show-tooltip="{{showTooltip}}"
+          animation="{{animation}}"
+          show-value="{{showValue}}"
+          bar-width="50"
+        />
+      </view>
+    </view>
+  </view>
+</view>

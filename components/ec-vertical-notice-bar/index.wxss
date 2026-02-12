@@ -1,0 +1,113 @@
+.ec-vertical-notice-bar {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--ec-bg, #f7f8fa);
+  color: var(--ec-text-primary, #333);
+  box-sizing: border-box;
+}
+
+.ec-vertical-notice-bar--default {
+  background: var(--ec-bg, #f7f8fa);
+  color: var(--ec-text-primary, #333);
+}
+
+.ec-vertical-notice-bar--primary {
+  background: var(--ec-primary-bg, #fff8f2);
+  color: var(--ec-primary, #FF4400);
+}
+
+.ec-vertical-notice-bar--success {
+  background: var(--ec-success-bg, #f2fdf9);
+  color: var(--ec-success, #07c160);
+}
+
+.ec-vertical-notice-bar--warning {
+  background: var(--ec-warning-bg, #fff9f0);
+  color: var(--ec-warning, #ff976a);
+}
+
+.ec-vertical-notice-bar--danger {
+  background: var(--ec-danger-bg, #fef9f9);
+  color: var(--ec-danger, #ee0a24);
+}
+
+.ec-vertical-notice-bar__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ec-vertical-notice-bar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+  color: var(--ec-primary, #FF4400);
+}
+
+.ec-vertical-notice-bar__scroll {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ec-vertical-notice-bar__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.ec-vertical-notice-bar__item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ec-vertical-notice-bar__item-content {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  width: 100%;
+}
+
+.ec-vertical-notice-bar__item-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--ec-font-sm, 24rpx);
+  line-height: 1.5;
+}
+
+.ec-vertical-notice-bar__item-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rpx 12rpx;
+  font-size: 20rpx;
+  color: var(--ec-white, #fff);
+  border-radius: 4rpx;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.ec-vertical-notice-bar__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 16rpx;
+  flex-shrink: 0;
+  color: var(--ec-text-placeholder, #999);
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.ec-vertical-notice-bar__close:active {
+  opacity: 0.6;
+}

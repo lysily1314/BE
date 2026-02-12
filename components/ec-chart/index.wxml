@@ -1,0 +1,21 @@
+<view class="ec-chart {{custom-class}}" style="width: {{width}}; height: {{height}};">
+  <canvas
+    id="ecChartCanvas"
+    type="2d"
+    class="ec-chart__canvas"
+    bindtouchstart="onTouchStart"
+    bindtouchmove="onTouchMove"
+    bindtouchend="onTouchEnd"
+  ></canvas>
+  
+  <view 
+    class="ec-chart__tooltip {{tooltip.show ? 'ec-chart__tooltip--show' : ''}}" 
+    style="left: {{tooltip.x}}px; top: {{tooltip.y}}px;"
+    wx:if="{{showTooltip && tooltip.data}}"
+  >
+    <view class="ec-chart__tooltip-content">
+      <text class="ec-chart__tooltip-label">{{tooltip.data.label}}</text>
+      <text class="ec-chart__tooltip-value">{{tooltip.data.value}}</text>
+    </view>
+  </view>
+</view>

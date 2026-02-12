@@ -37,9 +37,13 @@
     "pages/divider/index",
     "pages/swipeout/index",
     "pages/sticky/index",
-    "pages/keyboard/index",
-    "pages/swiper-card/index"
-  ],
+      "pages/keyboard/index",
+      "pages/swiper-card/index",
+      "pages/roll-new/index",
+      "pages/vertical-notice-bar/index",
+      "pages/chart/index",
+      "pages/table/index"
+    ],
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "ec-ui",

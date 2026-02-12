@@ -1,0 +1,233 @@
+<view class="demo-page">
+  <view class="demo-header">
+    <text class="demo-header__title">Table 表格</text>
+    <text class="demo-header__desc">功能完整的表格展示组件</text>
+  </view>
+
+  <view class="demo-section">
+    <view class="demo-block">
+      <text class="demo-block__title">基础用法</text>
+      <view class="demo-block__content">
+        <ec-table
+          id="basicTable"
+          data="{{basicData}}"
+          columns="{{basicColumns}}"
+          border="{{showBorder}}"
+          stripe="{{showStripe}}"
+          hover="{{showHover}}"
+          bind:cellclick="onCellClick"
+          bind:rowclick="onRowClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">电商场景 - 商品列表</text>
+      <view class="demo-block__content">
+        <ec-table
+          id="productTable"
+          data="{{productData}}"
+          columns="{{productColumns}}"
+          border="{{showBorder}}"
+          stripe="{{showStripe}}"
+          hover="{{showHover}}"
+          index-column="{{showIndex}}"
+          selection-column="{{showSelection}}"
+          selected-row-keys="{{selectedRowKeys}}"
+          row-key="id"
+          bind:cellclick="onCellClick"
+          bind:rowclick="onRowClick"
+          bind:selectionchange="onSelectionChange"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">电商场景 - 订单列表</text>
+      <view class="demo-block__content">
+        <ec-table
+          data="{{orderData}}"
+          columns="{{orderColumns}}"
+          border="{{showBorder}}"
+          stripe="{{showStripe}}"
+          hover="{{showHover}}"
+          bind:cellclick="onCellClick"
+          bind:rowclick="onRowClick"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">表格控制</text>
+      <view class="demo-block__content">
+        <view class="control-row">
+          <text class="control-label">显示序号: {{showIndex ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleIndex">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">选择功能: {{showSelection ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleSelection">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">斑马纹: {{showStripe ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleStripe">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">悬停效果: {{showHover ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleHover">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">边框: {{showBorder ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleBorder">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">固定表头: {{fixedHeader ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleFixedHeader">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">纵向滚动: {{scrollY ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleScrollY">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">横向滚动: {{scrollX ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleScrollX">切换</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">加载状态: {{loading ? '是' : '否'}}</text>
+          <ec-button type="primary" size="small" bind:tap="toggleLoading">切换</ec-button>
+        </view>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">选择操作</text>
+      <view class="demo-block__content">
+        <view class="control-row">
+          <text class="control-label">已选择: {{selectedRowKeys.length}} 项</text>
+        </view>
+        <view class="control-row">
+          <text class="control-label">全选</text>
+          <ec-button type="default" size="small" bind:tap="selectAll">全选</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">清空选择</text>
+          <ec-button type="default" size="small" bind:tap="clearSelection">清空</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">获取选中行</text>
+          <ec-button type="default" size="small" bind:tap="getSelectedRows">获取</ec-button>
+        </view>
+        <view class="control-row">
+          <text class="control-label">刷新表格</text>
+          <ec-button type="default" size="small" bind:tap="refreshTable">刷新</ec-button>
+        </view>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">固定表头 + 纵向滚动</text>
+      <view class="demo-block__content">
+        <ec-table
+          data="{{productData}}"
+          columns="{{productColumns}}"
+          border="{{showBorder}}"
+          stripe="{{showStripe}}"
+          hover="{{showHover}}"
+          fixed-header="{{true}}"
+          scroll-y="{{true}}"
+          height="400rpx"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">横向滚动</text>
+      <view class="demo-block__content">
+        <ec-table
+          data="{{orderData}}"
+          columns="{{orderColumns}}"
+          border="{{showBorder}}"
+          stripe="{{showStripe}}"
+          hover="{{showHover}}"
+          scroll-x="{{true}}"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">加载状态</text>
+      <view class="demo-block__content">
+        <ec-table
+          data="{{productData}}"
+          columns="{{productColumns}}"
+          border="{{showBorder}}"
+          stripe="{{showStripe}}"
+          hover="{{showHover}}"
+          loading="{{loading}}"
+          loading-text="数据加载中..."
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">空数据</text>
+      <view class="demo-block__content">
+        <ec-table
+          data="{{emptyData}}"
+          columns="{{productColumns}}"
+          border="{{showBorder}}"
+          stripe="{{showStripe}}"
+          hover="{{showHover}}"
+          empty-text="暂无商品数据"
+        />
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">大数据量（100条）</text>
+      <view class="demo-block__content">
+        <view class="control-row">
+          <text class="control-label">滚动控制</text>
+          <view class="button-group">
+            <ec-button type="default" size="small" bind:tap="scrollToTop">回到顶部</ec-button>
+            <ec-button type="default" size="small" bind:tap="scrollToBottom">滚动到底部</ec-button>
+          </view>
+        </view>
+        <view style="margin-top: 20rpx;">
+          <ec-table
+            id="largeTable"
+            data="{{largeData}}"
+            columns="{{largeColumns}}"
+            border="{{showBorder}}"
+            stripe="{{showStripe}}"
+            hover="{{showHover}}"
+            index-column="{{true}}"
+            fixed-header="{{true}}"
+            scroll-y="{{true}}"
+            height="600rpx"
+          />
+        </view>
+      </view>
+    </view>
+
+    <view class="demo-block">
+      <text class="demo-block__title">自定义样式</text>
+      <view class="demo-block__content">
+        <ec-table
+          data="{{basicData}}"
+          columns="{{basicColumns}}"
+          border="{{false}}"
+          stripe="{{true}}"
+          hover="{{false}}"
+          header-background="#667eea"
+          header-color="#fff"
+          header-font-size="32rpx"
+          body-background="#f8f9fa"
+          body-color="#333"
+          body-font-size="30rpx"
+          stripe-background="#fff"
+        />
+      </view>
+    </view>
+  </view>
+</view>
