@@ -158,55 +158,6 @@
       </view>
     </view>
 
-    <view class="demo-block">
-      <text class="demo-block__title">电商场景 - 销售趋势</text>
-      <view class="demo-block__content">
-        <ec-chart
-          type="line"
-          data="{{smoothLineData}}"
-          height="400rpx"
-          colors="#FF4400"
-          show-legend="{{showLegend}}"
-          show-tooltip="{{showTooltip}}"
-          animation="{{animation}}"
-          smooth="{{true}}"
-          area="{{true}}"
-          area-color="rgba(255, 68, 0, 0.1)"
-        />
-      </view>
-    </view>
-
-    <view class="demo-block">
-      <text class="demo-block__title">电商场景 - 商品分类占比</text>
-      <view class="demo-block__content">
-        <ec-chart
-          type="doughnut"
-          data="{{pieData}}"
-          height="400rpx"
-          colors="{{customColors}}"
-          show-legend="{{showLegend}}"
-          show-tooltip="{{showTooltip}}"
-          animation="{{animation}}"
-          doughnut-radius="0.6"
-        />
-      </view>
-    </view>
-
-    <view class="demo-block">
-      <text class="demo-block__title">电商场景 - 月度销量对比</text>
-      <view class="demo-block__content">
-        <ec-chart
-          type="bar"
-          data="{{barData}}"
-          height="400rpx"
-          colors="#07c160"
-          show-legend="{{showLegend}}"
-          show-tooltip="{{showTooltip}}"
-          animation="{{animation}}"
-          show-value="{{showValue}}"
-          bar-width="50"
-        />
-      </view>
-    </view>
+  
   </view>
 </view>
